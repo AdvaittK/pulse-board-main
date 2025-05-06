@@ -4,7 +4,21 @@ import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Search, Settings, Bell, Home, LayoutDashboard, User, LogOut, HelpCircle } from "lucide-react"
+import { 
+  Search, 
+  Settings, 
+  Bell, 
+  Home, 
+  LayoutDashboard, 
+  User, 
+  LogOut, 
+  HelpCircle,
+  CheckCircle,
+  AlertCircle,
+  Info,
+  Server,
+  Check
+} from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -21,12 +35,45 @@ import {
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 
+// Sample notification data
+const sampleNotifications = [
+  {
+    id: 1,
+    title: "System Update",
+    message: "New dashboard features have been deployed",
+    time: "10 minutes ago",
+    icon: <Info className="h-4 w-4 text-blue-500" />,
+    read: false,
+    type: "info"
+  },
+  {
+    id: 2,
+    title: "Server Alert",
+    message: "Database server load is high (82%)",
+    time: "45 minutes ago",
+    icon: <AlertCircle className="h-4 w-4 text-amber-500" />,
+    read: false,
+    type: "warning"
+  },
+  {
+    id: 3,
+    title: "Task Completed",
+    message: "Your data export has finished processing",
+    time: "2 hours ago",
+    icon: <CheckCircle className="h-4 w-4 text-green-500" />,
+    read: false,
+    type: "success"
+  }
+]
+
 export function DashboardTopNav() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [searchFocused, setSearchFocused] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
-  const [notificationCount, setNotificationCount] = useState(3)
+  const [notifications, setNotifications] = useState(sampleNotifications)
+  const [notificationCount, setNotificationCount] = useState(notifications.filter(n => !n.read).length)
+  const [notificationsOpen, setNotificationsOpen] = useState(false)
   
   // Handle scroll effect for enhanced top nav
   useEffect(() => {
@@ -41,6 +88,28 @@ export function DashboardTopNav() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  // Update notification count when notifications change
+  useEffect(() => {
+    setNotificationCount(notifications.filter(n => !n.read).length)
+  }, [notifications])
+
+  // Mark all notifications as read
+  const markAllAsRead = () => {
+    const updatedNotifications = notifications.map(notification => ({
+      ...notification,
+      read: true
+    }))
+    setNotifications(updatedNotifications)
+  }
+
+  // Mark a single notification as read
+  const markAsRead = (id: number) => {
+    const updatedNotifications = notifications.map(notification => 
+      notification.id === id ? { ...notification, read: true } : notification
+    )
+    setNotifications(updatedNotifications)
+  }
 
   // Extract page title from pathname
   const getPageTitle = () => {
@@ -158,27 +227,85 @@ export function DashboardTopNav() {
             </Tooltip>
           </TooltipProvider>
           
-          <TooltipProvider delayDuration={300}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full relative">
-                  <Bell className="h-4 w-4 text-slate-600 dark:text-slate-300" />
-                  {notificationCount > 0 && (
-                    <motion.div 
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 flex items-center justify-center"
+          <DropdownMenu open={notificationsOpen} onOpenChange={setNotificationsOpen}>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="rounded-full relative">
+                <Bell className="h-4 w-4 text-slate-600 dark:text-slate-300" />
+                {notificationCount > 0 && (
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 flex items-center justify-center"
+                  >
+                    <span className="text-[10px] font-bold text-white">{notificationCount}</span>
+                  </motion.div>
+                )}
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-80">
+              <DropdownMenuLabel className="flex items-center justify-between">
+                <span>Notifications</span>
+                {notificationCount > 0 && (
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="h-8 text-xs text-blue-600 hover:text-blue-700"
+                    onClick={markAllAsRead}
+                  >
+                    <Check className="h-3 w-3 mr-1" /> Mark all as read
+                  </Button>
+                )}
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              
+              {notifications.length === 0 ? (
+                <div className="text-center py-4 text-muted-foreground text-sm">
+                  No notifications
+                </div>
+              ) : (
+                <div className="max-h-[300px] overflow-auto">
+                  {notifications.map((notification) => (
+                    <DropdownMenuItem 
+                      key={notification.id} 
+                      className={cn("p-0", 
+                        notification.read ? "opacity-70" : "bg-blue-50/50 dark:bg-blue-900/10"
+                      )}
+                      onSelect={(e) => {
+                        e.preventDefault();
+                        markAsRead(notification.id);
+                      }}
                     >
-                      <span className="text-[10px] font-bold text-white">{notificationCount}</span>
-                    </motion.div>
-                  )}
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="bottom">
-                <p>Notifications</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+                      <div className="flex items-start p-3 w-full gap-3 cursor-pointer">
+                        <div className="flex-shrink-0 mt-0.5">
+                          {notification.icon}
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-start justify-between">
+                            <p className="font-medium text-sm">{notification.title}</p>
+                            {!notification.read && (
+                              <Badge className="ml-2 bg-blue-100 text-blue-700 hover:bg-blue-200 border-none h-5">New</Badge>
+                            )}
+                          </div>
+                          <p className="text-muted-foreground text-xs mt-0.5">{notification.message}</p>
+                          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{notification.time}</p>
+                        </div>
+                      </div>
+                    </DropdownMenuItem>
+                  ))}
+                </div>
+              )}
+
+              <DropdownMenuSeparator />
+              <DropdownMenuItem className="justify-center focus:bg-transparent" asChild>
+                <Link 
+                  href="/dashboard"
+                  className="text-center w-full text-blue-600 dark:text-blue-400 text-sm font-medium py-1 hover:underline"
+                >
+                  View all notifications
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           
           <TooltipProvider delayDuration={300}>
             <Tooltip>

@@ -368,11 +368,6 @@ export function DashboardSidebar() {
                   <span>Back to Home</span>
                 </Link>
               </MotionButton>
-              <div className="flex items-center gap-2">
-                <BarChart className="h-4 w-4" />
-                <span className="font-medium">
-                </span>
-              </div>
             </div>
           </SidebarFooter>
         </Sidebar>
