@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
+import { useSidebarClose } from "@/hooks/use-sidebar-close"
 import { 
   Package, 
   LayoutDashboard,
@@ -41,6 +42,7 @@ const MotionButton = motion(Button)
 export function DashboardSidebar() {
   const pathname = usePathname()
   const [isCollapsed, setIsCollapsed] = useState(false)
+  const { closeSidebar } = useSidebarClose()
 
   // Animation variants for menu items
   const menuItemVariants = {
@@ -68,11 +70,10 @@ export function DashboardSidebar() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <SidebarProvider defaultOpen={!isCollapsed} onOpenChange={setIsCollapsed}>
         <Sidebar 
           variant="floating" 
           collapsible="icon"
-          className="border-r border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-950 rounded-tr-xl rounded-br-xl overflow-hidden"
+          className="border-r border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-950 rounded-tr-xl rounded-br-xl overflow-hidden max-h-screen overflow-y-auto"
         >
           <SidebarHeader>
             <div className="flex items-center gap-3 px-4 py-4">
@@ -80,7 +81,7 @@ export function DashboardSidebar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link href="/" className="block">
+                <Link href="/" className="block" onClick={closeSidebar}>
                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 text-white shadow-md">
                     <Sparkles className="h-4 w-4" />
                   </div>
@@ -101,8 +102,7 @@ export function DashboardSidebar() {
           
           <SidebarSeparator />
           
-          <SidebarContent>
-            <SidebarGroup>
+          <SidebarContent>              <SidebarGroup>
               <SidebarGroupLabel className="text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mx-4">
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -113,7 +113,7 @@ export function DashboardSidebar() {
                 </motion.div>
               </SidebarGroupLabel>
               
-              <div className="space-y-1 px-3 py-2">
+              <div className="space-y-1.5 sm:space-y-1 px-3 py-2">
                 <MotionDiv
                   custom={0}
                   initial="hidden"
@@ -123,10 +123,10 @@ export function DashboardSidebar() {
                   <MotionButton
                     asChild
                     variant={pathname === "/dashboard" ? "secondary" : "ghost"}
-                    className="w-full justify-start gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors duration-200"
+                    className="w-full justify-start gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors duration-200 py-2.5 sm:py-2"
                     whileTap={buttonTapAnimation}
                   >
-                    <Link href="/dashboard">
+                    <Link href="/dashboard" onClick={closeSidebar}>
                       <motion.div whileHover={{ scale: 1.05 }} className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-md">
                         <LayoutDashboard className="h-5 w-5 text-blue-500" />
                       </motion.div>
@@ -147,7 +147,7 @@ export function DashboardSidebar() {
                     className="w-full justify-start gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors duration-200"
                     whileTap={buttonTapAnimation}
                   >
-                    <Link href="/dashboard/data-feeds">
+                    <Link href="/dashboard/data-feeds" onClick={closeSidebar}>
                       <motion.div whileHover={{ scale: 1.05 }} className="bg-green-50 dark:bg-green-950/30 p-2 rounded-md">
                         <LineChart className="h-5 w-5 text-green-500" />
                       </motion.div>
@@ -168,7 +168,7 @@ export function DashboardSidebar() {
                     className="w-full justify-start gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors duration-200"
                     whileTap={buttonTapAnimation}
                   >
-                    <Link href="/dashboard/marketplace">
+                    <Link href="/dashboard/marketplace" onClick={closeSidebar}>
                       <motion.div whileHover={{ scale: 1.05 }} className="bg-purple-50 dark:bg-purple-950/30 p-2 rounded-md">
                         <ShoppingCart className="h-5 w-5 text-purple-500" />
                       </motion.div>
@@ -371,7 +371,6 @@ export function DashboardSidebar() {
             </div>
           </SidebarFooter>
         </Sidebar>
-      </SidebarProvider>
     </motion.div>
   )
 }

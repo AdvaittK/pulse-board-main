@@ -13,12 +13,13 @@ export function ThemeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button 
-          variant="outline" 
+          variant="ghost" 
           size="icon"
           className={cn(
-            "hover:bg-muted hover:text-muted-foreground",
+            "hover:bg-transparent hover:text-foreground",
             "data-[state=open]:bg-transparent data-[state=open]:text-foreground",
-            "transition-colors duration-200"
+            "transition-colors duration-200",
+            "h-auto w-auto p-0 border-0"
           )}
         >
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

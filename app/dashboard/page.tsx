@@ -78,7 +78,7 @@ export default function DashboardPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50/80 to-blue-50/70 dark:from-slate-900 dark:to-indigo-950/70">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50/80 to-blue-50/70 dark:from-slate-900 dark:to-indigo-950/70 px-1 sm:px-2 md:px-3">
       <div className="container px-0 md:px-4 max-w-full py-6">
         <motion.div 
           initial="hidden"
@@ -127,7 +127,7 @@ export default function DashboardPage() {
           {/* Widget Cards - Enhanced with animations */}
           <motion.div 
             variants={cardVariants}
-            className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6"
+            className="grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4 md:gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6"
           >
             <motion.div 
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
@@ -268,7 +268,7 @@ export default function DashboardPage() {
                   </TabsTrigger>
                 </TabsList>
 
-                <Button variant="outline" size="sm" className="hidden md:flex items-center gap-1 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-900 hover:bg-blue-50 dark:hover:bg-blue-950/50">
+                <Button variant="outline" size="sm" className="hidden sm:flex items-center gap-1 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-900 hover:bg-blue-50 dark:hover:bg-blue-950/50">
                   View All
                   <ChevronRight className="h-3 w-3" />
                 </Button>
@@ -282,9 +282,9 @@ export default function DashboardPage() {
                   exit="exit"
                   variants={tabContentVariants}
                 >
-                  <TabsContent value="overview" className="space-y-6 mt-0">
+                  <TabsContent value="overview" className="space-y-4 sm:space-y-6 mt-0 overflow-hidden">
                     {/* Horizon Dashboard Components - Row 1 */}
-                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
                       <motion.div
                         whileHover={{ y: -5, transition: { duration: 0.2 } }}
                         className="transition-all duration-200 shadow-sm hover:shadow-md"
@@ -300,14 +300,14 @@ export default function DashboardPage() {
                     </div>
 
                     {/* Horizon Dashboard Components - Row 2 */}
-                    <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-4 sm:gap-6 xl:grid-cols-2">
                       <motion.div
                         whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                        className="transition-all duration-200 shadow-sm hover:shadow-md"
+                        className="transition-all duration-200 shadow-sm hover:shadow-md overflow-x-auto"
                       >
                         <CheckTable tableData={tableDataCheck} />
                       </motion.div>
-                      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                      <div className="grid grid-cols-1 gap-4 xs:grid-cols-2 sm:gap-6">
                         <motion.div
                           whileHover={{ y: -5, transition: { duration: 0.2 } }}
                           className="transition-all duration-200 shadow-sm hover:shadow-md"

@@ -17,7 +17,8 @@ import {
   AlertCircle,
   Info,
   Server,
-  Check
+  Check,
+  X
 } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -34,6 +35,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
+import { SidebarTrigger } from "@/components/ui/sidebar"
 
 // Sample notification data
 const sampleNotifications = [
@@ -71,6 +73,7 @@ export function DashboardTopNav() {
   const [scrolled, setScrolled] = useState(false)
   const [searchFocused, setSearchFocused] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
+  const [searchOpen, setSearchOpen] = useState(false)
   const [notifications, setNotifications] = useState(sampleNotifications)
   const [notificationCount, setNotificationCount] = useState(notifications.filter(n => !n.read).length)
   const [notificationsOpen, setNotificationsOpen] = useState(false)
@@ -93,6 +96,18 @@ export function DashboardTopNav() {
   useEffect(() => {
     setNotificationCount(notifications.filter(n => !n.read).length)
   }, [notifications])
+  
+  // Handle screen resize for search bar visibility
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setSearchOpen(false); // Reset search open state on desktop
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [])
 
   // Mark all notifications as read
   const markAllAsRead = () => {
@@ -133,7 +148,7 @@ export function DashboardTopNav() {
   return (
     <motion.div 
       className={cn(
-        "sticky top-0 z-30 flex h-16 items-center justify-between gap-4 px-4 transition-all duration-300",
+        "sticky top-0 z-30 flex h-12 xs:h-14 sm:h-16 items-center justify-between gap-1 xs:gap-2 sm:gap-4 px-2 sm:px-4 transition-all duration-300",
         scrolled 
           ? "bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-sm border-b border-slate-200 dark:border-slate-800" 
           : "bg-white/70 dark:bg-slate-950/70 backdrop-blur-sm border-b border-slate-100 dark:border-slate-900"
@@ -142,7 +157,37 @@ export function DashboardTopNav() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3 sm:gap-4">
+        {/* Mobile Sidebar Trigger */}
+        <motion.div 
+          className="md:hidden"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.1, duration: 0.3 }}
+        >
+          <SidebarTrigger className="h-8 w-8 rounded-md bg-white dark:bg-slate-900 dark:hover:bg-slate-800 shadow-sm hover:bg-slate-100 border border-slate-200 dark:border-slate-800" />
+        </motion.div>
+        
+        {/* Mobile Page Title */}
+        <motion.div
+          className="md:hidden"
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.3 }}
+        >
+          <motion.h1
+            className="text-base font-bold text-slate-800 dark:text-white flex items-center truncate max-w-[140px]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            {pathname.includes('/dashboard') && (
+              <LayoutDashboard className="mr-1.5 h-4 w-4 text-blue-500 flex-shrink-0" />
+            )}
+            <span className="truncate">{pageTitle}</span>
+          </motion.h1>
+        </motion.div>
+        
+        {/* Desktop Page Title */}
         <motion.div 
           className="hidden md:block"
           initial={{ opacity: 0, x: -20 }}
@@ -167,54 +212,86 @@ export function DashboardTopNav() {
         </motion.div>
       </div>
       
-      <div className="flex flex-1 items-center justify-end gap-3">
+      <div className="flex flex-1 items-center justify-end gap-2 sm:gap-3">
+        {/* Search Icon for Mobile - Shows when search is collapsed */}
         <AnimatePresence>
-          <motion.div 
-            className={cn(
-              "relative transition-all duration-300 ease-out",
-              searchFocused ? "w-full max-w-md" : "w-full max-w-[200px] md:max-w-xs"
-            )}
-            initial={{ opacity: 0, width: 100 }}
-            animate={{ opacity: 1, width: searchFocused ? 350 : 200 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400 dark:text-slate-500" />
-            <Input
-              type="search"
-              placeholder="Search dashboard..."
-              value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
-              onFocus={() => setSearchFocused(true)}
-              onBlur={() => setSearchFocused(false)}
-              className={cn(
-                "w-full transition-all duration-200 pl-9 pr-4 py-2 h-9",
-                "border border-slate-200 dark:border-slate-800",
-                "rounded-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm",
-                "hover:bg-white hover:border-slate-300 dark:hover:bg-slate-800 dark:hover:border-slate-700",
-                "focus:border-blue-500 focus:ring-1 focus:ring-blue-500 dark:focus:border-blue-600 dark:focus:ring-blue-600",
-                "focus:bg-white dark:focus:bg-slate-900"
-              )}
-            />
-            {searchQuery && (
-              <motion.button
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-600 hover:text-slate-600 dark:hover:text-slate-400"
-                onClick={() => setSearchQuery("")}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                ×
-              </motion.button>
-            )}
-          </motion.div>
+          {!searchOpen && (
+            <motion.button
+              className="md:hidden flex items-center justify-center h-8 w-8 rounded-md bg-white dark:bg-slate-900 shadow-sm hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800"
+              onClick={() => setSearchOpen(true)}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Search className="h-4 w-4 text-slate-600 dark:text-slate-300" />
+            </motion.button>
+          )}
         </AnimatePresence>
         
-        <div className="flex items-center gap-2 md:gap-3">
+        {/* Expandable Search Bar */}
+        <AnimatePresence>
+          {(searchOpen || !searchOpen && typeof window !== 'undefined' && window.innerWidth >= 768) && (
+            <motion.div 
+              className={cn(
+                "relative transition-all duration-300 ease-out",
+                searchFocused 
+                  ? "w-full max-w-full md:max-w-md" 
+                  : searchOpen 
+                    ? "w-full max-w-full" 
+                    : "hidden md:block md:max-w-xs"
+              )}
+              initial={{ opacity: 0, width: 0, scale: 0.9 }}
+              animate={{ opacity: 1, width: "auto", scale: 1 }}
+              exit={{ opacity: 0, width: 0, scale: 0.9 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+            >
+              <div className="relative flex items-center">
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400 dark:text-slate-500" />
+                <Input
+                  type="search"
+                  placeholder="Search dashboard..."
+                  value={searchQuery}
+                  onChange={e => setSearchQuery(e.target.value)}
+                  onFocus={() => setSearchFocused(true)}
+                  onBlur={() => setSearchFocused(false)}
+                  className={cn(
+                    "w-full transition-all duration-200 pl-9 pr-9 py-2 h-9",
+                    "border border-slate-200 dark:border-slate-800",
+                    "rounded-md bg-white dark:bg-slate-900 backdrop-blur-sm",
+                    "hover:bg-white hover:border-slate-300 dark:hover:bg-slate-800 dark:hover:border-slate-700",
+                    "focus:border-blue-500 focus:ring-1 focus:ring-blue-500 dark:focus:border-blue-600 dark:focus:ring-blue-600"
+                  )}
+                  autoFocus={searchOpen}
+                />
+                <button
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-600 hover:text-slate-600 dark:hover:text-slate-400"
+                  onClick={() => {
+                    if (searchQuery) {
+                      setSearchQuery("");
+                    } else {
+                      setSearchOpen(false);
+                    }
+                  }}
+                >
+                  {searchQuery ? "×" : <X className="h-4 w-4" />}
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        
+        <div className="flex items-center gap-1 xs:gap-1.5 sm:gap-2 md:gap-3">
+          {/* Home button - hidden on smallest screens */}
           <TooltipProvider delayDuration={300}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button asChild variant="ghost" size="icon" className="rounded-full">
+                <Button 
+                  asChild 
+                  variant="ghost" 
+                  size="icon" 
+                  className="rounded-md h-8 w-8 bg-white dark:bg-slate-900 shadow-sm hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 hidden xs:flex items-center justify-center"
+                >
                   <Link href="/">
                     <Home className="h-4 w-4 text-slate-600 dark:text-slate-300" />
                     <span className="sr-only">Home</span>
@@ -229,27 +306,31 @@ export function DashboardTopNav() {
           
           <DropdownMenu open={notificationsOpen} onOpenChange={setNotificationsOpen}>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="rounded-full relative">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="rounded-md h-8 w-8 bg-white dark:bg-slate-900 shadow-sm hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 relative"
+              >
                 <Bell className="h-4 w-4 text-slate-600 dark:text-slate-300" />
                 {notificationCount > 0 && (
                   <motion.div 
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 flex items-center justify-center"
+                    className="absolute -top-1.5 -right-1.5 h-4 w-4 rounded-full bg-red-500 flex items-center justify-center"
                   >
                     <span className="text-[10px] font-bold text-white">{notificationCount}</span>
                   </motion.div>
                 )}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-80">
+            <DropdownMenuContent align="end" className="w-[calc(100vw-1.5rem)] xs:w-[calc(100vw-2rem)] sm:w-80">
               <DropdownMenuLabel className="flex items-center justify-between">
-                <span>Notifications</span>
+                <span className="text-sm">Notifications</span>
                 {notificationCount > 0 && (
                   <Button 
                     variant="ghost" 
                     size="sm" 
-                    className="h-8 text-xs text-blue-600 hover:text-blue-700"
+                    className="h-7 sm:h-8 text-xs text-blue-600 hover:text-blue-700 px-2"
                     onClick={markAllAsRead}
                   >
                     <Check className="h-3 w-3 mr-1" /> Mark all as read
@@ -310,8 +391,12 @@ export function DashboardTopNav() {
           <TooltipProvider delayDuration={300}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <div className="h-9 w-9 rounded-full">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }}
+                  className="rounded-md h-8 w-8 flex items-center justify-center bg-white dark:bg-slate-900 shadow-sm hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800"
+                >
+                  <div className="flex items-center justify-center">
                     <ThemeToggle />
                   </div>
                 </motion.div>
@@ -326,9 +411,9 @@ export function DashboardTopNav() {
             <DropdownMenuTrigger asChild>
               <Button 
                 variant="ghost" 
-                className="relative h-9 w-9 rounded-full border border-slate-200 dark:border-slate-800 p-0 overflow-hidden"
+                className="relative h-8 w-8 md:h-9 md:w-9 rounded-md sm:rounded-full border border-slate-200 dark:border-slate-800 p-0 overflow-hidden shadow-sm hover:bg-slate-100 dark:hover:bg-slate-800 bg-white dark:bg-slate-900"
               >
-                <Avatar className="h-9 w-9">
+                <Avatar className="h-8 w-8 md:h-9 md:w-9">
                   <AvatarImage src="/placeholder-user.jpg" alt="User" />
                   <AvatarFallback className="bg-blue-600">
                     <User className="h-4 w-4 text-white" />
