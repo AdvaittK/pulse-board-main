@@ -149,11 +149,11 @@ export default function AdminDataSourcesPage() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'active':
-        return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
       case 'inactive':
         return 'bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-300'
       case 'error':
-        return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300'
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
       default:
         return 'bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-300'
     }
@@ -162,7 +162,7 @@ export default function AdminDataSourcesPage() {
   return (
     <div className={`container px-4 py-6 mx-auto max-w-7xl transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold tracking-tight text-blue-700">
           Data Sources
         </h1>
         <p className="text-muted-foreground mt-1">
@@ -375,7 +375,7 @@ export default function AdminDataSourcesPage() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="text-red-500 hover:text-red-600"
+                          className="text-blue-500 hover:text-blue-600"
                         >
                           <Trash className="h-4 w-4" />
                         </Button>

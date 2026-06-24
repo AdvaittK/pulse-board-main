@@ -96,7 +96,7 @@ interface LineChartProps {
   color?: string;
 }
 
-export function LineChart({ dataPoints, color = '#8884d8' }: LineChartProps = {}) {
+export function LineChart({ dataPoints, color = '#2563EB' }: LineChartProps = {}) {
   const { theme } = useTheme()
   const isDark = theme === "dark"
 
@@ -134,8 +134,8 @@ export function LineChart({ dataPoints, color = '#8884d8' }: LineChartProps = {}
           ? <Line type="monotone" dataKey="value" stroke={color} activeDot={{ r: 8 }} /> 
           : (
             <>
-              <Line type="monotone" dataKey="total" stroke="#8884d8" activeDot={{ r: 8 }} />
-              <Line type="monotone" dataKey="revenue" stroke="#82ca9d" />
+              <Line type="monotone" dataKey="total" stroke="#2563EB" activeDot={{ r: 8 }} />
+              <Line type="monotone" dataKey="revenue" stroke="#60A5FA" />
             </>
           )
         }
@@ -170,7 +170,7 @@ export function BarChart() {
           }}
         />
         <Legend />
-        <Bar dataKey="users" fill="#8884d8" />
+        <Bar dataKey="users" fill="#2563EB" />
       </RechartsBarChart>
     </ResponsiveContainer>
   )
@@ -202,8 +202,8 @@ export function AreaChart() {
           }}
         />
         <Legend />
-        <Area type="monotone" dataKey="total" stroke="#8884d8" fill="#8884d8" fillOpacity={0.3} />
-        <Area type="monotone" dataKey="revenue" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.3} />
+        <Area type="monotone" dataKey="total" stroke="#2563EB" fill="#2563EB" fillOpacity={0.3} />
+        <Area type="monotone" dataKey="revenue" stroke="#60A5FA" fill="#60A5FA" fillOpacity={0.3} />
       </RechartsAreaChart>
     </ResponsiveContainer>
   )

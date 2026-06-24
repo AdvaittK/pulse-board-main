@@ -38,7 +38,7 @@ function CheckTable(props: { tableData: any }) {
         <div className="flex items-center">
           <Checkbox
             defaultChecked={info.getValue()[1]}
-            color="indigo"
+            color="blue"
             me="10px"
           />
           <p className="ml-3 text-sm font-bold text-slate-700 dark:text-white">
@@ -109,15 +109,15 @@ function CheckTable(props: { tableData: any }) {
       <Card 
         extra={cn(
           'w-full h-full px-4 pb-4 sm:overflow-x-auto rounded-2xl border-none',
-          'shadow-md hover:shadow-lg transition-all duration-300',
-          'bg-gradient-to-br from-white to-blue-50/40',
-          'dark:from-slate-800 dark:to-slate-700/90'
+          'shadow-sm hover:shadow-sm transition-all duration-300',
+          'bg-white',
+          'dark:bg-slate-800'
         )}
       >
         <div className="relative flex items-center justify-between pt-6">
           <div className="flex items-center">
-            <div className="mr-3 flex h-9 w-9 items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-900/30">
-              <MdListAlt className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+            <div className="mr-3 flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
+              <MdListAlt className="h-5 w-5 text-blue-600 dark:text-blue-400" />
             </div>
             <div>
               <h4 className="text-lg font-bold text-slate-800 dark:text-white">
@@ -135,8 +135,8 @@ function CheckTable(props: { tableData: any }) {
         <div className="grid grid-cols-3 gap-3 mt-4 mb-5">
           <div className="bg-white dark:bg-slate-800 p-3 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700">
             <div className="flex items-center gap-2">
-              <div className="p-1.5 bg-amber-100 dark:bg-amber-900/20 rounded-md">
-                <MdTrendingUp className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+              <div className="p-1.5 bg-blue-100 dark:bg-blue-900/20 rounded-md">
+                <MdTrendingUp className="h-4 w-4 text-blue-600 dark:text-blue-400" />
               </div>
               <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Total Revenue</span>
             </div>
@@ -155,8 +155,8 @@ function CheckTable(props: { tableData: any }) {
           
           <div className="bg-white dark:bg-slate-800 p-3 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700">
             <div className="flex items-center gap-2">
-              <div className="p-1.5 bg-indigo-100 dark:bg-indigo-900/20 rounded-md">
-                <MdAccessTime className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+              <div className="p-1.5 bg-blue-100 dark:bg-blue-900/20 rounded-md">
+                <MdAccessTime className="h-4 w-4 text-blue-600 dark:text-blue-400" />
               </div>
               <span className="text-xs font-medium text-gray-500 dark:text-gray-400">Avg. Time</span>
             </div>

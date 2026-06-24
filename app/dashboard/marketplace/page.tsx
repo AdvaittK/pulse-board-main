@@ -220,7 +220,7 @@ const MarketplaceItem: React.FC<MarketplaceItemProps> = ({ item, type }) => {
   };
   
   return (
-    <Card className="h-full flex flex-col overflow-hidden hover:shadow-md transition-shadow">
+    <Card className="h-full flex flex-col overflow-hidden hover:shadow-sm transition-shadow">
       <div className="relative h-40 bg-slate-100 dark:bg-slate-800 overflow-hidden">
         <div className="absolute top-2 right-2 z-10 flex space-x-1">
           <Button 
@@ -229,7 +229,7 @@ const MarketplaceItem: React.FC<MarketplaceItemProps> = ({ item, type }) => {
             className="h-8 w-8 rounded-full bg-white/80 dark:bg-black/50 backdrop-blur-sm hover:bg-white dark:hover:bg-black/70"
             onClick={handleFavorite}
           >
-            <Heart className={`h-4 w-4 ${isFavorite ? 'fill-red-500 text-red-500' : ''}`} />
+            <Heart className={`h-4 w-4 ${isFavorite ? 'fill-blue-500 text-blue-500' : ''}`} />
           </Button>
         </div>
         <img 
@@ -248,7 +248,7 @@ const MarketplaceItem: React.FC<MarketplaceItemProps> = ({ item, type }) => {
       </CardHeader>
       <CardContent className="pb-2 flex-grow">
         <div className="flex items-center space-x-1 mb-1">
-          <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+          <Star className="h-4 w-4 fill-blue-400 text-blue-400" />
           <span className="text-sm font-medium">{item.ratings}</span>
           <span className="text-sm text-muted-foreground">({item.reviewCount} reviews)</span>
         </div>
@@ -321,7 +321,7 @@ export default function MarketplacePage() {
     <div className={`container px-4 py-6 mx-auto transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">
-          <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
+          <span className="text-blue-700">
             Marketplace
           </span>
         </h1>
@@ -386,10 +386,10 @@ export default function MarketplacePage() {
             <span>Explore all</span>
           </Button>
         </div>
-        <Card className="overflow-hidden border-0 bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-950/50 dark:to-purple-950/50">
+        <Card className="overflow-hidden border-0 bg-blue-600 dark:bg-blue-950/50">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
             <div className="col-span-1 lg:col-span-2 p-8">
-              <Badge className="mb-4 bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300 hover:bg-indigo-200 dark:hover:bg-indigo-800">Featured</Badge>
+              <Badge className="mb-4 bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">Featured</Badge>
               <h3 className="text-2xl font-bold mb-2">Advanced AI Data Analysis Suite</h3>
               <p className="text-muted-foreground mb-6">
                 Transform your raw data into actionable insights with our AI-powered analysis suite. 
@@ -408,25 +408,25 @@ export default function MarketplacePage() {
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
                   <div className="bg-white/80 dark:bg-black/30 p-1 rounded-full">
-                    <Check className="h-4 w-4 text-green-600" />
+                    <Check className="h-4 w-4 text-blue-600" />
                   </div>
                   <span className="text-sm">Process up to 50GB of data per month</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="bg-white/80 dark:bg-black/30 p-1 rounded-full">
-                    <Check className="h-4 w-4 text-green-600" />
+                    <Check className="h-4 w-4 text-blue-600" />
                   </div>
                   <span className="text-sm">12 pre-built analysis models</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="bg-white/80 dark:bg-black/30 p-1 rounded-full">
-                    <Check className="h-4 w-4 text-green-600" />
+                    <Check className="h-4 w-4 text-blue-600" />
                   </div>
                   <span className="text-sm">Custom dashboards and reports</span>
                 </div>
               </div>
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <Button size="lg" className="gap-1 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-700">
+                <Button size="lg" className="gap-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700">
                   <ShoppingBag className="h-4 w-4" />
                   <span>$499/month</span>
                 </Button>
@@ -527,7 +527,7 @@ export default function MarketplacePage() {
           <Button variant="outline" size="sm">View all</Button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card className="h-full flex flex-col overflow-hidden hover:shadow-md transition-shadow">
+          <Card className="h-full flex flex-col overflow-hidden hover:shadow-sm transition-shadow">
             <div className="relative h-40 bg-slate-100 dark:bg-slate-800 overflow-hidden">
               <img src="/placeholder.jpg" alt="Recommendation" className="w-full h-full object-cover" />
               <Badge className="absolute top-2 left-2 bg-blue-500">New</Badge>
@@ -538,7 +538,7 @@ export default function MarketplacePage() {
             </CardHeader>
             <CardContent className="pb-2">
               <div className="flex items-center space-x-1 mb-1">
-                <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                <Star className="h-4 w-4 fill-blue-400 text-blue-400" />
                 <span className="text-sm font-medium">4.9</span>
                 <span className="text-sm text-muted-foreground">(78)</span>
               </div>
@@ -556,7 +556,7 @@ export default function MarketplacePage() {
       
       {/* Add your own data feed section */}
       <div className="mt-12 mb-6">
-        <Card className="bg-gradient-to-r from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-800/80 border border-slate-200 dark:border-slate-700">
+        <Card className="bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
           <CardHeader>
             <CardTitle>Have data to share? Become a provider</CardTitle>
             <CardDescription>List your own data feeds, apps or services in our marketplace</CardDescription>
@@ -597,7 +597,7 @@ export default function MarketplacePage() {
             { name: "Technology", icon: "💻" },
             { name: "Entertainment", icon: "🎬" },
           ].map((category) => (
-            <Card key={category.name} className="hover:shadow-md transition-all cursor-pointer hover:translate-y-[-2px]">
+            <Card key={category.name} className="hover:shadow-sm transition-all cursor-pointer hover:translate-y-[-2px]">
               <CardContent className="p-4 flex flex-col items-center text-center">
                 <div className="text-3xl mb-2">{category.icon}</div>
                 <p className="font-medium text-sm">{category.name}</p>
@@ -670,11 +670,11 @@ export default function MarketplacePage() {
               avatar: "/placeholder-user.jpg"
             },
           ].map((testimonial, i) => (
-            <Card key={i} className="bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
+            <Card key={i} className="bg-white dark:bg-slate-900">
               <CardContent className="pt-6">
                 <div className="mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="inline-block h-4 w-4 fill-yellow-400 text-yellow-400 mr-0.5" />
+                    <Star key={i} className="inline-block h-4 w-4 fill-blue-400 text-blue-400 mr-0.5" />
                   ))}
                 </div>
                 <p className="mb-4 italic text-muted-foreground">"{testimonial.quote}"</p>

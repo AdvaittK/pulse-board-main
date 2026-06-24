@@ -135,14 +135,14 @@ export default function AdminAnalyticsPage() {
         left: 0,
         blur: 10,
         opacity: 0.1,
-        color: "#4318FF",
+        color: "#2563EB",
       },
     },
-    colors: ["#4318FF", "#39B8FF"],
+    colors: ["#2563EB", "#39B8FF"],
     markers: {
       size: 0,
       colors: "white",
-      strokeColors: ["#4318FF", "#39B8FF"],
+      strokeColors: ["#2563EB", "#39B8FF"],
       strokeWidth: 3,
       strokeOpacity: 0.9,
       strokeDashArray: 0,
@@ -220,7 +220,7 @@ export default function AdminAnalyticsPage() {
         show: false,
       },
     },
-    colors: ["#6C5DD3", "#FFB547"],
+    colors: ["#2563EB", "#60A5FA"],
     plotOptions: {
       bar: {
         horizontal: false,
@@ -283,7 +283,7 @@ export default function AdminAnalyticsPage() {
 
   const pieChartOptions = {
     labels: usageByFeatureData.map(item => item.name),
-    colors: ["#4318FF", "#6AD2FF", "#EFF4FB", "#de4e96", "#f6c845"],
+    colors: ["#2563EB", "#60A5FA", "#EFF6FF", "#1D4ED8", "#93C5FD"],
     chart: {
       width: "100%",
     },
@@ -317,7 +317,7 @@ export default function AdminAnalyticsPage() {
   return (
     <div className={`container px-4 py-6 mx-auto max-w-7xl transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold tracking-tight text-blue-700">
           Analytics Dashboard
         </h1>
         <p className="text-muted-foreground mt-1">
@@ -407,12 +407,12 @@ export default function AdminAnalyticsPage() {
               </div>
             </div>
             
-            <div className="mt-4 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10 rounded-md p-3 border border-blue-200 dark:border-blue-800">
+            <div className="mt-4 bg-blue-600 dark:bg-blue-900/10 rounded-md p-3 border border-blue-200 dark:border-blue-800">
               <h3 className="text-sm font-semibold text-blue-800 dark:text-blue-300 flex items-center gap-1 mb-2">
                 <CalendarIcon className="h-3.5 w-3.5" />
                 Selected Range
               </h3>
-              <div className="text-sm font-medium text-indigo-800 dark:text-indigo-300">
+              <div className="text-sm font-medium text-blue-800 dark:text-blue-300">
                 {getDateRangeText()}
               </div>
               <div className="mt-2 flex gap-2">
@@ -430,7 +430,7 @@ export default function AdminAnalyticsPage() {
 
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-        <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-800">
+        <Card className="bg-blue-600 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
           <CardHeader className="pb-2">
             <CardTitle className="text-blue-700 dark:text-blue-400 text-lg">Total Users</CardTitle>
           </CardHeader>
@@ -440,33 +440,33 @@ export default function AdminAnalyticsPage() {
           </CardContent>
         </Card>
         
-        <Card className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 border-purple-200 dark:border-purple-800">
+        <Card className="bg-blue-600 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
           <CardHeader className="pb-2">
-            <CardTitle className="text-purple-700 dark:text-purple-400 text-lg">Active Sessions</CardTitle>
+            <CardTitle className="text-blue-700 dark:text-blue-400 text-lg">Active Sessions</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-purple-800 dark:text-purple-300">1,482</div>
-            <p className="text-purple-600 dark:text-purple-400 text-sm mt-1">↑ 8% from last month</p>
+            <div className="text-3xl font-bold text-blue-800 dark:text-blue-300">1,482</div>
+            <p className="text-blue-600 dark:text-blue-400 text-sm mt-1">↑ 8% from last month</p>
           </CardContent>
         </Card>
         
-        <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 border-green-200 dark:border-green-800">
+        <Card className="bg-blue-600 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
           <CardHeader className="pb-2">
-            <CardTitle className="text-green-700 dark:text-green-400 text-lg">Conversion Rate</CardTitle>
+            <CardTitle className="text-blue-700 dark:text-blue-400 text-lg">Conversion Rate</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-green-800 dark:text-green-300">7.4%</div>
-            <p className="text-green-600 dark:text-green-400 text-sm mt-1">↑ 2.1% from last month</p>
+            <div className="text-3xl font-bold text-blue-800 dark:text-blue-300">7.4%</div>
+            <p className="text-blue-600 dark:text-blue-400 text-sm mt-1">↑ 2.1% from last month</p>
           </CardContent>
         </Card>
         
-        <Card className="bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-800/20 border-amber-200 dark:border-amber-800">
+        <Card className="bg-blue-600 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
           <CardHeader className="pb-2">
-            <CardTitle className="text-amber-700 dark:text-amber-400 text-lg">Avg. Session Time</CardTitle>
+            <CardTitle className="text-blue-700 dark:text-blue-400 text-lg">Avg. Session Time</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-amber-800 dark:text-amber-300">8m 42s</div>
-            <p className="text-amber-600 dark:text-amber-400 text-sm mt-1">↑ 0.5% from last month</p>
+            <div className="text-3xl font-bold text-blue-800 dark:text-blue-300">8m 42s</div>
+            <p className="text-blue-600 dark:text-blue-400 text-sm mt-1">↑ 0.5% from last month</p>
           </CardContent>
         </Card>
       </div>

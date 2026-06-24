@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils"
 
 export default function Loading() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30 dark:from-slate-950 dark:to-blue-950/20">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
       <div className="container px-0 md:px-4 max-w-full py-6">
         <div className="animate-pulse space-y-8">
           <div className="mb-8">
@@ -24,28 +24,28 @@ export default function Loading() {
               <Card 
                 key={item} 
                 className={cn(
-                  "flex flex-row items-center rounded-2xl shadow-md h-[90px]",
-                  "bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 border-none"
+                  "flex flex-row items-center rounded-2xl shadow-sm h-[90px]",
+                  "bg-white dark:bg-slate-900 border-none"
                 )}
               >
                 <CardContent className="flex flex-row items-center p-4">
                   <div className={cn(
                     "rounded-full p-3",
                     item % 6 === 1 ? "bg-blue-100/40 dark:bg-blue-900/20" :
-                    item % 6 === 2 ? "bg-purple-100/40 dark:bg-purple-900/20" :
-                    item % 6 === 3 ? "bg-emerald-100/40 dark:bg-emerald-900/20" :
-                    item % 6 === 4 ? "bg-amber-100/40 dark:bg-amber-900/20" :
-                    item % 6 === 5 ? "bg-rose-100/40 dark:bg-rose-900/20" :
-                    "bg-indigo-100/40 dark:bg-indigo-900/20"
+                    item % 6 === 2 ? "bg-blue-100/40 dark:bg-blue-900/20" :
+                    item % 6 === 3 ? "bg-blue-100/40 dark:bg-blue-900/20" :
+                    item % 6 === 4 ? "bg-blue-100/40 dark:bg-blue-900/20" :
+                    item % 6 === 5 ? "bg-blue-100/40 dark:bg-blue-900/20" :
+                    "bg-blue-100/40 dark:bg-blue-900/20"
                   )}>
                     <div className={cn(
                       "h-7 w-7 rounded",
                       item % 6 === 1 ? "bg-blue-500/20" :
-                      item % 6 === 2 ? "bg-purple-500/20" :
-                      item % 6 === 3 ? "bg-emerald-500/20" :
-                      item % 6 === 4 ? "bg-amber-500/20" :
-                      item % 6 === 5 ? "bg-rose-500/20" :
-                      "bg-indigo-500/20"
+                      item % 6 === 2 ? "bg-blue-500/20" :
+                      item % 6 === 3 ? "bg-blue-500/20" :
+                      item % 6 === 4 ? "bg-blue-500/20" :
+                      item % 6 === 5 ? "bg-blue-500/20" :
+                      "bg-blue-500/20"
                     )} />
                   </div>
                   <div className="ml-4 flex flex-col justify-center">
@@ -70,7 +70,7 @@ export default function Loading() {
             <TabsContent value="overview" className="space-y-6 mt-0">
               {/* Charts - Skeleton - Row 1 */}
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Card className="rounded-2xl border-none shadow-md bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+                <Card className="rounded-2xl border-none shadow-sm bg-white dark:bg-slate-900">
                   <CardContent className="p-6">
                     <div className="flex justify-between mb-4">
                       <Skeleton className="h-8 w-40 rounded-lg" />
@@ -151,7 +151,7 @@ export default function Loading() {
                   </CardContent>
                 </Card>
                 
-                <Card className="rounded-2xl border-none shadow-md bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+                <Card className="rounded-2xl border-none shadow-sm bg-white dark:bg-slate-900">
                   <CardContent className="p-6">
                     <div className="flex justify-between mb-4">
                       <Skeleton className="h-8 w-40 rounded-lg" />

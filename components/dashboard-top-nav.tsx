@@ -53,7 +53,7 @@ const sampleNotifications = [
     title: "Server Alert",
     message: "Database server load is high (82%)",
     time: "45 minutes ago",
-    icon: <AlertCircle className="h-4 w-4 text-amber-500" />,
+    icon: <AlertCircle className="h-4 w-4 text-blue-500" />,
     read: false,
     type: "warning"
   },
@@ -62,7 +62,7 @@ const sampleNotifications = [
     title: "Task Completed",
     message: "Your data export has finished processing",
     time: "2 hours ago",
-    icon: <CheckCircle className="h-4 w-4 text-green-500" />,
+    icon: <CheckCircle className="h-4 w-4 text-blue-500" />,
     read: false,
     type: "success"
   }
@@ -316,7 +316,7 @@ export function DashboardTopNav() {
                   <motion.div 
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="absolute -top-1.5 -right-1.5 h-4 w-4 rounded-full bg-red-500 flex items-center justify-center"
+                    className="absolute -top-1.5 -right-1.5 h-4 w-4 rounded-full bg-blue-500 flex items-center justify-center"
                   >
                     <span className="text-[10px] font-bold text-white">{notificationCount}</span>
                   </motion.div>
@@ -442,7 +442,7 @@ export function DashboardTopNav() {
                 <span>Help</span>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="flex items-center text-red-500 dark:text-red-400 focus:text-red-500 dark:focus:text-red-400">
+              <DropdownMenuItem className="flex items-center text-blue-500 dark:text-blue-400 focus:text-blue-500 dark:focus:text-blue-400">
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Log out</span>
               </DropdownMenuItem>

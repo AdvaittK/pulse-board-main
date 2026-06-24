@@ -72,7 +72,7 @@ export default function AdminSettingsPage() {
   return (
     <div className={`container px-4 py-6 mx-auto max-w-7xl transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold tracking-tight text-blue-700">
           System Settings
         </h1>
         <p className="text-muted-foreground mt-1">

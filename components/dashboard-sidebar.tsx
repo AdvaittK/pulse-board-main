@@ -82,7 +82,7 @@ export function DashboardSidebar() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link href="/" className="block" onClick={closeSidebar}>
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 text-white shadow-md">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white shadow-sm">
                     <Sparkles className="h-4 w-4" />
                   </div>
                 </Link>
@@ -92,7 +92,7 @@ export function DashboardSidebar() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
-                  className="font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-xl"
+                  className="font-bold text-blue-700 text-xl"
                 >
                   PulseBoard
                 </motion.span>
@@ -148,8 +148,8 @@ export function DashboardSidebar() {
                     whileTap={buttonTapAnimation}
                   >
                     <Link href="/dashboard/data-feeds" onClick={closeSidebar}>
-                      <motion.div whileHover={{ scale: 1.05 }} className="bg-green-50 dark:bg-green-950/30 p-2 rounded-md">
-                        <LineChart className="h-5 w-5 text-green-500" />
+                      <motion.div whileHover={{ scale: 1.05 }} className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-md">
+                        <LineChart className="h-5 w-5 text-blue-500" />
                       </motion.div>
                       <span>Data Feeds</span>
                     </Link>
@@ -169,8 +169,8 @@ export function DashboardSidebar() {
                     whileTap={buttonTapAnimation}
                   >
                     <Link href="/dashboard/marketplace" onClick={closeSidebar}>
-                      <motion.div whileHover={{ scale: 1.05 }} className="bg-purple-50 dark:bg-purple-950/30 p-2 rounded-md">
-                        <ShoppingCart className="h-5 w-5 text-purple-500" />
+                      <motion.div whileHover={{ scale: 1.05 }} className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-md">
+                        <ShoppingCart className="h-5 w-5 text-blue-500" />
                       </motion.div>
                       <span>Marketplace</span>
                     </Link>
@@ -206,8 +206,8 @@ export function DashboardSidebar() {
                     whileTap={buttonTapAnimation}
                   >
                     <Link href="/dashboard/calendar">
-                      <motion.div whileHover={{ scale: 1.05 }} className="bg-cyan-50 dark:bg-cyan-950/30 p-2 rounded-md">
-                        <Calendar className="h-5 w-5 text-cyan-500" />
+                      <motion.div whileHover={{ scale: 1.05 }} className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-md">
+                        <Calendar className="h-5 w-5 text-blue-500" />
                       </motion.div>
                       <span>Calendar</span>
                     </Link>
@@ -227,8 +227,8 @@ export function DashboardSidebar() {
                     whileTap={buttonTapAnimation}
                   >
                     <Link href="/dashboard/messages">
-                      <motion.div whileHover={{ scale: 1.05 }} className="bg-teal-50 dark:bg-teal-950/30 p-2 rounded-md">
-                        <MessageSquare className="h-5 w-5 text-teal-500" />
+                      <motion.div whileHover={{ scale: 1.05 }} className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-md">
+                        <MessageSquare className="h-5 w-5 text-blue-500" />
                       </motion.div>
                       <span>Messages</span>
                     </Link>
@@ -264,8 +264,8 @@ export function DashboardSidebar() {
                     whileTap={buttonTapAnimation}
                   >
                     <Link href="/dashboard/admin">
-                      <motion.div whileHover={{ scale: 1.05 }} className="bg-red-50 dark:bg-red-950/30 p-2 rounded-md">
-                        <Shield className="h-5 w-5 text-red-500" />
+                      <motion.div whileHover={{ scale: 1.05 }} className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-md">
+                        <Shield className="h-5 w-5 text-blue-500" />
                       </motion.div>
                       <span>Admin Panel</span>
                     </Link>
@@ -301,8 +301,8 @@ export function DashboardSidebar() {
                     whileTap={buttonTapAnimation}
                   >
                     <Link href="/dashboard/profile">
-                      <motion.div whileHover={{ scale: 1.05 }} className="bg-indigo-50 dark:bg-indigo-950/30 p-2 rounded-md">
-                        <User className="h-5 w-5 text-indigo-500" />
+                      <motion.div whileHover={{ scale: 1.05 }} className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-md">
+                        <User className="h-5 w-5 text-blue-500" />
                       </motion.div>
                       <span>Profile</span>
                     </Link>
@@ -322,8 +322,8 @@ export function DashboardSidebar() {
                     whileTap={buttonTapAnimation}
                   >
                     <Link href="/dashboard/billing">
-                      <motion.div whileHover={{ scale: 1.05 }} className="bg-amber-50 dark:bg-amber-950/30 p-2 rounded-md">
-                        <Receipt className="h-5 w-5 text-amber-500" />
+                      <motion.div whileHover={{ scale: 1.05 }} className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-md">
+                        <Receipt className="h-5 w-5 text-blue-500" />
                       </motion.div>
                       <span>Billing</span>
                     </Link>
@@ -343,8 +343,8 @@ export function DashboardSidebar() {
                     whileTap={buttonTapAnimation}
                   >
                     <Link href="/dashboard/subscriptions">
-                      <motion.div whileHover={{ scale: 1.05 }} className="bg-pink-50 dark:bg-pink-950/30 p-2 rounded-md">
-                        <ListChecks className="h-5 w-5 text-pink-500" />
+                      <motion.div whileHover={{ scale: 1.05 }} className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-md">
+                        <ListChecks className="h-5 w-5 text-blue-500" />
                       </motion.div>
                       <span>Subscriptions</span>
                     </Link>

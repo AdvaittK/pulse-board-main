@@ -16,16 +16,16 @@ const TaskCard = () => {
       <Card 
         extra={cn(
           "pb-7 p-[20px] rounded-2xl h-full border-none",
-          "shadow-md hover:shadow-lg transition-all duration-300",
-          "bg-gradient-to-br from-white to-purple-50",
-          "dark:from-slate-900 dark:to-purple-950/30"
+          "shadow-sm hover:shadow-sm transition-all duration-300",
+          "bg-white",
+          "dark:bg-slate-900"
         )}
       >
         {/* task header */}
         <div className="relative flex flex-row justify-between">
           <div className="flex items-center">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/30">
-              <MdCheckCircle className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30">
+              <MdCheckCircle className="h-6 w-6 text-blue-600 dark:text-blue-400" />
             </div>
             <h4 className="ml-4 text-xl font-bold text-slate-800 dark:text-white">
               Tasks
@@ -57,7 +57,7 @@ const TaskCard = () => {
               >
                 <div className="flex items-center justify-center gap-3">
                   <div className="flex items-center justify-center rounded-md p-0.5 bg-white dark:bg-slate-800 shadow-sm">
-                    <Checkbox color="purple" />
+                    <Checkbox color="amber" />
                   </div>
                   <p className="text-base font-medium text-slate-700 dark:text-white">
                     {task}
@@ -76,8 +76,8 @@ const TaskCard = () => {
             </p>
             <button className={cn(
               "text-sm font-medium py-2 px-3 rounded-lg",
-              "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400",
-              "hover:bg-purple-200 dark:hover:bg-purple-900/40 transition-colors"
+              "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
+              "hover:bg-blue-200 dark:hover:bg-blue-900/40 transition-colors"
             )}>
               View All
             </button>

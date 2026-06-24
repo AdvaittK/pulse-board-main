@@ -133,8 +133,8 @@ export default function UsersPage() {
 
   const stats = [
     { title: "Total Users", value: users.length, icon: <UsersRound className="h-6 w-6 text-blue-500" /> },
-    { title: "Active Users", value: users.filter(u => u.status === "active").length, icon: <CheckCircle className="h-6 w-6 text-green-500" /> },
-    { title: "Admins", value: users.filter(u => u.role === "admin").length, icon: <UserCog className="h-6 w-6 text-purple-500" /> },
+    { title: "Active Users", value: users.filter(u => u.status === "active").length, icon: <CheckCircle className="h-6 w-6 text-blue-500" /> },
+    { title: "Admins", value: users.filter(u => u.role === "admin").length, icon: <UserCog className="h-6 w-6 text-blue-500" /> },
   ]
 
   const columns: ColumnDef<User>[] = [
@@ -156,8 +156,8 @@ export default function UsersPage() {
           <span
             className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
               role === "admin"
-                ? "bg-gradient-to-r from-purple-100 to-purple-200 text-purple-800 dark:from-purple-900 dark:to-purple-800 dark:text-purple-200"
-                : "bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800 dark:from-blue-900 dark:to-blue-800 dark:text-blue-200"
+                ? "bg-blue-600 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                : "bg-blue-600 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
             }`}
           >
             {role}
@@ -173,12 +173,12 @@ export default function UsersPage() {
         return (
           <div className="flex items-center gap-1">
             {status === "active" ? (
-              <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-green-100 to-green-200 text-green-800 dark:from-green-900 dark:to-green-800 dark:text-green-200 px-2.5 py-0.5 text-xs font-medium">
+              <span className="inline-flex items-center gap-1 rounded-full bg-blue-600 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2.5 py-0.5 text-xs font-medium">
                 <CheckCircle className="h-3 w-3" />
                 Active
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-red-100 to-red-200 text-red-800 dark:from-red-900 dark:to-red-800 dark:text-red-200 px-2.5 py-0.5 text-xs font-medium">
+              <span className="inline-flex items-center gap-1 rounded-full bg-blue-600 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2.5 py-0.5 text-xs font-medium">
                 <X className="h-3 w-3" />
                 Inactive
               </span>
@@ -199,7 +199,7 @@ export default function UsersPage() {
                 {subscriptions.map((sub, index) => (
                   <span
                     key={index}
-                    className="inline-flex items-center rounded-full bg-gradient-to-r from-gray-100 to-gray-200 px-2.5 py-0.5 text-xs font-medium text-gray-800 dark:from-gray-800 dark:to-gray-700 dark:text-gray-300"
+                    className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800 dark:bg-gray-800 dark:text-gray-300"
                   >
                     {sub}
                   </span>
@@ -240,7 +240,7 @@ export default function UsersPage() {
                   <UserCog className="mr-2 h-4 w-4" />
                   <span>Edit User</span>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="text-red-600 dark:text-red-400">
+                <DropdownMenuItem className="text-blue-600 dark:text-blue-400">
                   <Trash className="mr-2 h-4 w-4" />
                   <span>Delete User</span>
                 </DropdownMenuItem>
@@ -258,7 +258,7 @@ export default function UsersPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold tracking-tight text-blue-700">
               User Management
             </h1>
             <p className="text-muted-foreground mt-1">View and manage all user accounts in the system</p>
@@ -268,7 +268,7 @@ export default function UsersPage() {
               <Filter className="mr-2 h-4 w-4" />
               Filters
             </Button>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
               <Plus className="mr-2 h-4 w-4" />
               Add User
             </Button>
@@ -278,7 +278,7 @@ export default function UsersPage() {
         {/* Stats Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           {stats.map((stat, index) => (
-            <Card key={index} className="overflow-hidden border-0 shadow-md bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800">
+            <Card key={index} className="overflow-hidden border-0 shadow-sm bg-white dark:bg-gray-900">
               <CardContent className="p-6 flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-muted-foreground">{stat.title}</p>

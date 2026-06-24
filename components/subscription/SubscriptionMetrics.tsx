@@ -84,12 +84,12 @@ export function SubscriptionMetrics() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {/* Metric Card: Current MRR */}
           <motion.div variants={itemVariants}>
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-sm">
               <CardHeader className="pb-2">
                 <CardDescription>Monthly Recurring Revenue</CardDescription>
                 <div className="flex justify-between items-baseline">
                   <CardTitle className="text-2xl">$4,200</CardTitle>
-                  <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 gap-1">
+                  <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 gap-1">
                     <TrendingUp className="h-3.5 w-3.5" />
                     +2.4%
                   </Badge>
@@ -97,7 +97,7 @@ export function SubscriptionMetrics() {
               </CardHeader>
               <CardContent className="pb-2">
                 <div className="text-xs text-muted-foreground">
-                  <span className="font-medium text-green-600 dark:text-green-400">↑ $100</span> from last month
+                  <span className="font-medium text-blue-600 dark:text-blue-400">↑ $100</span> from last month
                 </div>
               </CardContent>
               <CardFooter className="pt-0">
@@ -119,12 +119,12 @@ export function SubscriptionMetrics() {
 
           {/* Metric Card: Active Users */}
           <motion.div variants={itemVariants}>
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-sm">
               <CardHeader className="pb-2">
                 <CardDescription>Active Users</CardDescription>
                 <div className="flex justify-between items-baseline">
                   <CardTitle className="text-2xl">80</CardTitle>
-                  <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 gap-1">
+                  <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 gap-1">
                     <TrendingUp className="h-3.5 w-3.5" />
                     +8.1%
                   </Badge>
@@ -132,7 +132,7 @@ export function SubscriptionMetrics() {
               </CardHeader>
               <CardContent className="pb-2">
                 <div className="text-xs text-muted-foreground">
-                  <span className="font-medium text-green-600 dark:text-green-400">↑ 6</span> from last month
+                  <span className="font-medium text-blue-600 dark:text-blue-400">↑ 6</span> from last month
                 </div>
               </CardContent>
               <CardFooter className="pt-0">
@@ -141,7 +141,7 @@ export function SubscriptionMetrics() {
                     {subscriptionData.monthlyUsers.map((value, i) => (
                       <div 
                         key={i}
-                        className="flex-1 bg-purple-500 dark:bg-purple-600 mx-0.5 rounded-t-sm"
+                        className="flex-1 bg-blue-500 dark:bg-blue-600 mx-0.5 rounded-t-sm"
                         style={{ height: `${(value / 100) * 100}%` }}
                       ></div>
                     ))}
@@ -153,12 +153,12 @@ export function SubscriptionMetrics() {
 
           {/* Metric Card: Retention Rate */}
           <motion.div variants={itemVariants}>
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-sm">
               <CardHeader className="pb-2">
                 <CardDescription>User Retention</CardDescription>
                 <div className="flex justify-between items-baseline">
                   <CardTitle className="text-2xl">99%</CardTitle>
-                  <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 gap-1">
+                  <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 gap-1">
                     <TrendingUp className="h-3.5 w-3.5" />
                     +1.0%
                   </Badge>
@@ -166,7 +166,7 @@ export function SubscriptionMetrics() {
               </CardHeader>
               <CardContent className="pb-2">
                 <div className="text-xs text-muted-foreground">
-                  <span className="font-medium text-green-600 dark:text-green-400">↑ 1.0%</span> from last month
+                  <span className="font-medium text-blue-600 dark:text-blue-400">↑ 1.0%</span> from last month
                 </div>
               </CardContent>
               <CardFooter className="pt-0">
@@ -175,7 +175,7 @@ export function SubscriptionMetrics() {
                     {subscriptionData.monthlyRetention.map((value, i) => (
                       <div 
                         key={i}
-                        className="flex-1 bg-green-500 dark:bg-green-600 mx-0.5 rounded-t-sm"
+                        className="flex-1 bg-blue-500 dark:bg-blue-600 mx-0.5 rounded-t-sm"
                         style={{ height: `${value}%` }}
                       ></div>
                     ))}
@@ -187,12 +187,12 @@ export function SubscriptionMetrics() {
 
           {/* Metric Card: Average MRR per User */}
           <motion.div variants={itemVariants}>
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-sm">
               <CardHeader className="pb-2">
                 <CardDescription>Avg. MRR per User</CardDescription>
                 <div className="flex justify-between items-baseline">
                   <CardTitle className="text-2xl">$52.50</CardTitle>
-                  <Badge className="bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200 gap-1">
+                  <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 gap-1">
                     <TrendingUp className="h-3.5 w-3.5" />
                     -5.4%
                   </Badge>
@@ -200,7 +200,7 @@ export function SubscriptionMetrics() {
               </CardHeader>
               <CardContent className="pb-2">
                 <div className="text-xs text-muted-foreground">
-                  <span className="font-medium text-amber-600 dark:text-amber-400">↓ $3.00</span> from last month
+                  <span className="font-medium text-blue-600 dark:text-blue-400">↓ $3.00</span> from last month
                 </div>
               </CardContent>
               <CardFooter className="pt-0">
@@ -216,7 +216,7 @@ export function SubscriptionMetrics() {
       </motion.div>
 
       <motion.div variants={itemVariants}>
-        <Card className="border-0 shadow-lg">
+        <Card className="border-0 shadow-sm">
           <CardHeader>
             <CardTitle>Subscription Plan Distribution</CardTitle>
             <CardDescription>Current distribution of users across subscription plans</CardDescription>
@@ -273,7 +273,7 @@ export function SubscriptionMetrics() {
                       cy="64" 
                       r="60" 
                       fill="none" 
-                      stroke="#8b5cf6" 
+                      stroke="#2563EB" 
                       strokeWidth="8" 
                       strokeDasharray="377" 
                       strokeDashoffset={(377 * (100 - 50)) / 100} 
@@ -307,7 +307,7 @@ export function SubscriptionMetrics() {
                       cy="64" 
                       r="60" 
                       fill="none" 
-                      stroke="#ec4899" 
+                      stroke="#1D4ED8" 
                       strokeWidth="8" 
                       strokeDasharray="377" 
                       strokeDashoffset={(377 * (100 - 30)) / 100} 
@@ -330,7 +330,7 @@ export function SubscriptionMetrics() {
       </motion.div>
 
       <motion.div variants={itemVariants}>
-        <Card className="border-0 shadow-lg">
+        <Card className="border-0 shadow-sm">
           <CardHeader className="space-y-0 pb-2">
             <div className="flex justify-between items-center">
               <div>
@@ -384,7 +384,7 @@ export function SubscriptionMetrics() {
       </motion.div>
 
       <motion.div variants={itemVariants}>
-        <Card className="border-0 shadow-lg">
+        <Card className="border-0 shadow-sm">
           <CardHeader>
             <CardTitle>Upcoming Renewals</CardTitle>
             <CardDescription>Monitor subscription renewals over the next 30 days</CardDescription>
@@ -397,7 +397,7 @@ export function SubscriptionMetrics() {
                   plan: 'Business', 
                   value: '$239.97', 
                   date: 'May 12, 2025',
-                  color: 'bg-pink-500',
+                  color: 'bg-blue-500',
                   icon: <Users className="h-4 w-4" />
                 },
                 { 
@@ -405,7 +405,7 @@ export function SubscriptionMetrics() {
                   plan: 'Pro', 
                   value: '$149.95', 
                   date: 'May 15, 2025',
-                  color: 'bg-purple-500',
+                  color: 'bg-blue-500',
                   icon: <BadgePercent className="h-4 w-4" />
                 },
                 { 
@@ -413,7 +413,7 @@ export function SubscriptionMetrics() {
                   plan: 'Pro', 
                   value: '$89.97', 
                   date: 'May 22, 2025',
-                  color: 'bg-purple-500',
+                  color: 'bg-blue-500',
                   icon: <Users className="h-4 w-4" />
                 },
                 { 
@@ -421,7 +421,7 @@ export function SubscriptionMetrics() {
                   plan: 'Business', 
                   value: '$239.97', 
                   date: 'May 28, 2025',
-                  color: 'bg-pink-500',
+                  color: 'bg-blue-500',
                   icon: <Users className="h-4 w-4" />
                 },
               ].map((renewal, index) => (

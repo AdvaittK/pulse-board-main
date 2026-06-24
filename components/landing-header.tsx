@@ -99,10 +99,10 @@ export function LandingHeader() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <div className="p-1.5 rounded-lg bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm shadow-sm">
+          <div className="p-1.5 rounded-lg bg-primary/10 backdrop-blur-sm shadow-sm">
             <BarChart3 className="h-5 w-5 md:h-6 md:w-6 text-blue-600" />
           </div>
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 text-xl md:text-2xl font-extrabold tracking-tight">PulseBoard</span>
+          <span className="text-primary text-xl md:text-2xl font-extrabold tracking-tight">PulseBoard</span>
         </motion.div>
         
         <nav className="hidden md:flex items-center gap-1 lg:gap-2">
@@ -183,7 +183,7 @@ export function LandingHeader() {
           <Button 
             size="sm" 
             asChild 
-            className="hidden md:inline-flex bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-md hover:shadow-lg transition-all"
+            className="hidden md:inline-flex bg-primary hover:bg-primary/90 shadow-sm hover:shadow-sm transition-all"
           >
             <Link href="/dashboard" className="flex items-center gap-1">
               Dashboard
@@ -202,10 +202,10 @@ export function LandingHeader() {
             <SheetContent side="right" className="w-full sm:w-80">
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-2">
-                  <div className="p-1 rounded-md bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+                  <div className="p-1 rounded-md bg-primary/10">
                     <BarChart3 className="h-5 w-5 text-blue-600" />
                   </div>
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 text-lg font-bold">PulseBoard</span>
+                  <span className="text-primary text-lg font-bold">PulseBoard</span>
                 </div>
                 <Button variant="ghost" size="icon" onClick={() => setMobileOpen(false)}>
                   <X className="h-5 w-5" />
@@ -268,7 +268,7 @@ export function LandingHeader() {
                 <div className="space-y-3 pt-4">
                   <Button 
                     asChild 
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                    className="w-full bg-primary hover:bg-primary/90"
                   >
                     <Link 
                       href="/dashboard" 

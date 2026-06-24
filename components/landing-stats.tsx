@@ -31,18 +31,18 @@ function Counter({ from, to, duration = 2, className = "" }: { from: number; to:
 
 export function LandingStats() {
   return (
-    <section className="w-full py-16 md:py-20 overflow-hidden relative bg-gradient-to-b from-muted/30 via-muted/40 to-muted/30">
+    <section className="w-full py-16 md:py-20 overflow-hidden relative bg-background">
       {/* Decorative gradients */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-800 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-border" />
       
       {/* Decorative circles */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-500/5 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4 pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4 pointer-events-none"></div>
       
       {/* Floating icons animation */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 
-          className="absolute text-green-500/10 dark:text-green-400/5"
+          className="absolute text-blue-500/10 dark:text-blue-400/5"
           animate={{ 
             y: [0, -15, 0],
             x: [0, 10, 0],
@@ -66,7 +66,7 @@ export function LandingStats() {
           <AreaChart className="h-32 w-32" />
         </motion.div>
         <motion.div 
-          className="absolute text-amber-500/10 dark:text-amber-400/5"
+          className="absolute text-blue-500/10 dark:text-blue-400/5"
           animate={{ 
             y: [0, 12, 0],
             x: [0, -5, 0],
@@ -88,12 +88,12 @@ export function LandingStats() {
           viewport={{ once: true }}
         >
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="h-1 w-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full"></span>
-            <span className="text-sm font-medium uppercase tracking-wider text-green-600 dark:text-green-400">Analytics</span>
-            <span className="h-1 w-12 bg-gradient-to-r from-emerald-600 to-green-500 rounded-full"></span>
+            <span className="h-1 w-12 bg-blue-600 rounded-full"></span>
+            <span className="text-sm font-medium uppercase tracking-wider text-blue-600 dark:text-blue-400">Analytics</span>
+            <span className="h-1 w-12 bg-blue-600 rounded-full"></span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-emerald-500 to-teal-600">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-700">
             Dashboard Impact
           </h2>
           <p className="text-muted-foreground md:text-xl max-w-[800px] mx-auto">
@@ -111,7 +111,7 @@ export function LandingStats() {
             viewport={{ once: true, margin: "-50px" }}
           >
             <div className="mb-4 p-3 rounded-xl bg-blue-50 dark:bg-blue-950/30">
-              <div className="p-2 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
+              <div className="p-2 rounded-full bg-blue-600 text-white">
                 <AreaChart className="h-10 w-10" />
               </div>
             </div>
@@ -130,8 +130,8 @@ export function LandingStats() {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            <div className="mb-4 p-3 rounded-xl bg-green-50 dark:bg-green-950/30">
-              <div className="p-2 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 text-white">
+            <div className="mb-4 p-3 rounded-xl bg-blue-50 dark:bg-blue-950/30">
+              <div className="p-2 rounded-full bg-blue-600 text-white">
                 <HeartHandshake className="h-10 w-10" />
               </div>
             </div>
@@ -150,8 +150,8 @@ export function LandingStats() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            <div className="mb-4 p-3 rounded-xl bg-purple-50 dark:bg-purple-950/30">
-              <div className="p-2 rounded-full bg-gradient-to-br from-purple-500 to-violet-600 text-white">
+            <div className="mb-4 p-3 rounded-xl bg-blue-50 dark:bg-blue-950/30">
+              <div className="p-2 rounded-full bg-blue-600 text-white">
                 <Users className="h-10 w-10" />
               </div>
             </div>
@@ -170,8 +170,8 @@ export function LandingStats() {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            <div className="mb-4 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30">
-              <div className="p-2 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 text-white">
+            <div className="mb-4 p-3 rounded-xl bg-blue-50 dark:bg-blue-950/30">
+              <div className="p-2 rounded-full bg-blue-600 text-white">
                 <TrendingUp className="h-10 w-10" />
               </div>
             </div>
@@ -191,12 +191,12 @@ export function LandingStats() {
           viewport={{ once: true }}
         >
           {/* Achievement Card 1 */}
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm hover:shadow-sm transition-shadow duration-300 relative overflow-hidden group">
             <div className="absolute top-0 right-0 opacity-5 group-hover:opacity-10 transition-opacity">
               <ChartBar className="h-32 w-32 transform translate-x-8 -translate-y-8" />
             </div>
             <div className="relative z-10">
-              <div className="p-2 mb-4 w-fit rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
+              <div className="p-2 mb-4 w-fit rounded-lg bg-blue-600 text-white">
                 <Award className="h-6 w-6" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Industry Recognition</h3>
@@ -207,12 +207,12 @@ export function LandingStats() {
           </div>
           
           {/* Achievement Card 2 */}
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm hover:shadow-sm transition-shadow duration-300 relative overflow-hidden group">
             <div className="absolute top-0 right-0 opacity-5 group-hover:opacity-10 transition-opacity">
               <Activity className="h-32 w-32 transform translate-x-8 -translate-y-8" />
             </div>
             <div className="relative z-10">
-              <div className="p-2 mb-4 w-fit rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 text-white">
+              <div className="p-2 mb-4 w-fit rounded-lg bg-blue-600 text-white">
                 <TrendingUp className="h-6 w-6" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Productivity Boost</h3>
@@ -223,12 +223,12 @@ export function LandingStats() {
           </div>
           
           {/* Achievement Card 3 */}
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm hover:shadow-sm transition-shadow duration-300 relative overflow-hidden group">
             <div className="absolute top-0 right-0 opacity-5 group-hover:opacity-10 transition-opacity">
               <BarChart3 className="h-32 w-32 transform translate-x-8 -translate-y-8" />
             </div>
             <div className="relative z-10">
-              <div className="p-2 mb-4 w-fit rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 text-white">
+              <div className="p-2 mb-4 w-fit rounded-lg bg-blue-600 text-white">
                 <Users className="h-6 w-6" />
               </div>
               <h3 className="text-lg font-semibold mb-2">Enterprise Adoption</h3>

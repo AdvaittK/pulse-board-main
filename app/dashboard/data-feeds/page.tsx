@@ -113,7 +113,7 @@ const dataFeeds = [
     type: "weather",
     updatedAt: "2023-05-02T10:30:00Z",
     refreshRate: "1 hour",
-    icon: <Droplets className="h-5 w-5 text-cyan-500" />,
+    icon: <Droplets className="h-5 w-5 text-blue-500" />,
     chartColor: "cyan",
     dataPoints: [32, 38, 35, 40, 45, 48, 43, 40, 35, 30],
     apiEndpoint: "/api/feeds/weather",
@@ -129,8 +129,8 @@ const dataFeeds = [
     type: "social",
     updatedAt: "2023-05-03T09:15:00Z",
     refreshRate: "5 min",
-    icon: <Share2 className="h-5 w-5 text-purple-500" />,
-    chartColor: "purple",
+    icon: <Share2 className="h-5 w-5 text-blue-500" />,
+    chartColor: "amber",
     dataPoints: [15, 25, 20, 30, 45, 40, 50, 45, 60, 55],
     apiEndpoint: "/api/feeds/social-trends",
     apiKey: "sm_**********",
@@ -145,7 +145,7 @@ const dataFeeds = [
     type: "financial",
     updatedAt: "2023-05-01T14:45:00Z",
     refreshRate: "30 sec",
-    icon: <Zap className="h-5 w-5 text-amber-500" />,
+    icon: <Zap className="h-5 w-5 text-blue-500" />,
     chartColor: "amber",
     dataPoints: [45, 30, 35, 42, 36, 29, 35, 42, 38, 40],
     apiEndpoint: "/api/feeds/crypto",
@@ -161,7 +161,7 @@ const dataFeeds = [
     type: "retail",
     updatedAt: "2023-04-28T16:20:00Z",
     refreshRate: "1 day",
-    icon: <Activity className="h-5 w-5 text-rose-500" />,
+    icon: <Activity className="h-5 w-5 text-blue-500" />,
     chartColor: "rose",
     dataPoints: [40, 38, 42, 45, 43, 40, 38, 35, 37, 39],
     apiEndpoint: "/api/feeds/ecommerce",
@@ -179,7 +179,7 @@ const availableFeeds = [
     description: "Customer behavior data, session analysis, and conversion metrics",
     type: "analytics",
     refreshRate: "15 min",
-    icon: <BarChart3 className="h-5 w-5 text-indigo-500" />,
+    icon: <BarChart3 className="h-5 w-5 text-blue-500" />,
     pricingTier: "premium",
     price: "$49/month"
   },
@@ -189,7 +189,7 @@ const availableFeeds = [
     description: "Real-time data from connected IoT devices and sensors",
     type: "iot",
     refreshRate: "10 sec",
-    icon: <Activity className="h-5 w-5 text-emerald-500" />,
+    icon: <Activity className="h-5 w-5 text-blue-500" />,
     pricingTier: "enterprise",
     price: "$199/month"
   },
@@ -199,7 +199,7 @@ const availableFeeds = [
     description: "Latest headlines and articles from global news sources",
     type: "content",
     refreshRate: "30 min",
-    icon: <LineChart className="h-5 w-5 text-sky-500" />,
+    icon: <LineChart className="h-5 w-5 text-blue-500" />,
     pricingTier: "standard",
     price: "$29/month"
   }
@@ -214,7 +214,7 @@ const DataFeedVisualization = ({ feed }: { feed: typeof dataFeeds[0] }) => {
     value
   }))
 
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"]
+  const COLORS = ["#2563EB", "#60A5FA", "#93C5FD", "#1D4ED8"]
 
   return (
     <div className="h-[180px]">
@@ -235,11 +235,11 @@ const DataFeedVisualization = ({ feed }: { feed: typeof dataFeeds[0] }) => {
             <Line 
               type="monotone" 
               dataKey="value" 
-              stroke={feed.chartColor === "blue" ? "#4F46E5" : 
-                     feed.chartColor === "cyan" ? "#06B6D4" :
-                     feed.chartColor === "purple" ? "#9333EA" :
-                     feed.chartColor === "amber" ? "#D97706" :
-                     feed.chartColor === "rose" ? "#E11D48" : "#4F46E5"}
+              stroke={feed.chartColor === "blue" ? "#2563EB" : 
+                     feed.chartColor === "cyan" ? "#2563EB" :
+                     feed.chartColor === "amber" ? "#1D4ED8" :
+                     feed.chartColor === "amber" ? "#1E40AF" :
+                     feed.chartColor === "rose" ? "#1E3A8A" : "#2563EB"}
               name={feed.name}
               strokeWidth={2}
               dot={{ strokeWidth: 0, r: 1 }}
@@ -261,11 +261,11 @@ const DataFeedVisualization = ({ feed }: { feed: typeof dataFeeds[0] }) => {
             />
             <Bar 
               dataKey="value" 
-              fill={feed.chartColor === "blue" ? "#4F46E5" : 
-                    feed.chartColor === "cyan" ? "#06B6D4" :
-                    feed.chartColor === "purple" ? "#9333EA" :
-                    feed.chartColor === "amber" ? "#D97706" :
-                    feed.chartColor === "rose" ? "#E11D48" : "#4F46E5"}
+              fill={feed.chartColor === "blue" ? "#2563EB" : 
+                    feed.chartColor === "cyan" ? "#2563EB" :
+                    feed.chartColor === "amber" ? "#1D4ED8" :
+                    feed.chartColor === "amber" ? "#1E40AF" :
+                    feed.chartColor === "rose" ? "#1E3A8A" : "#2563EB"}
               name={feed.name}
               radius={[4, 4, 0, 0]}
             />
@@ -379,7 +379,7 @@ export default function DataFeedsPage() {
 
         <Dialog open={isAddingFeed} onOpenChange={setIsAddingFeed}>
           <DialogTrigger asChild>
-            <Button size="lg" className="shadow-md">
+            <Button size="lg" className="shadow-sm">
               <Plus className="mr-2 h-4 w-4" />
               Add New Feed
             </Button>
@@ -541,7 +541,7 @@ export default function DataFeedsPage() {
                       >
                         <Card 
                           className={cn(
-                            "h-full overflow-hidden hover:shadow-md transition-all cursor-pointer",
+                            "h-full overflow-hidden hover:shadow-sm transition-all cursor-pointer",
                             selectedFeed?.id === feed.id && "ring-2 ring-primary"
                           )}
                           onClick={() => setSelectedFeed(feed)}
@@ -566,7 +566,7 @@ export default function DataFeedsPage() {
                                 variant={feed.status === "active" ? "default" : "secondary"}
                                 className={cn(
                                   "ml-auto mt-1",
-                                  feed.status === "active" ? "bg-green-500" : "bg-muted text-muted-foreground"
+                                  feed.status === "active" ? "bg-blue-500" : "bg-muted text-muted-foreground"
                                 )}
                               >
                                 {feed.status === "active" ? "Active" : "Inactive"}
@@ -637,7 +637,7 @@ export default function DataFeedsPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ type: "spring", stiffness: 100 }}
             >
-              <Card className="sticky top-6 overflow-hidden border shadow-lg">
+              <Card className="sticky top-6 overflow-hidden border shadow-sm">
                 <CardHeader className="pb-4 flex flex-row items-center justify-between">
                   <div>
                     <CardTitle>Feed Details</CardTitle>
@@ -666,7 +666,7 @@ export default function DataFeedsPage() {
                           <div className="flex items-center gap-2 mt-1">
                             <Badge 
                               variant={selectedFeed.status === "active" ? "default" : "secondary"}
-                              className={selectedFeed.status === "active" ? "bg-green-500" : "bg-muted text-muted-foreground"}
+                              className={selectedFeed.status === "active" ? "bg-blue-500" : "bg-muted text-muted-foreground"}
                             >
                               {selectedFeed.status === "active" ? "Active" : "Inactive"}
                             </Badge>
@@ -699,8 +699,8 @@ export default function DataFeedsPage() {
                                   selectedFeed.requestCount / selectedFeed.requestLimit > 0.9 
                                     ? "bg-destructive" 
                                     : selectedFeed.requestCount / selectedFeed.requestLimit > 0.7 
-                                    ? "bg-amber-500" 
-                                    : "bg-green-500"
+                                    ? "bg-blue-500" 
+                                    : "bg-blue-500"
                                 )}
                                 style={{ width: `${(selectedFeed.requestCount / selectedFeed.requestLimit) * 100}%` }}
                               />
@@ -1041,10 +1041,10 @@ export default function DataFeedsPage() {
                       <Line 
                         type="monotone" 
                         dataKey="value" 
-                        stroke="#4F46E5"
+                        stroke="#2563EB"
                         strokeWidth={3}
                         dot={{ strokeWidth: 3, r: 4, strokeDasharray: '' }}
-                        activeDot={{ r: 6, strokeWidth: 0, fill: '#4F46E5' }}
+                        activeDot={{ r: 6, strokeWidth: 0, fill: '#2563EB' }}
                       />
                     </RechartsLineChart>
                   </ResponsiveContainer>

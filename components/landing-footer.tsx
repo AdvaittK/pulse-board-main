@@ -99,16 +99,16 @@ export function LandingFooter({ className }: FooterProps) {
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
       className={cn(
-        "w-full border-t py-12 md:py-16 lg:py-24 bg-gradient-to-b from-background/60 to-muted/30 backdrop-blur-sm",
+        "w-full border-t py-12 md:py-16 lg:py-24 bg-muted/20 backdrop-blur-sm",
         className
       )}
     >
       <div className="w-full container px-4 sm:px-6 lg:px-8">
         {/* Newsletter section */}
-        <div className="rounded-2xl bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-950/20 dark:via-indigo-950/20 dark:to-purple-950/20 border border-blue-100/50 dark:border-blue-800/20 p-6 md:p-8 lg:p-10 mb-16">
+        <div className="rounded-2xl bg-muted/50 border border-blue-100/50 dark:border-blue-800/20 p-6 md:p-8 lg:p-10 mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
             <div className="lg:col-span-3 space-y-4">
-              <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Stay in the loop</h3>
+              <h3 className="text-2xl font-bold text-primary">Stay in the loop</h3>
               <p className="text-muted-foreground max-w-md">
                 Subscribe to our newsletter to receive updates about new features, data insights tips, and exclusive offers.
               </p>
@@ -122,7 +122,7 @@ export function LandingFooter({ className }: FooterProps) {
                 />
                 <Button 
                   type="submit"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90"
                 >
                   Subscribe
                 </Button>
@@ -140,10 +140,10 @@ export function LandingFooter({ className }: FooterProps) {
             {/* Brand and description */}
             <div className="space-y-4">
               <Link href="/" className="flex items-center gap-2 mb-4">
-                <div className="p-1.5 rounded-lg bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm shadow-sm">
+                <div className="p-1.5 rounded-lg bg-primary/10 backdrop-blur-sm shadow-sm">
                   <BarChart3 className="h-6 w-6 text-blue-600" />
                 </div>
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 text-xl font-extrabold tracking-tight">
+                <span className="text-primary text-xl font-extrabold tracking-tight">
                   PulseBoard
                 </span>
               </Link>

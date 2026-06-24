@@ -258,7 +258,7 @@ const billingAddresses = [
 // Chart data for spending analysis
 const spendingByService = [
   { name: "Pro Plan", value: 149.95, color: "blue" },
-  { name: "Financial Data Add-on", value: 39.96, color: "purple" },
+  { name: "Financial Data Add-on", value: 39.96, color: "amber" },
 ]
 
 // Motion variants
@@ -332,7 +332,7 @@ export default function BillingPage() {
         className="flex flex-col md:flex-row md:items-end justify-between gap-4"
       >
         <div>
-          <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold tracking-tight text-blue-700">
             Billing
           </h1>
           <p className="text-muted-foreground mt-2">
@@ -342,7 +342,7 @@ export default function BillingPage() {
         <Dialog>
           <DialogTrigger asChild>
             <Button 
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-md self-start md:self-auto"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm self-start md:self-auto"
               onClick={() => setIsAddingPaymentMethod(true)}
             >
               <Plus className="mr-2 h-4 w-4" />
@@ -386,7 +386,7 @@ export default function BillingPage() {
               </Button>
               <Button 
                 onClick={handleAddPaymentMethod}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 Add Card
               </Button>
@@ -404,25 +404,25 @@ export default function BillingPage() {
           <TabsList className="bg-white dark:bg-slate-900 p-1 border border-slate-200 dark:border-slate-800 shadow-sm rounded-xl">
             <TabsTrigger 
               value="overview" 
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
+              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
             >
               Overview
             </TabsTrigger>
             <TabsTrigger 
               value="invoices" 
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
+              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
             >
               Invoices
             </TabsTrigger>
             <TabsTrigger 
               value="payment-methods" 
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
+              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
             >
               Payment Methods
             </TabsTrigger>
             <TabsTrigger 
               value="addresses" 
-              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
+              className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
             >
               Billing Addresses
             </TabsTrigger>
@@ -431,7 +431,7 @@ export default function BillingPage() {
           <TabsContent value="overview">
             {!isLoaded ? (
               <div className="grid gap-6 md:grid-cols-3">
-                <Card className="md:col-span-2 border-0 shadow-lg">
+                <Card className="md:col-span-2 border-0 shadow-sm">
                   <CardHeader>
                     <Skeleton className="h-6 w-36" />
                   </CardHeader>
@@ -439,7 +439,7 @@ export default function BillingPage() {
                     <Skeleton className="h-[300px] w-full rounded-md" />
                   </CardContent>
                 </Card>
-                <Card className="border-0 shadow-lg">
+                <Card className="border-0 shadow-sm">
                   <CardHeader>
                     <Skeleton className="h-6 w-40" />
                   </CardHeader>
@@ -458,10 +458,10 @@ export default function BillingPage() {
                 className="grid gap-6 md:grid-cols-3"
               >
                 <motion.div variants={itemVariants} className="md:col-span-2">
-                  <Card className="border-0 shadow-lg">
-                    <CardHeader className="border-b bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+                  <Card className="border-0 shadow-sm">
+                    <CardHeader className="border-b bg-white dark:bg-slate-900">
                       <CardTitle className="flex items-center gap-2">
-                        <DollarSign className="h-5 w-5 text-green-500" />
+                        <DollarSign className="h-5 w-5 text-blue-500" />
                         Spending Analysis
                       </CardTitle>
                       <CardDescription>
@@ -476,7 +476,7 @@ export default function BillingPage() {
                               chartData={spendingByService.map(item => item.value)}
                               chartOptions={{
                                 labels: spendingByService.map(item => item.name),
-                                colors: spendingByService.map(item => item.color === 'blue' ? '#3b82f6' : '#9333ea'),
+                                colors: spendingByService.map(item => item.color === 'blue' ? '#3b82f6' : '#1D4ED8'),
                                 legend: {
                                   show: false
                                 },
@@ -500,8 +500,8 @@ export default function BillingPage() {
                               <div key={item.name} className="flex items-center justify-between text-sm">
                                 <div className="flex items-center gap-2">
                                   <div 
-                                    className={`h-3 w-3 rounded-full bg-${item.color}-500`} 
-                                    style={{ backgroundColor: item.color === 'blue' ? '#3b82f6' : '#9333ea' }} 
+                                    className={`h-3 w-3 rounded-full bg-blue-500`} 
+                                    style={{ backgroundColor: item.color === 'blue' ? '#3b82f6' : '#1D4ED8' }} 
                                   />
                                   <span>{item.name}</span>
                                 </div>
@@ -536,7 +536,7 @@ export default function BillingPage() {
                                       </p>
                                       <Badge 
                                         variant="outline"
-                                        className="text-[10px] px-1 py-0 rounded-sm h-4 bg-green-50 text-green-600 border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800"
+                                        className="text-[10px] px-1 py-0 rounded-sm h-4 bg-blue-50 text-blue-600 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800"
                                       >
                                         Success
                                       </Badge>
@@ -561,8 +561,8 @@ export default function BillingPage() {
                   </Card>
                 </motion.div>
                 <motion.div variants={itemVariants}>
-                  <Card className="border-0 shadow-lg">
-                    <CardHeader className="border-b bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+                  <Card className="border-0 shadow-sm">
+                    <CardHeader className="border-b bg-white dark:bg-slate-900">
                       <CardTitle className="flex items-center gap-2">
                         <CalendarIcon className="h-5 w-5 text-blue-500" />
                         Upcoming Charges
@@ -633,12 +633,12 @@ export default function BillingPage() {
               animate="visible"
             >
               <motion.div variants={itemVariants}>
-                <Card className="border-0 shadow-lg">
-                  <CardHeader className="border-b bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+                <Card className="border-0 shadow-sm">
+                  <CardHeader className="border-b bg-white dark:bg-slate-900">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                       <div>
                         <CardTitle className="flex items-center gap-2">
-                          <Receipt className="h-5 w-5 text-amber-500" />
+                          <Receipt className="h-5 w-5 text-blue-500" />
                           Invoices
                         </CardTitle>
                         <CardDescription>
@@ -684,7 +684,7 @@ export default function BillingPage() {
                             <TableCell>
                               <Badge 
                                 variant="outline" 
-                                className="bg-green-50 text-green-700 border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800"
+                                className="bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800"
                               >
                                 Paid
                               </Badge>
@@ -750,7 +750,7 @@ export default function BillingPage() {
                       <span>Invoice {selectedInvoice?.id}</span>
                       <Badge 
                         variant="outline" 
-                        className="bg-green-50 text-green-700 border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800"
+                        className="bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800"
                       >
                         Paid
                       </Badge>
@@ -817,7 +817,7 @@ export default function BillingPage() {
                       <Download className="h-4 w-4" />
                       Download PDF
                     </Button>
-                    <Button size="sm" className="gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+                    <Button size="sm" className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90">
                       <ExternalLink className="h-4 w-4" />
                       View Full Invoice
                     </Button>
@@ -835,8 +835,8 @@ export default function BillingPage() {
               className="space-y-6"
             >
               <motion.div variants={itemVariants}>
-                <Card className="border-0 shadow-lg">
-                  <CardHeader className="border-b bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+                <Card className="border-0 shadow-sm">
+                  <CardHeader className="border-b bg-white dark:bg-slate-900">
                     <CardTitle className="flex items-center gap-2">
                       <CreditCard className="h-5 w-5 text-blue-500" />
                       Payment Methods
@@ -894,7 +894,7 @@ export default function BillingPage() {
                               <DropdownMenuContent align="end">
                                 <DropdownMenuItem>Edit</DropdownMenuItem>
                                 <DropdownMenuItem
-                                  className="text-red-600 dark:text-red-400"
+                                  className="text-blue-600 dark:text-blue-400"
                                   onClick={() => {
                                     toast({
                                       title: "Payment Method Removed",
@@ -915,7 +915,7 @@ export default function BillingPage() {
                   <CardFooter className="flex justify-center border-t">
                     <Button 
                       onClick={() => setIsAddingPaymentMethod(true)}
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                      className="bg-primary text-primary-foreground hover:bg-primary/90"
                     >
                       <Plus className="mr-2 h-4 w-4" />
                       Add New Payment Method
@@ -925,11 +925,11 @@ export default function BillingPage() {
               </motion.div>
               
               <motion.div variants={itemVariants}>
-                <Alert className="border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-900/50 dark:bg-amber-900/20 dark:text-amber-300">
+                <Alert className="border-blue-200 bg-blue-50 text-blue-800 dark:border-blue-900/50 dark:bg-blue-900/20 dark:text-blue-300">
                   <AlertCircle className="h-4 w-4 mr-2" />
                   <AlertDescription className="flex items-center justify-between w-full">
                     <span>Your payment information is encrypted and securely stored.</span>
-                    <Button variant="link" className="h-auto p-0 text-amber-800 dark:text-amber-300">
+                    <Button variant="link" className="h-auto p-0 text-blue-800 dark:text-blue-300">
                       Learn more
                     </Button>
                   </AlertDescription>
@@ -945,10 +945,10 @@ export default function BillingPage() {
               animate="visible"
             >
               <motion.div variants={itemVariants}>
-                <Card className="border-0 shadow-lg">
-                  <CardHeader className="border-b bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+                <Card className="border-0 shadow-sm">
+                  <CardHeader className="border-b bg-white dark:bg-slate-900">
                     <CardTitle className="flex items-center gap-2">
-                      <FileText className="h-5 w-5 text-purple-500" />
+                      <FileText className="h-5 w-5 text-blue-500" />
                       Billing Addresses
                     </CardTitle>
                     <CardDescription>
@@ -997,7 +997,7 @@ export default function BillingPage() {
                   </CardContent>
                   <CardFooter className="flex justify-center border-t">
                     <Button 
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                      className="bg-primary text-primary-foreground hover:bg-primary/90"
                       onClick={() => {
                         toast({
                           title: "Add Billing Address",

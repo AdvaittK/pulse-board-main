@@ -103,7 +103,7 @@ export default function AdminEnvironmentPage() {
   return (
     <div className={`container px-4 py-6 mx-auto max-w-7xl transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold tracking-tight text-blue-700">
           Environment Management
         </h1>
         <p className="text-muted-foreground mt-1">
@@ -264,9 +264,9 @@ export default function AdminEnvironmentPage() {
                       {selectedEnvironment === 'all' && (
                         <TableCell>
                           <Badge variant="outline" className={
-                            variable.environment === 'production' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' :
+                            variable.environment === 'production' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300' :
                             variable.environment === 'staging' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300' :
-                            'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-300'
+                            'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
                           }>
                             {variable.environment}
                           </Badge>
@@ -285,7 +285,7 @@ export default function AdminEnvironmentPage() {
                           <Button
                             variant="ghost"
                             size="icon"
-                            className="h-8 w-8 text-red-500 hover:text-red-600"
+                            className="h-8 w-8 text-blue-500 hover:text-blue-600"
                           >
                             <Trash className="h-4 w-4" />
                           </Button>

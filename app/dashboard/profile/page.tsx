@@ -162,7 +162,7 @@ export default function ProfilePage() {
         transition={{ duration: 0.5 }}
         className="mb-8"
       >
-        <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold tracking-tight text-blue-700">
           My Profile
         </h1>
         <p className="text-muted-foreground mt-2">
@@ -178,19 +178,19 @@ export default function ProfilePage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="border-0 shadow-lg bg-gradient-to-br from-white to-blue-50/30 dark:from-slate-900 dark:to-indigo-950/30 sticky top-20">
+            <Card className="border-0 shadow-sm bg-white dark:bg-slate-900 sticky top-20">
               <CardContent className="pt-6">
                 <div className="flex flex-col items-center">
                   <div className="relative group">
-                    <Avatar className="h-24 w-24 border-4 border-white dark:border-slate-800 shadow-lg">
+                    <Avatar className="h-24 w-24 border-4 border-white dark:border-slate-800 shadow-sm">
                       <AvatarImage src={user?.avatar || '/placeholder-user.jpg'} alt={user?.firstName} />
-                      <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-xl">
+                      <AvatarFallback className="bg-blue-600 text-white text-xl">
                         {user?.firstName?.charAt(0)}{user?.lastName?.charAt(0)}
                       </AvatarFallback>
                     </Avatar>
                     <button 
                       onClick={handleUploadAvatar}
-                      className="absolute bottom-0 right-0 h-8 w-8 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center text-white shadow-md hover:bg-blue-700 dark:hover:bg-blue-400 transition-colors duration-200"
+                      className="absolute bottom-0 right-0 h-8 w-8 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center text-white shadow-sm hover:bg-blue-700 dark:hover:bg-blue-400 transition-colors duration-200"
                     >
                       {isUploading ? (
                         <Loader2 className="h-4 w-4 animate-spin" />
@@ -206,7 +206,7 @@ export default function ProfilePage() {
                   
                   <div className="mt-2">
                     {user?.role === 'admin' ? (
-                      <Badge variant="outline" className="bg-gradient-to-r from-purple-100 to-purple-200 text-purple-800 dark:from-purple-900 dark:to-purple-800 dark:text-purple-200 border-purple-200 dark:border-purple-800">
+                      <Badge variant="outline" className="bg-blue-600 text-blue-800 dark:bg-blue-900 dark:text-blue-200 border-blue-200 dark:border-blue-800">
                         <Shield className="h-3 w-3 mr-1" />
                         Administrator
                       </Badge>
@@ -225,28 +225,28 @@ export default function ProfilePage() {
                     
                     {user?.phone && (
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <Phone className="h-4 w-4 text-green-500" />
+                        <Phone className="h-4 w-4 text-blue-500" />
                         <span>{user?.phone}</span>
                       </div>
                     )}
                     
                     {user?.company && (
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <Building className="h-4 w-4 text-purple-500" />
+                        <Building className="h-4 w-4 text-blue-500" />
                         <span>{user?.company}</span>
                       </div>
                     )}
                     
                     {user?.title && (
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <Briefcase className="h-4 w-4 text-amber-500" />
+                        <Briefcase className="h-4 w-4 text-blue-500" />
                         <span>{user?.title}</span>
                       </div>
                     )}
                     
                     {user?.location && (
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <MapPin className="h-4 w-4 text-rose-500" />
+                        <MapPin className="h-4 w-4 text-blue-500" />
                         <span>{user?.location}</span>
                       </div>
                     )}
@@ -276,19 +276,19 @@ export default function ProfilePage() {
             <TabsList className="bg-white dark:bg-slate-900 p-1 border border-slate-200 dark:border-slate-800 shadow-sm rounded-xl">
               <TabsTrigger 
                 value="general" 
-                className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
               >
                 General
               </TabsTrigger>
               <TabsTrigger 
                 value="security" 
-                className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
               >
                 Security
               </TabsTrigger>
               <TabsTrigger 
                 value="notifications" 
-                className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
+                className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
               >
                 Notifications
               </TabsTrigger>
@@ -296,7 +296,7 @@ export default function ProfilePage() {
 
             <div className="mt-6">
               <TabsContent value="general">
-                <Card className="border-0 shadow-lg">
+                <Card className="border-0 shadow-sm">
                   <CardHeader>
                     <CardTitle>Profile Information</CardTitle>
                     <CardDescription>
@@ -437,7 +437,7 @@ export default function ProfilePage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3 }}
                           >
-                            <Alert className="bg-green-50 border-green-200 text-green-800 dark:bg-green-900/50 dark:border-green-900 dark:text-green-200">
+                            <Alert className="bg-blue-50 border-blue-200 text-blue-800 dark:bg-blue-900/50 dark:border-blue-900 dark:text-blue-200">
                               <CheckCircle className="h-4 w-4 mr-2" />
                               <AlertDescription>
                                 Your profile has been updated successfully!
@@ -450,7 +450,7 @@ export default function ProfilePage() {
                         <Button 
                           type="submit" 
                           disabled={isLoading}
-                          className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-md"
+                          className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm"
                         >
                           {isLoading ? (
                             <span className="flex items-center">
@@ -475,7 +475,7 @@ export default function ProfilePage() {
                   className="space-y-6"
                 >
                   <motion.div variants={itemVariants}>
-                    <Card className="border-0 shadow-lg">
+                    <Card className="border-0 shadow-sm">
                       <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                           <Key className="h-5 w-5 text-blue-500" />
@@ -520,10 +520,10 @@ export default function ProfilePage() {
                   </motion.div>
                   
                   <motion.div variants={itemVariants}>
-                    <Card className="border-0 shadow-lg">
+                    <Card className="border-0 shadow-sm">
                       <CardHeader>
                         <CardTitle className="flex items-center gap-2">
-                          <Shield className="h-5 w-5 text-green-500" />
+                          <Shield className="h-5 w-5 text-blue-500" />
                           Active Sessions
                         </CardTitle>
                         <CardDescription>
@@ -536,13 +536,13 @@ export default function ProfilePage() {
                             <div className="flex items-start gap-4">
                               <div className={cn(
                                 "h-2 w-2 mt-2 rounded-full",
-                                device.current ? "bg-green-500" : "bg-blue-400"
+                                device.current ? "bg-blue-500" : "bg-blue-400"
                               )} />
                               <div>
                                 <h4 className="font-medium flex items-center">
                                   {device.name}
                                   {device.current && (
-                                    <Badge className="ml-2 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+                                    <Badge className="ml-2 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
                                       Current
                                     </Badge>
                                   )}
@@ -569,13 +569,13 @@ export default function ProfilePage() {
                   </motion.div>
                   
                   <motion.div variants={itemVariants}>
-                    <Card className="border-0 shadow-lg border-red-200 dark:border-red-900/50">
-                      <CardHeader className="text-red-600 dark:text-red-400">
+                    <Card className="border-0 shadow-sm border-blue-200 dark:border-blue-900/50">
+                      <CardHeader className="text-blue-600 dark:text-blue-400">
                         <CardTitle className="flex items-center gap-2">
                           <Trash2 className="h-5 w-5" />
                           Delete Account
                         </CardTitle>
-                        <CardDescription className="text-red-600/80 dark:text-red-400/80">
+                        <CardDescription className="text-blue-600/80 dark:text-blue-400/80">
                           Permanently delete your account and all of your data
                         </CardDescription>
                       </CardHeader>
@@ -595,10 +595,10 @@ export default function ProfilePage() {
               </TabsContent>
 
               <TabsContent value="notifications">
-                <Card className="border-0 shadow-lg">
+                <Card className="border-0 shadow-sm">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Bell className="h-5 w-5 text-amber-500" />
+                      <Bell className="h-5 w-5 text-blue-500" />
                       Notification Preferences
                     </CardTitle>
                     <CardDescription>
@@ -692,7 +692,7 @@ export default function ProfilePage() {
                     <Button variant="ghost">
                       Restore Defaults
                     </Button>
-                    <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-md">
+                    <Button className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm">
                       Save Preferences
                     </Button>
                   </CardFooter>

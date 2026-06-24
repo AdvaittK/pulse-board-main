@@ -20,9 +20,9 @@ import { cn } from "@/lib/utils";
 // Add this spending data for the progress bars
 const spendingCategories = [
   { name: "Marketing", percentage: 42, color: "bg-blue-500 dark:bg-blue-600" },
-  { name: "Development", percentage: 28, color: "bg-purple-500 dark:bg-purple-600" },
-  { name: "Infrastructure", percentage: 18, color: "bg-emerald-500 dark:bg-emerald-600" },
-  { name: "Operations", percentage: 12, color: "bg-amber-500 dark:bg-amber-600" },
+  { name: "Development", percentage: 28, color: "bg-blue-500 dark:bg-blue-600" },
+  { name: "Infrastructure", percentage: 18, color: "bg-blue-500 dark:bg-blue-600" },
+  { name: "Operations", percentage: 12, color: "bg-blue-500 dark:bg-blue-600" },
 ];
 
 const TotalSpent = () => {
@@ -58,9 +58,9 @@ const TotalSpent = () => {
       <Card 
         extra={cn(
           "!p-[20px] text-center rounded-2xl border-none",
-          "shadow-md hover:shadow-lg transition-all duration-300",
-          "bg-gradient-to-br from-white to-slate-50",
-          "dark:from-slate-900 dark:to-slate-800",
+          "shadow-sm hover:shadow-sm transition-all duration-300",
+          "bg-white",
+          "dark:bg-slate-900",
           "flex flex-col h-full"
         )}
       >
@@ -101,10 +101,10 @@ const TotalSpent = () => {
               <div className="flex flex-col items-start">
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Total Spent</p>
                 <div className="flex flex-row items-center justify-center">
-                  <span className="flex items-center justify-center rounded-full bg-emerald-100/50 dark:bg-emerald-900/30 p-1">
-                    <MdArrowDropUp className="text-emerald-500 dark:text-emerald-400" />
+                  <span className="flex items-center justify-center rounded-full bg-blue-100/50 dark:bg-blue-900/30 p-1">
+                    <MdArrowDropUp className="text-blue-500 dark:text-blue-400" />
                   </span>
-                  <p className="ml-1 text-sm font-bold text-emerald-500 dark:text-emerald-400"> +2.45% </p>
+                  <p className="ml-1 text-sm font-bold text-blue-500 dark:text-blue-400"> +2.45% </p>
                 </div>
               </div>
             </div>
@@ -175,16 +175,16 @@ const TotalSpent = () => {
               transition={{ delay: 0.3 }}
               className={cn(
                 "rounded-xl p-3",
-                "bg-purple-50/50 dark:bg-purple-900/20",
-                "border border-purple-100 dark:border-purple-800/30"
+                "bg-blue-50/50 dark:bg-blue-900/20",
+                "border border-blue-100 dark:border-blue-800/30"
               )}
             >
               <div className="flex items-center">
                 <div className={cn(
                   "rounded-full p-2 mr-3",
-                  "bg-purple-100 dark:bg-purple-800/30"
+                  "bg-blue-100 dark:bg-blue-800/30"
                 )}>
-                  <MdHistory className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                  <MdHistory className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div className="text-left">
                   <p className="text-xs text-slate-600 dark:text-slate-400">Year To Date</p>
@@ -199,16 +199,16 @@ const TotalSpent = () => {
               transition={{ delay: 0.4 }}
               className={cn(
                 "rounded-xl p-3",
-                "bg-emerald-50/50 dark:bg-emerald-900/20",
-                "border border-emerald-100 dark:border-emerald-800/30"
+                "bg-blue-50/50 dark:bg-blue-900/20",
+                "border border-blue-100 dark:border-blue-800/30"
               )}
             >
               <div className="flex items-center">
                 <div className={cn(
                   "rounded-full p-2 mr-3",
-                  "bg-emerald-100 dark:bg-emerald-800/30"
+                  "bg-blue-100 dark:bg-blue-800/30"
                 )}>
-                  <MdInfoOutline className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                  <MdInfoOutline className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div className="text-left">
                   <p className="text-xs text-slate-600 dark:text-slate-400">Projected Q2</p>

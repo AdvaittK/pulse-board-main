@@ -29,10 +29,10 @@ export default function AdminVisualizationPage() {
   // Chart settings
   const [chartTheme, setChartTheme] = useState("system")
   const [primaryColor, setPrimaryColor] = useState("#3b82f6")
-  const [secondaryColor, setSecondaryColor] = useState("#6366f1")
-  const [accentColor, setAccentColor] = useState("#8b5cf6")
-  const [negativeColor, setNegativeColor] = useState("#ef4444")
-  const [positiveColor, setPositiveColor] = useState("#22c55e")
+  const [secondaryColor, setSecondaryColor] = useState("#2563EB")
+  const [accentColor, setAccentColor] = useState("#2563EB")
+  const [negativeColor, setNegativeColor] = useState("#1D4ED8")
+  const [positiveColor, setPositiveColor] = useState("#2563EB")
   const [fontFamily, setFontFamily] = useState("Inter, system-ui")
   const [animations, setAnimations] = useState(true)
   const [darkMode, setDarkMode] = useState(true)
@@ -74,10 +74,10 @@ export default function AdminVisualizationPage() {
     // Reset all settings to defaults
     setChartTheme("system")
     setPrimaryColor("#3b82f6")
-    setSecondaryColor("#6366f1")
-    setAccentColor("#8b5cf6")
-    setNegativeColor("#ef4444")
-    setPositiveColor("#22c55e")
+    setSecondaryColor("#2563EB")
+    setAccentColor("#2563EB")
+    setNegativeColor("#1D4ED8")
+    setPositiveColor("#2563EB")
     setFontFamily("Inter, system-ui")
     setAnimations(true)
     setDarkMode(true)
@@ -101,7 +101,7 @@ export default function AdminVisualizationPage() {
   return (
     <div className={`container px-4 py-6 mx-auto max-w-7xl transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold tracking-tight text-blue-700">
           Visualization Settings
         </h1>
         <p className="text-muted-foreground mt-1">

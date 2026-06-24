@@ -59,6 +59,10 @@ const config = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        "brand-accent": {
+          DEFAULT: "hsl(var(--brand-accent))",
+          foreground: "hsl(var(--brand-accent-foreground))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -77,10 +81,10 @@ const config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Horizon Dashboard Colors
+        // Horizon Dashboard Colors (remapped to blue, no purple)
         lightPrimary: '#F4F7FE',
-        blueSecondary: '#4318FF',
-        brandLinear: '#868CFF',
+        blueSecondary: '#2563EB',
+        brandLinear: '#60A5FA',
         navy: {
           50: '#d0dcfb',
           100: '#aac0fe',
@@ -94,16 +98,16 @@ const config = {
           900: '#0b1437',
         },
         brand: {
-          50: '#E9E3FF',
-          100: '#C0B8FE',
-          200: '#A195FD',
-          300: '#8171FC',
-          400: '#7551FF',
-          500: '#422AFB',
-          600: '#3311DB',
-          700: '#2111A5',
-          800: '#190793',
-          900: '#11047A',
+          50: '#EFF6FF',
+          100: '#DBEAFE',
+          200: '#BFDBFE',
+          300: '#93C5FD',
+          400: '#60A5FA',
+          500: '#2563EB',
+          600: '#1D4ED8',
+          700: '#1E40AF',
+          800: '#1E3A8A',
+          900: '#172554',
         },
       },
       borderRadius: {

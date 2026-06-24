@@ -30,7 +30,7 @@ export function ShowcaseBanner() {
   if (!isVisible) return null;
   
   return (
-    <div className="fixed bottom-4 right-4 z-50 max-w-md p-4 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-3">
+    <div className="fixed bottom-4 right-4 z-50 max-w-md p-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 flex items-center gap-3">
       <div className="flex-1">
         <h3 className="font-medium text-sm">Portfolio Project</h3>
         <p className="text-xs text-muted-foreground">A showcase dashboard by Advait K.</p>

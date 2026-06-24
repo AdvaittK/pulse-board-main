@@ -83,13 +83,13 @@ export function DashboardFooter({ className, ...props }: FooterProps) {
             </Button>
           </div>
           
-          <div className="flex flex-col items-center md:items-start space-y-2 p-4 rounded-lg bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/30">
-            <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-full">
-              <FileText className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+          <div className="flex flex-col items-center md:items-start space-y-2 p-4 rounded-lg bg-blue-50/50 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/30">
+            <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+              <FileText className="h-5 w-5 text-blue-600 dark:text-blue-400" />
             </div>
-            <h3 className="font-medium text-emerald-800 dark:text-emerald-300">Documentation</h3>
+            <h3 className="font-medium text-blue-800 dark:text-blue-300">Documentation</h3>
             <p className="text-sm text-slate-600 dark:text-slate-400 text-center md:text-left">Comprehensive guides and API references</p>
-            <Button variant="link" className="p-0 h-auto text-emerald-600 dark:text-emerald-400 font-medium" asChild>
+            <Button variant="link" className="p-0 h-auto text-blue-600 dark:text-blue-400 font-medium" asChild>
               <Link href="#" className="inline-flex items-center">
                 Read docs
                 <ExternalLink className="ml-1 h-3 w-3" />
@@ -97,13 +97,13 @@ export function DashboardFooter({ className, ...props }: FooterProps) {
             </Button>
           </div>
           
-          <div className="flex flex-col items-center md:items-start space-y-2 p-4 rounded-lg bg-purple-50/50 dark:bg-purple-950/20 border border-purple-100 dark:border-purple-900/30">
-            <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-full">
-              <Headphones className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+          <div className="flex flex-col items-center md:items-start space-y-2 p-4 rounded-lg bg-blue-50/50 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/30">
+            <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+              <Headphones className="h-5 w-5 text-blue-600 dark:text-blue-400" />
             </div>
-            <h3 className="font-medium text-purple-800 dark:text-purple-300">Support</h3>
+            <h3 className="font-medium text-blue-800 dark:text-blue-300">Support</h3>
             <p className="text-sm text-slate-600 dark:text-slate-400 text-center md:text-left">Get personalized help from our support team</p>
-            <Button variant="link" className="p-0 h-auto text-purple-600 dark:text-purple-400 font-medium" asChild>
+            <Button variant="link" className="p-0 h-auto text-blue-600 dark:text-blue-400 font-medium" asChild>
               <Link href="#" className="inline-flex items-center">
                 Contact us
                 <ExternalLink className="ml-1 h-3 w-3" />
@@ -119,7 +119,7 @@ export function DashboardFooter({ className, ...props }: FooterProps) {
           <div className="col-span-2">
             <div className="flex flex-col space-y-4">
               <Link href="/" className="flex items-center">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center mr-2">
+                <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center mr-2">
                   <span className="text-white font-bold">PB</span>
                 </div>
                 <span className="font-bold text-xl">PulseBoard</span>

@@ -52,22 +52,22 @@ export default function ComplexTable(props: { tableData: any }) {
         return (
           <div className={cn(
             "flex items-center px-2 py-1 rounded-full w-fit",
-            status === "Approved" ? "bg-green-100/70 dark:bg-green-900/30" : 
-            status === "Disable" ? "bg-red-100/70 dark:bg-red-900/30" : 
-            "bg-amber-100/70 dark:bg-amber-900/30"
+            status === "Approved" ? "bg-blue-100/70 dark:bg-blue-900/30" : 
+            status === "Disable" ? "bg-blue-100/70 dark:bg-blue-900/30" : 
+            "bg-blue-100/70 dark:bg-blue-900/30"
           )}>
             {status === "Approved" ? (
-              <MdCheckCircle className="text-green-500 me-1 dark:text-green-300" />
+              <MdCheckCircle className="text-blue-500 me-1 dark:text-blue-300" />
             ) : status === "Disable" ? (
-              <MdCancel className="text-red-500 me-1 dark:text-red-300" />
+              <MdCancel className="text-blue-500 me-1 dark:text-blue-300" />
             ) : status === "Error" ? (
-              <MdOutlineError className="text-amber-500 me-1 dark:text-amber-300" />
+              <MdOutlineError className="text-blue-500 me-1 dark:text-blue-300" />
             ) : null}
             <p className={cn(
               "text-sm font-bold",
-              status === "Approved" ? "text-green-700 dark:text-green-300" : 
-              status === "Disable" ? "text-red-700 dark:text-red-300" : 
-              "text-amber-700 dark:text-amber-300"
+              status === "Approved" ? "text-blue-700 dark:text-blue-300" : 
+              status === "Disable" ? "text-blue-700 dark:text-blue-300" : 
+              "text-blue-700 dark:text-blue-300"
             )}>
               {status}
             </p>
@@ -124,9 +124,9 @@ export default function ComplexTable(props: { tableData: any }) {
       <Card 
         extra={cn(
           "w-full h-full px-6 pb-6 sm:overflow-x-auto rounded-2xl border-none",
-          "shadow-md hover:shadow-lg transition-all duration-300",
-          "bg-gradient-to-br from-white to-blue-50",
-          "dark:from-slate-900 dark:to-blue-950/30"
+          "shadow-sm hover:shadow-sm transition-all duration-300",
+          "bg-white",
+          "dark:bg-slate-900"
         )}
       >
         <div className="relative flex items-center justify-between pt-4">

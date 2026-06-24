@@ -17,10 +17,10 @@ import { cn } from "@/lib/utils";
 
 // Weekly performance data for the progress cards
 const weeklyPerformance = [
-  { day: "Monday", revenue: 6.4, percentage: 65, color: "bg-indigo-500 dark:bg-indigo-600" },
+  { day: "Monday", revenue: 6.4, percentage: 65, color: "bg-blue-500 dark:bg-blue-600" },
   { day: "Tuesday", revenue: 7.8, percentage: 78, color: "bg-blue-500 dark:bg-blue-600" },
-  { day: "Wednesday", revenue: 9.2, percentage: 92, color: "bg-emerald-500 dark:bg-emerald-600" },
-  { day: "Thursday", revenue: 8.4, percentage: 84, color: "bg-amber-500 dark:bg-amber-600" },
+  { day: "Wednesday", revenue: 9.2, percentage: 92, color: "bg-blue-500 dark:bg-blue-600" },
+  { day: "Thursday", revenue: 8.4, percentage: 84, color: "bg-blue-500 dark:bg-blue-600" },
 ];
 
 const WeeklyRevenue = () => {
@@ -56,18 +56,18 @@ const WeeklyRevenue = () => {
       <Card 
         extra={cn(
           "!p-[20px] text-center rounded-2xl border-none",
-          "shadow-md hover:shadow-lg transition-all duration-300",
-          "bg-gradient-to-br from-white to-slate-50",
-          "dark:from-slate-900 dark:to-slate-800",
+          "shadow-sm hover:shadow-sm transition-all duration-300",
+          "bg-white",
+          "dark:bg-slate-900",
           "flex flex-col h-full"
         )}
       >
         <div className="flex justify-between">
           <button className={cn(
             "linear mt-1 flex items-center justify-center gap-2 rounded-lg p-2",
-            "bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300",
-            "transition duration-200 hover:bg-indigo-100 dark:hover:bg-indigo-800/40",
-            "hover:shadow-sm hover:shadow-indigo-200/50 dark:hover:shadow-indigo-900/20"
+            "bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
+            "transition duration-200 hover:bg-blue-100 dark:hover:bg-blue-800/40",
+            "hover:shadow-sm hover:shadow-blue-200/50 dark:hover:shadow-blue-900/20"
           )}>
             <MdOutlineCalendarToday />
             <span className="text-sm font-medium">This week</span>
@@ -76,8 +76,8 @@ const WeeklyRevenue = () => {
             whileTap={{ scale: 0.95 }}
             className={cn(
               "!linear z-[1] flex items-center justify-center rounded-lg p-2",
-              "bg-indigo-500/10 text-indigo-600 dark:bg-indigo-500/20 dark:text-indigo-300",
-              "!transition !duration-200 hover:bg-indigo-500/20 dark:hover:bg-indigo-500/30",
+              "bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300",
+              "!transition !duration-200 hover:bg-blue-500/20 dark:hover:bg-blue-500/30",
               "shadow-sm hover:shadow"
             )}
           >
@@ -99,10 +99,10 @@ const WeeklyRevenue = () => {
               <div className="flex flex-col items-start">
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">Weekly Revenue</p>
                 <div className="flex flex-row items-center justify-center">
-                  <span className="flex items-center justify-center rounded-full bg-emerald-100/50 dark:bg-emerald-900/30 p-1">
-                    <MdTrendingUp className="text-emerald-500 dark:text-emerald-400" />
+                  <span className="flex items-center justify-center rounded-full bg-blue-100/50 dark:bg-blue-900/30 p-1">
+                    <MdTrendingUp className="text-blue-500 dark:text-blue-400" />
                   </span>
-                  <p className="ml-1 text-sm font-bold text-emerald-500 dark:text-emerald-400"> +12.6% </p>
+                  <p className="ml-1 text-sm font-bold text-blue-500 dark:text-blue-400"> +12.6% </p>
                 </div>
               </div>
             </div>
@@ -141,16 +141,16 @@ const WeeklyRevenue = () => {
               transition={{ delay: 0.2 }}
               className={cn(
                 "rounded-xl p-3",
-                "bg-indigo-50/50 dark:bg-indigo-900/20",
-                "border border-indigo-100 dark:border-indigo-800/30"
+                "bg-blue-50/50 dark:bg-blue-900/20",
+                "border border-blue-100 dark:border-blue-800/30"
               )}
             >
               <div className="flex items-center">
                 <div className={cn(
                   "rounded-full p-2 mr-3",
-                  "bg-indigo-100 dark:bg-indigo-800/30"
+                  "bg-blue-100 dark:bg-blue-800/30"
                 )}>
-                  <MdAttachMoney className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                  <MdAttachMoney className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div className="text-left">
                   <p className="text-xs text-slate-600 dark:text-slate-400">Average Sale</p>
@@ -189,16 +189,16 @@ const WeeklyRevenue = () => {
               transition={{ delay: 0.4 }}
               className={cn(
                 "rounded-xl p-3",
-                "bg-emerald-50/50 dark:bg-emerald-900/20",
-                "border border-emerald-100 dark:border-emerald-800/30"
+                "bg-blue-50/50 dark:bg-blue-900/20",
+                "border border-blue-100 dark:border-blue-800/30"
               )}
             >
               <div className="flex items-center">
                 <div className={cn(
                   "rounded-full p-2 mr-3",
-                  "bg-emerald-100 dark:bg-emerald-800/30"
+                  "bg-blue-100 dark:bg-blue-800/30"
                 )}>
-                  <MdTrendingUp className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                  <MdTrendingUp className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div className="text-left">
                   <p className="text-xs text-slate-600 dark:text-slate-400">Conversion</p>
@@ -222,7 +222,7 @@ const WeeklyRevenue = () => {
                 </div>
                 <h3 className="font-medium text-slate-800 dark:text-slate-200">Daily Performance</h3>
               </div>
-              <span className="text-xs text-indigo-600 dark:text-indigo-400 font-medium cursor-pointer hover:underline">
+              <span className="text-xs text-blue-600 dark:text-blue-400 font-medium cursor-pointer hover:underline">
                 Weekly Report
               </span>
             </div>

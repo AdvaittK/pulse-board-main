@@ -73,19 +73,19 @@ export default function AdminDashboardPage() {
     { 
       title: "User Management", 
       description: "Manage users, permissions, and roles", 
-      icon: <Users className="h-7 w-7 text-indigo-500" />,
+      icon: <Users className="h-7 w-7 text-blue-500" />,
       href: "/dashboard/admin/users",
-      color: "from-indigo-500 to-blue-600",
-      gradient: "bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-indigo-900/20 dark:to-blue-800/20",
+      color: "from-blue-500 to-blue-600",
+      gradient: "bg-blue-600 dark:bg-blue-900/20",
       badge: "Core"
     },
     { 
       title: "Analytics", 
       description: "View usage statistics and reports", 
-      icon: <BarChart3 className="h-7 w-7 text-purple-500" />,
+      icon: <BarChart3 className="h-7 w-7 text-blue-500" />,
       href: "/dashboard/admin/analytics",
-      color: "from-purple-500 to-pink-600",
-      gradient: "bg-gradient-to-br from-purple-50 to-pink-100 dark:from-purple-900/20 dark:to-pink-800/20",
+      color: "from-blue-500 to-blue-500",
+      gradient: "bg-blue-600 dark:bg-blue-900/20",
       badge: "Insights"
     },
     { 
@@ -94,43 +94,43 @@ export default function AdminDashboardPage() {
       icon: <Settings className="h-7 w-7 text-slate-500" />,
       href: "/dashboard/admin/settings",
       color: "from-slate-600 to-slate-800",
-      gradient: "bg-gradient-to-br from-slate-50 to-slate-200 dark:from-slate-900/40 dark:to-slate-800/40",
+      gradient: "bg-slate-50 dark:bg-slate-900/40",
       badge: "System"
     },
     { 
       title: "Logs", 
       description: "View system and user activity logs", 
-      icon: <FileText className="h-7 w-7 text-amber-500" />,
+      icon: <FileText className="h-7 w-7 text-blue-500" />,
       href: "/dashboard/admin/logs",
-      color: "from-amber-500 to-orange-600",
-      gradient: "bg-gradient-to-br from-amber-50 to-orange-100 dark:from-amber-900/20 dark:to-orange-800/20",
+      color: "from-blue-500 to-blue-600",
+      gradient: "bg-blue-600 dark:bg-blue-900/20",
       badge: "Security"
     },
     { 
       title: "Data Sources", 
       description: "Configure data source connections", 
-      icon: <Database className="h-7 w-7 text-cyan-500" />,
+      icon: <Database className="h-7 w-7 text-blue-500" />,
       href: "/dashboard/admin/sources",
-      color: "from-cyan-500 to-blue-600",
-      gradient: "bg-gradient-to-br from-cyan-50 to-blue-100 dark:from-cyan-900/20 dark:to-blue-800/20",
+      color: "from-blue-500 to-blue-600",
+      gradient: "bg-blue-600 dark:bg-blue-900/20",
       badge: "Data"
     },
     { 
       title: "Visualization", 
       description: "Configure visualization settings", 
-      icon: <PieChart className="h-7 w-7 text-rose-500" />,
+      icon: <PieChart className="h-7 w-7 text-blue-500" />,
       href: "/dashboard/admin/visualization",
-      color: "from-rose-500 to-red-600",
-      gradient: "bg-gradient-to-br from-rose-50 to-red-100 dark:from-rose-900/20 dark:to-red-800/20",
+      color: "from-blue-500 to-blue-600",
+      gradient: "bg-blue-600 dark:bg-blue-900/20",
       badge: "UI"
     },
     { 
       title: "Security", 
       description: "Manage security and access controls", 
-      icon: <ShieldAlert className="h-7 w-7 text-red-500" />,
+      icon: <ShieldAlert className="h-7 w-7 text-blue-500" />,
       href: "/dashboard/admin/security",
-      color: "from-red-500 to-rose-600",
-      gradient: "bg-gradient-to-br from-red-50 to-rose-100 dark:from-red-900/20 dark:to-rose-800/20",
+      color: "from-blue-500 to-blue-600",
+      gradient: "bg-blue-600 dark:bg-blue-900/20",
       badge: "Critical"
     },
   ]
@@ -154,7 +154,7 @@ export default function AdminDashboardPage() {
   return (
     <div className="container px-4 py-6 mx-auto max-w-7xl">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold tracking-tight text-blue-700">
           Admin Dashboard
         </h1>
         <p className="text-muted-foreground mt-1">
@@ -163,7 +163,7 @@ export default function AdminDashboardPage() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 mb-8">
-        <Card className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 border-blue-200 dark:border-blue-800">
+        <Card className="bg-blue-600 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800">
           <CardHeader className="pb-2">
             <CardTitle className="text-blue-800 dark:text-blue-300">Admin Overview</CardTitle>
           </CardHeader>
@@ -175,8 +175,8 @@ export default function AdminDashboardPage() {
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-medium text-blue-600 dark:text-blue-400">System Status</span>
-                <span className="flex items-center text-green-600 font-medium">
-                  <span className="h-2 w-2 rounded-full bg-green-500 mr-2"></span>
+                <span className="flex items-center text-blue-600 font-medium">
+                  <span className="h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
                   {systemStatus}
                 </span>
               </div>
@@ -192,42 +192,42 @@ export default function AdminDashboardPage() {
           </CardContent>
         </Card>
         
-        <Card className="bg-gradient-to-br from-purple-50 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 border-purple-200 dark:border-purple-800">
+        <Card className="bg-blue-600 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800">
           <CardHeader className="pb-2">
-            <CardTitle className="text-purple-800 dark:text-purple-300">Quick Stats</CardTitle>
+            <CardTitle className="text-blue-800 dark:text-blue-300">Quick Stats</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-4">
               <div className="flex flex-col">
-                <span className="text-sm font-medium text-purple-600 dark:text-purple-400">New Users</span>
+                <span className="text-sm font-medium text-blue-600 dark:text-blue-400">New Users</span>
                 <span className="text-2xl font-bold">+{newUsers}</span>
-                <span className="text-xs text-green-600">↑ 12% this week</span>
+                <span className="text-xs text-blue-600">↑ 12% this week</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-sm font-medium text-purple-600 dark:text-purple-400">API Calls</span>
+                <span className="text-sm font-medium text-blue-600 dark:text-blue-400">API Calls</span>
                 <span className="text-2xl font-bold">{apiCalls}</span>
-                <span className="text-xs text-amber-600">↑ 5% this week</span>
+                <span className="text-xs text-blue-600">↑ 5% this week</span>
               </div>
             </div>
           </CardContent>
         </Card>
         
-        <Card className="bg-gradient-to-br from-amber-50 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 border-amber-200 dark:border-amber-800 md:col-span-2 xl:col-span-1">
+        <Card className="bg-blue-600 dark:bg-blue-900/30 border-blue-200 dark:border-blue-800 md:col-span-2 xl:col-span-1">
           <CardHeader className="pb-2">
-            <CardTitle className="text-amber-800 dark:text-amber-300">Recent Alerts</CardTitle>
+            <CardTitle className="text-blue-800 dark:text-blue-300">Recent Alerts</CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2">
               <li className="flex items-center justify-between text-sm">
                 <span className="flex items-center">
-                  <span className="h-2 w-2 rounded-full bg-yellow-500 mr-2"></span>
+                  <span className="h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
                   Memory usage at 75%
                 </span>
                 <span className="text-xs text-muted-foreground">15 min ago</span>
               </li>
               <li className="flex items-center justify-between text-sm">
                 <span className="flex items-center">
-                  <span className="h-2 w-2 rounded-full bg-green-500 mr-2"></span>
+                  <span className="h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
                   Database backup completed
                 </span>
                 <span className="text-xs text-muted-foreground">1 hour ago</span>
@@ -251,7 +251,7 @@ export default function AdminDashboardPage() {
         {adminSections.map((section, index) => (
           <motion.div key={index} variants={cardVariants}>
             <Link href={section.href} className="block h-full">
-              <Card className={`h-full transition-all duration-200 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 overflow-hidden ${section.gradient}`}>
+              <Card className={`h-full transition-all duration-200 hover:shadow-sm hover:border-blue-300 dark:hover:border-blue-700 overflow-hidden ${section.gradient}`}>
                 <CardHeader className="pb-2 relative">
                   <div className="absolute top-3 right-3">
                     <Badge variant="outline" className="bg-white/75 dark:bg-black/30 backdrop-blur-sm">
@@ -265,7 +265,7 @@ export default function AdminDashboardPage() {
                   <CardDescription className="text-sm">{section.description}</CardDescription>
                 </CardHeader>
                 <CardFooter className="pt-0 pb-3 flex justify-between items-center">
-                  <div className={`w-full h-1 rounded-full bg-gradient-to-r ${section.color} opacity-70`}></div>
+                  <div className={`w-full h-1 rounded-full bg-blue-500 opacity-70`}></div>
                   <Button variant="ghost" className="rounded-full p-0 h-8 w-8 ml-2 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-background/80">
                     <ArrowUpRight className="h-4 w-4" />
                   </Button>

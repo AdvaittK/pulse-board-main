@@ -18,7 +18,7 @@ interface LineAreaChartProps {
 }
 
 const LineAreaChart = (props: LineAreaChartProps) => {
-  const { chartData, chartOptions, data, color = '#8884d8', yAxisLabel, tooltipFormat } = props;
+  const { chartData, chartOptions, data, color = '#2563EB', yAxisLabel, tooltipFormat } = props;
 
   // If using the new props structure, convert to ApexCharts format
   if (data) {

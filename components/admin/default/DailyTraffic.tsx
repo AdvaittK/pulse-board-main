@@ -47,16 +47,16 @@ const DailyTraffic = () => {
       <Card 
         extra={cn(
           "!p-[20px] rounded-2xl h-full border-none",
-          "shadow-md hover:shadow-lg transition-all duration-300",
-          "bg-gradient-to-br from-white to-cyan-50",
-          "dark:from-slate-900 dark:to-cyan-950/30",
+          "shadow-sm hover:shadow-sm transition-all duration-300",
+          "bg-white",
+          "dark:bg-slate-900",
           "flex flex-col"
         )}
       >
         <div className="flex justify-between">
           <div className="flex items-center gap-2">
-            <div className="flex items-center justify-center p-2 rounded-lg bg-cyan-100 dark:bg-cyan-900/30">
-              <MdPeople className="h-6 w-6 text-cyan-600 dark:text-cyan-400" />
+            <div className="flex items-center justify-center p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
+              <MdPeople className="h-6 w-6 text-blue-600 dark:text-blue-400" />
             </div>
             <div>
               <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
@@ -71,15 +71,15 @@ const DailyTraffic = () => {
             </div>
           </div>
           <div className="flex items-start">
-            <div className="flex items-center justify-center px-2 py-1 rounded-full bg-emerald-100/50 dark:bg-emerald-900/30">
-              <MdArrowDropUp className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
-              <p className="font-bold text-emerald-500 dark:text-emerald-400"> +2.45% </p>
+            <div className="flex items-center justify-center px-2 py-1 rounded-full bg-blue-100/50 dark:bg-blue-900/30">
+              <MdArrowDropUp className="h-5 w-5 text-blue-500 dark:text-blue-400" />
+              <p className="font-bold text-blue-500 dark:text-blue-400"> +2.45% </p>
             </div>
           </div>
         </div>
 
         <div className="h-[180px] w-full mt-4 relative">
-          <div className="absolute inset-0 z-0 rounded-xl bg-gradient-to-b from-transparent via-cyan-400/5 to-transparent dark:via-cyan-600/5"></div>
+          <div className="absolute inset-0 z-0 rounded-xl bg-blue-400/5 dark:bg-blue-600/5"></div>
           <BarChart
             chartData={barChartDataDailyTraffic}
             chartOptions={{
@@ -108,9 +108,9 @@ const DailyTraffic = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="rounded-xl p-2 bg-cyan-50/70 dark:bg-cyan-900/20 border border-cyan-100 dark:border-cyan-800/30 flex flex-col items-center"
+            className="rounded-xl p-2 bg-blue-50/70 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/30 flex flex-col items-center"
           >
-            <MdSchedule className="h-5 w-5 text-cyan-600 dark:text-cyan-400 mb-1" />
+            <MdSchedule className="h-5 w-5 text-blue-600 dark:text-blue-400 mb-1" />
             <p className="text-xs text-gray-600 dark:text-gray-400">Avg. Time</p>
             <p className="font-semibold text-slate-800 dark:text-white">3:42</p>
           </motion.div>
@@ -119,9 +119,9 @@ const DailyTraffic = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="rounded-xl p-2 bg-cyan-50/70 dark:bg-cyan-900/20 border border-cyan-100 dark:border-cyan-800/30 flex flex-col items-center"
+            className="rounded-xl p-2 bg-blue-50/70 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/30 flex flex-col items-center"
           >
-            <MdDevices className="h-5 w-5 text-cyan-600 dark:text-cyan-400 mb-1" />
+            <MdDevices className="h-5 w-5 text-blue-600 dark:text-blue-400 mb-1" />
             <p className="text-xs text-gray-600 dark:text-gray-400">Mobile</p>
             <p className="font-semibold text-slate-800 dark:text-white">64.8%</p>
           </motion.div>
@@ -130,9 +130,9 @@ const DailyTraffic = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="rounded-xl p-2 bg-cyan-50/70 dark:bg-cyan-900/20 border border-cyan-100 dark:border-cyan-800/30 flex flex-col items-center"
+            className="rounded-xl p-2 bg-blue-50/70 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/30 flex flex-col items-center"
           >
-            <MdTrendingUp className="h-5 w-5 text-cyan-600 dark:text-cyan-400 mb-1" />
+            <MdTrendingUp className="h-5 w-5 text-blue-600 dark:text-blue-400 mb-1" />
             <p className="text-xs text-gray-600 dark:text-gray-400">Bounce</p>
             <p className="font-semibold text-slate-800 dark:text-white">27.4%</p>
           </motion.div>
@@ -152,7 +152,7 @@ const DailyTraffic = () => {
                 <span className="text-slate-600 dark:text-slate-400">{source.source}</span>
                 <div className="flex items-center gap-2">
                   <span className="font-medium text-slate-800 dark:text-slate-200">{source.visits}</span>
-                  <span className="text-emerald-500 dark:text-emerald-400 text-[10px]">{source.trend}</span>
+                  <span className="text-blue-500 dark:text-blue-400 text-[10px]">{source.trend}</span>
                 </div>
               </div>
             ))}

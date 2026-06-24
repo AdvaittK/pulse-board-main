@@ -5,10 +5,10 @@ import React from 'react'
 export const chartConfig = {
   colors: {
     primary: '#3B82F6',
-    secondary: '#8B5CF6',
-    success: '#10B981',
-    warning: '#F59E0B',
-    danger: '#EF4444',
+    secondary: '#2563EB',
+    success: '#2563EB',
+    warning: '#2563EB',
+    danger: '#1D4ED8',
   },
   margin: { top: 5, right: 30, left: 20, bottom: 5 },
 }

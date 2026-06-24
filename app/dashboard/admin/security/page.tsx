@@ -210,16 +210,16 @@ export default function AdminSecurityPage() {
     switch (status) {
       case 'blocked':
       case 'denied':
-        return 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
       case 'flagged':
-        return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300'
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
       case 'resolved':
       case 'success':
-        return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
       case 'in_progress':
         return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
       case 'open':
-        return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300'
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
       default:
         return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300'
     }
@@ -228,9 +228,9 @@ export default function AdminSecurityPage() {
   const getSeverityColor = (severity: string) => {
     switch (severity) {
       case 'high':
-        return 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
       case 'medium':
-        return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300'
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
       case 'low':
         return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
       default:
@@ -241,7 +241,7 @@ export default function AdminSecurityPage() {
   return (
     <div className={`container px-4 py-6 mx-auto max-w-7xl transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold tracking-tight text-blue-700">
           Security Center
         </h1>
         <p className="text-muted-foreground mt-1">
@@ -251,38 +251,38 @@ export default function AdminSecurityPage() {
 
       {/* Security overview cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-8">
-        <Card className="bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-indigo-900/20 dark:to-blue-800/20 border-indigo-200 dark:border-indigo-800">
+        <Card className="bg-blue-600 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
           <CardHeader className="pb-2">
             <div className="flex items-center gap-2">
-              <Shield className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
-              <CardTitle className="text-sm font-medium text-indigo-900 dark:text-indigo-300">Security Score</CardTitle>
+              <Shield className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+              <CardTitle className="text-sm font-medium text-blue-900 dark:text-blue-300">Security Score</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
             <div className="mt-1">
               <div className="flex items-center justify-between mb-1">
                 <span className="text-2xl font-bold">{securityScore}/100</span>
-                <Badge variant="outline" className="bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300">
+                <Badge variant="outline" className="bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300">
                   Good
                 </Badge>
               </div>
-              <Progress value={securityScore} className="h-2 bg-indigo-100 dark:bg-indigo-900/50" indicatorClassName="bg-indigo-600 dark:bg-indigo-400" />
+              <Progress value={securityScore} className="h-2 bg-blue-100 dark:bg-blue-900/50" indicatorClassName="bg-blue-600 dark:bg-blue-400" />
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-rose-50 to-red-100 dark:from-rose-900/20 dark:to-red-800/20 border-rose-200 dark:border-rose-800">
+        <Card className="bg-blue-600 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
           <CardHeader className="pb-2">
             <div className="flex items-center gap-2">
-              <ShieldAlert className="h-5 w-5 text-rose-600 dark:text-rose-400" />
-              <CardTitle className="text-sm font-medium text-rose-900 dark:text-rose-300">Threat Level</CardTitle>
+              <ShieldAlert className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+              <CardTitle className="text-sm font-medium text-blue-900 dark:text-blue-300">Threat Level</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
             <div className="mt-1">
               <div className="flex items-center justify-between">
                 <span className="text-2xl font-bold capitalize">{threatLevel}</span>
-                <Badge variant="outline" className={`bg-${threatLevel === 'low' ? 'green' : threatLevel === 'medium' ? 'amber' : 'red'}-100 text-${threatLevel === 'low' ? 'green' : threatLevel === 'medium' ? 'amber' : 'red'}-800 dark:bg-${threatLevel === 'low' ? 'green' : threatLevel === 'medium' ? 'amber' : 'red'}-900/40 dark:text-${threatLevel === 'low' ? 'green' : threatLevel === 'medium' ? 'amber' : 'red'}-300`}>
+                <Badge variant="outline" className="bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300">
                   {threatLevel === 'low' ? '1 active threat' : threatLevel === 'medium' ? '3 active threats' : '8+ active threats'}
                 </Badge>
               </div>
@@ -290,18 +290,18 @@ export default function AdminSecurityPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-cyan-50 to-blue-100 dark:from-cyan-900/20 dark:to-blue-800/20 border-cyan-200 dark:border-cyan-800">
+        <Card className="bg-blue-600 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
           <CardHeader className="pb-2">
             <div className="flex items-center gap-2">
-              <Users className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
-              <CardTitle className="text-sm font-medium text-cyan-900 dark:text-cyan-300">Active Sessions</CardTitle>
+              <Users className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+              <CardTitle className="text-sm font-medium text-blue-900 dark:text-blue-300">Active Sessions</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
             <div className="mt-1">
               <div className="flex items-center justify-between">
                 <span className="text-2xl font-bold">{activeSessions}</span>
-                <Badge variant="outline" className="bg-cyan-100 text-cyan-800 dark:bg-cyan-900/40 dark:text-cyan-300">
+                <Badge variant="outline" className="bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300">
                   5 locations
                 </Badge>
               </div>
@@ -309,18 +309,18 @@ export default function AdminSecurityPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-amber-50 to-orange-100 dark:from-amber-900/20 dark:to-orange-800/20 border-amber-200 dark:border-amber-800">
+        <Card className="bg-blue-600 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
           <CardHeader className="pb-2">
             <div className="flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5 text-amber-600 dark:text-amber-400" />
-              <CardTitle className="text-sm font-medium text-amber-900 dark:text-amber-300">Pending Actions</CardTitle>
+              <AlertTriangle className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+              <CardTitle className="text-sm font-medium text-blue-900 dark:text-blue-300">Pending Actions</CardTitle>
             </div>
           </CardHeader>
           <CardContent>
             <div className="mt-1">
               <div className="flex items-center justify-between">
                 <span className="text-2xl font-bold">{pendingActions}</span>
-                <Button size="sm" variant="outline" className="text-xs h-7 px-2 border-amber-300 dark:border-amber-700 bg-white/80 dark:bg-black/30">
+                <Button size="sm" variant="outline" className="text-xs h-7 px-2 border-blue-300 dark:border-blue-700 bg-white/80 dark:bg-black/30">
                   Review
                 </Button>
               </div>
@@ -357,10 +357,10 @@ export default function AdminSecurityPage() {
               <CardDescription>Review and respond to potentially malicious user activity</CardDescription>
             </CardHeader>
             <CardContent>
-              <Alert className="mb-6 bg-amber-50 border-amber-200 dark:bg-amber-900/20 dark:border-amber-800">
-                <AlertTriangle className="h-4 w-4 text-amber-600 dark:text-amber-400" />
-                <AlertTitle className="text-amber-800 dark:text-amber-300">Attention Required</AlertTitle>
-                <AlertDescription className="text-amber-700 dark:text-amber-400">
+              <Alert className="mb-6 bg-blue-50 border-blue-200 dark:bg-blue-900/20 dark:border-blue-800">
+                <AlertTriangle className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                <AlertTitle className="text-blue-800 dark:text-blue-300">Attention Required</AlertTitle>
+                <AlertDescription className="text-blue-700 dark:text-blue-400">
                   You have 2 high-priority security alerts that require your immediate attention.
                 </AlertDescription>
               </Alert>
@@ -397,7 +397,7 @@ export default function AdminSecurityPage() {
                               className="h-8 w-8"
                               onClick={() => handleBlockUser(activity.user)}
                             >
-                              <UserX className="h-4 w-4 text-red-500" />
+                              <UserX className="h-4 w-4 text-blue-500" />
                             </Button>
                             <Button 
                               variant="ghost" 
@@ -405,7 +405,7 @@ export default function AdminSecurityPage() {
                               className="h-8 w-8"
                               onClick={() => handleIgnoreAlert(activity.id)}
                             >
-                              <CheckCircle2 className="h-4 w-4 text-green-500" />
+                              <CheckCircle2 className="h-4 w-4 text-blue-500" />
                             </Button>
                           </div>
                         </TableCell>
@@ -686,7 +686,7 @@ export default function AdminSecurityPage() {
 
               <div className="space-y-4">
                 <h3 className="text-lg font-medium flex items-center">
-                  <Server className="h-4 w-4 mr-2 text-amber-500" />
+                  <Server className="h-4 w-4 mr-2 text-blue-500" />
                   API Security
                 </h3>
 
@@ -748,7 +748,7 @@ export default function AdminSecurityPage() {
 
               <div className="space-y-4">
                 <h3 className="text-lg font-medium flex items-center">
-                  <Eye className="h-4 w-4 mr-2 text-indigo-500" />
+                  <Eye className="h-4 w-4 mr-2 text-blue-500" />
                   Monitoring & Alerts
                 </h3>
 

@@ -44,16 +44,16 @@ const staggerContainer = {
 const DashboardDemo = () => {
   return (
     <motion.div 
-      className="relative w-full h-full rounded-lg bg-white dark:bg-slate-900 overflow-hidden shadow-2xl dashboard-preview"
+      className="relative w-full h-full rounded-lg bg-white dark:bg-slate-900 overflow-hidden shadow-sm dashboard-preview"
       whileHover={{ scale: 1.01 }}
       transition={{ type: "spring", stiffness: 100 }}
     >
       {/* Dashboard Header */}
       <div className="absolute top-0 left-0 right-0 h-8 sm:h-12 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center px-2 sm:px-4 z-10">
         <div className="flex items-center gap-1 sm:gap-2">
-          <motion.div whileHover={{ scale: 1.2 }} className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-red-500 rounded-full"></motion.div>
-          <motion.div whileHover={{ scale: 1.2 }} className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-yellow-500 rounded-full"></motion.div>
-          <motion.div whileHover={{ scale: 1.2 }} className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-green-500 rounded-full"></motion.div>
+          <motion.div whileHover={{ scale: 1.2 }} className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-blue-500 rounded-full"></motion.div>
+          <motion.div whileHover={{ scale: 1.2 }} className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-blue-500 rounded-full"></motion.div>
+          <motion.div whileHover={{ scale: 1.2 }} className="h-1.5 w-1.5 sm:h-2 sm:w-2 bg-blue-500 rounded-full"></motion.div>
         </div>
         <div className="flex-1 flex justify-center">
           <motion.div 
@@ -73,42 +73,42 @@ const DashboardDemo = () => {
           whileHover={{ scale: 1.2, rotate: 10 }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 300 }}
-          className="h-6 w-6 sm:h-8 sm:w-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-blue-500/20"
+          className="h-6 w-6 sm:h-8 sm:w-8 bg-blue-600 rounded-lg flex items-center justify-center text-white shadow-sm shadow-blue-500/20"
         >
           <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
         </motion.div>
         <motion.div 
           whileHover={{ scale: 1.15, y: -2 }} 
           whileTap={{ scale: 0.95 }}
-          className="h-5 w-5 sm:h-7 sm:w-7 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-md shadow-blue-500/10"
+          className="h-5 w-5 sm:h-7 sm:w-7 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm shadow-blue-500/10"
         >
           <PieChart className="h-2.5 w-2.5 sm:h-4 sm:w-4" />
         </motion.div>
         <motion.div 
           whileHover={{ scale: 1.15, y: -2 }} 
           whileTap={{ scale: 0.95 }}
-          className="h-5 w-5 sm:h-7 sm:w-7 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center text-green-600 dark:text-green-400 shadow-md shadow-green-500/10"
+          className="h-5 w-5 sm:h-7 sm:w-7 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm shadow-blue-500/10"
         >
           <BarChart3 className="h-2.5 w-2.5 sm:h-4 sm:w-4" />
         </motion.div>
         <motion.div 
           whileHover={{ scale: 1.15, y: -2 }} 
           whileTap={{ scale: 0.95 }}
-          className="h-5 w-5 sm:h-7 sm:w-7 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center text-purple-600 dark:text-purple-400 shadow-md shadow-purple-500/10"
+          className="h-5 w-5 sm:h-7 sm:w-7 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm shadow-blue-500/10"
         >
           <LineChart className="h-2.5 w-2.5 sm:h-4 sm:w-4" />
         </motion.div>
         <motion.div 
           whileHover={{ scale: 1.15, y: -2 }} 
           whileTap={{ scale: 0.95 }}
-          className="h-5 w-5 sm:h-7 sm:w-7 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center text-amber-600 dark:text-amber-400 shadow-md shadow-amber-500/10"
+          className="h-5 w-5 sm:h-7 sm:w-7 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm shadow-blue-500/10"
         >
           <Users className="h-2.5 w-2.5 sm:h-4 sm:w-4" />
         </motion.div>
         <motion.div 
           whileHover={{ scale: 1.15, y: -2 }}
           whileTap={{ scale: 0.95 }} 
-          className="h-5 w-5 sm:h-7 sm:w-7 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center text-red-600 dark:text-red-400 shadow-md shadow-red-500/10"
+          className="h-5 w-5 sm:h-7 sm:w-7 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm shadow-blue-500/10"
         >
           <BellRing className="h-2.5 w-2.5 sm:h-4 sm:w-4" />
         </motion.div>
@@ -118,7 +118,7 @@ const DashboardDemo = () => {
       <div className="absolute top-8 sm:top-12 left-10 sm:left-14 right-0 bottom-0 p-1.5 sm:p-2 md:p-4 overflow-hidden">
         <div className="grid grid-cols-3 gap-1 sm:gap-2 md:gap-3 h-full">
           {/* Main chart */}
-          <div className="col-span-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 sm:p-3 h-[40%] relative shadow-lg shadow-blue-500/5">
+          <div className="col-span-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 sm:p-3 h-[40%] relative shadow-sm shadow-blue-500/5">
             <div className="flex justify-between items-center mb-1 sm:mb-2">
               <h3 className="text-[9px] sm:text-xs font-semibold">Revenue Overview</h3>
               <div className="flex gap-1 sm:gap-2">
@@ -135,84 +135,84 @@ const DashboardDemo = () => {
                   initial={{ height: 0 }}
                   animate={{ height: '60%' }}
                   transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-                  className="w-[4%] sm:w-[5%] bg-gradient-to-t from-blue-600/90 to-blue-400/90 rounded-t-md shadow-lg shadow-blue-500/20"
+                  className="w-[4%] sm:w-[5%] bg-blue-600 rounded-t-md shadow-sm shadow-blue-500/20"
                   whileHover={{ height: '65%' }}
                 />
                 <motion.div 
                   initial={{ height: 0 }}
                   animate={{ height: '45%' }}
                   transition={{ delay: 0.25, duration: 0.8, ease: "easeOut" }}
-                  className="w-[4%] sm:w-[5%] bg-gradient-to-t from-blue-600/90 to-blue-400/90 rounded-t-md shadow-lg shadow-blue-500/20"
+                  className="w-[4%] sm:w-[5%] bg-blue-600 rounded-t-md shadow-sm shadow-blue-500/20"
                   whileHover={{ height: '50%' }}
                 />
                 <motion.div 
                   initial={{ height: 0 }}
                   animate={{ height: '75%' }}
                   transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-                  className="w-[4%] sm:w-[5%] bg-gradient-to-t from-blue-600/90 to-blue-400/90 rounded-t-md shadow-lg shadow-blue-500/20"
+                  className="w-[4%] sm:w-[5%] bg-blue-600 rounded-t-md shadow-sm shadow-blue-500/20"
                   whileHover={{ height: '80%' }}
                 />
                 <motion.div 
                   initial={{ height: 0 }}
                   animate={{ height: '50%' }}
                   transition={{ delay: 0.35, duration: 0.8, ease: "easeOut" }}
-                  className="w-[4%] sm:w-[5%] bg-gradient-to-t from-blue-600/90 to-blue-400/90 rounded-t-md shadow-lg shadow-blue-500/20"
+                  className="w-[4%] sm:w-[5%] bg-blue-600 rounded-t-md shadow-sm shadow-blue-500/20"
                   whileHover={{ height: '55%' }}
                 />
                 <motion.div 
                   initial={{ height: 0 }}
                   animate={{ height: '65%' }}
                   transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-                  className="w-[4%] sm:w-[5%] bg-gradient-to-t from-blue-600/90 to-blue-400/90 rounded-t-md shadow-lg shadow-blue-500/20"
+                  className="w-[4%] sm:w-[5%] bg-blue-600 rounded-t-md shadow-sm shadow-blue-500/20"
                   whileHover={{ height: '70%' }}
                 />
                 <motion.div 
                   initial={{ height: 0 }}
                   animate={{ height: '40%' }}
                   transition={{ delay: 0.45, duration: 0.8, ease: "easeOut" }}
-                  className="w-[4%] sm:w-[5%] bg-gradient-to-t from-blue-600/90 to-blue-400/90 rounded-t-md shadow-lg shadow-blue-500/20"
+                  className="w-[4%] sm:w-[5%] bg-blue-600 rounded-t-md shadow-sm shadow-blue-500/20"
                   whileHover={{ height: '45%' }}
                 />
                 <motion.div 
                   initial={{ height: 0 }}
                   animate={{ height: '80%' }}
                   transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-                  className="w-[4%] sm:w-[5%] bg-gradient-to-t from-blue-600/90 to-blue-400/90 rounded-t-md shadow-lg shadow-blue-500/20"
+                  className="w-[4%] sm:w-[5%] bg-blue-600 rounded-t-md shadow-sm shadow-blue-500/20"
                   whileHover={{ height: '85%' }}
                 />
                 <motion.div 
                   initial={{ height: 0 }}
                   animate={{ height: '60%' }}
                   transition={{ delay: 0.55, duration: 0.8, ease: "easeOut" }}
-                  className="w-[4%] sm:w-[5%] bg-gradient-to-t from-blue-600/90 to-blue-400/90 rounded-t-md shadow-lg shadow-blue-500/20"
+                  className="w-[4%] sm:w-[5%] bg-blue-600 rounded-t-md shadow-sm shadow-blue-500/20"
                   whileHover={{ height: '65%' }}
                 />
                 <motion.div 
                   initial={{ height: 0 }}
                   animate={{ height: '70%' }}
                   transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
-                  className="w-[4%] sm:w-[5%] bg-gradient-to-t from-blue-600/90 to-blue-400/90 rounded-t-md shadow-lg shadow-blue-500/20"
+                  className="w-[4%] sm:w-[5%] bg-blue-600 rounded-t-md shadow-sm shadow-blue-500/20"
                   whileHover={{ height: '75%' }}
                 />
                 <motion.div 
                   initial={{ height: 0 }}
                   animate={{ height: '85%' }}
                   transition={{ delay: 0.65, duration: 0.8, ease: "easeOut" }}
-                  className="w-[4%] sm:w-[5%] bg-gradient-to-t from-purple-600/90 to-purple-400/90 rounded-t-md shadow-lg shadow-purple-500/20"
+                  className="w-[4%] sm:w-[5%] bg-blue-600 rounded-t-md shadow-sm shadow-blue-500/20"
                   whileHover={{ height: '90%' }}
                 />
                 <motion.div 
                   initial={{ height: 0 }}
                   animate={{ height: '90%' }}
                   transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
-                  className="w-[4%] sm:w-[5%] bg-gradient-to-t from-purple-600/90 to-purple-400/90 rounded-t-md shadow-lg shadow-purple-500/20"
+                  className="w-[4%] sm:w-[5%] bg-blue-600 rounded-t-md shadow-sm shadow-blue-500/20"
                   whileHover={{ height: '95%' }}
                 />
                 <motion.div 
                   initial={{ height: 0 }}
                   animate={{ height: '95%' }}
                   transition={{ delay: 0.75, duration: 0.8, ease: "easeOut" }}
-                  className="w-[4%] sm:w-[5%] bg-gradient-to-t from-purple-600/90 to-purple-400/90 rounded-t-md shadow-lg shadow-purple-500/20"
+                  className="w-[4%] sm:w-[5%] bg-blue-600 rounded-t-md shadow-sm shadow-blue-500/20"
                   whileHover={{ height: '100%' }}
                 />
               </div>
@@ -223,7 +223,7 @@ const DashboardDemo = () => {
           </div>
 
           {/* Stats card */}
-          <div className="rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 sm:p-3 h-[40%] flex flex-col shadow-lg shadow-blue-500/5">
+          <div className="rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 sm:p-3 h-[40%] flex flex-col shadow-sm shadow-blue-500/5">
             <h3 className="text-[9px] sm:text-xs font-semibold mb-1 sm:mb-2">Key Metrics</h3>
             <div className="flex-1 flex flex-col justify-between overflow-hidden">
               <motion.div 
@@ -236,7 +236,7 @@ const DashboardDemo = () => {
                 <div className="flex items-center gap-1 sm:gap-1.5">
                   <motion.div 
                     whileHover={{ rotate: 15 }} 
-                    className="p-0.5 sm:p-1 bg-green-100 dark:bg-green-900/30 rounded text-green-600 dark:text-green-400 shadow-md shadow-green-500/10"
+                    className="p-0.5 sm:p-1 bg-blue-100 dark:bg-blue-900/30 rounded text-blue-600 dark:text-blue-400 shadow-sm shadow-blue-500/10"
                   >
                     <TrendingUp className="h-2 w-2 sm:h-3 sm:w-3" />
                   </motion.div>
@@ -246,7 +246,7 @@ const DashboardDemo = () => {
                   <span className="text-[7px] sm:text-[9px] font-bold">4.28%</span>
                   <motion.span 
                     whileHover={{ y: -2 }}
-                    className="text-[6px] sm:text-[7px] text-green-600"
+                    className="text-[6px] sm:text-[7px] text-blue-600"
                   >
                     <ChevronUp className="h-1.5 w-1.5 sm:h-2 sm:w-2 inline" /> 12%
                   </motion.span>
@@ -263,7 +263,7 @@ const DashboardDemo = () => {
                 <div className="flex items-center gap-1 sm:gap-1.5">
                   <motion.div 
                     whileHover={{ rotate: 15 }} 
-                    className="p-0.5 sm:p-1 bg-blue-100 dark:bg-blue-900/30 rounded text-blue-600 dark:text-blue-400 shadow-md shadow-blue-500/10"
+                    className="p-0.5 sm:p-1 bg-blue-100 dark:bg-blue-900/30 rounded text-blue-600 dark:text-blue-400 shadow-sm shadow-blue-500/10"
                   >
                     <Users className="h-2 w-2 sm:h-3 sm:w-3" />
                   </motion.div>
@@ -273,7 +273,7 @@ const DashboardDemo = () => {
                   <span className="text-[7px] sm:text-[9px] font-bold">14.8k</span>
                   <motion.span 
                     whileHover={{ y: -2 }}
-                    className="text-[6px] sm:text-[7px] text-green-600"
+                    className="text-[6px] sm:text-[7px] text-blue-600"
                   >
                     <ChevronUp className="h-1.5 w-1.5 sm:h-2 sm:w-2 inline" /> 8%
                   </motion.span>
@@ -290,7 +290,7 @@ const DashboardDemo = () => {
                 <div className="flex items-center gap-1 sm:gap-1.5">
                   <motion.div 
                     whileHover={{ rotate: 15 }} 
-                    className="p-0.5 sm:p-1 bg-amber-100 dark:bg-amber-900/30 rounded text-amber-600 dark:text-amber-400 shadow-md shadow-amber-500/10"
+                    className="p-0.5 sm:p-1 bg-blue-100 dark:bg-blue-900/30 rounded text-blue-600 dark:text-blue-400 shadow-sm shadow-blue-500/10"
                   >
                     <CircleDollarSign className="h-2 w-2 sm:h-3 sm:w-3" />
                   </motion.div>
@@ -300,7 +300,7 @@ const DashboardDemo = () => {
                   <span className="text-[7px] sm:text-[9px] font-bold">$24.5k</span>
                   <motion.span 
                     whileHover={{ y: 2 }}
-                    className="text-[6px] sm:text-[7px] text-red-600"
+                    className="text-[6px] sm:text-[7px] text-blue-600"
                   >
                     <ChevronDown className="h-1.5 w-1.5 sm:h-2 sm:w-2 inline" /> 3%
                   </motion.span>
@@ -310,13 +310,13 @@ const DashboardDemo = () => {
           </div>
           
           {/* Performance card with enhanced chart */}
-          <div className="col-span-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 sm:p-3 h-[56%] relative shadow-lg shadow-blue-500/5">
+          <div className="col-span-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 sm:p-3 h-[56%] relative shadow-sm shadow-blue-500/5">
             <div className="flex flex-col xs:flex-row justify-between items-start xs:items-center mb-1 sm:mb-2">
               <h3 className="text-[9px] sm:text-xs font-semibold">Performance Analytics</h3>
               <div className="flex items-center gap-1 sm:gap-2 mt-0.5 xs:mt-0 text-right">
                 <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 shadow-sm shadow-blue-500/40"></div>
                 <span className="text-[6px] sm:text-[8px] text-muted-foreground">This Week</span>
-                <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-purple-500 shadow-sm shadow-purple-500/40"></div>
+                <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500 shadow-sm shadow-blue-500/40"></div>
                 <span className="text-[6px] sm:text-[8px] text-muted-foreground">Last Week</span>
               </div>
             </div>
@@ -329,15 +329,15 @@ const DashboardDemo = () => {
                     <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.2" />
                     <stop offset="100%" stopColor="#3B82F6" stopOpacity="0" />
                   </linearGradient>
-                  <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.1" />
-                    <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0" />
+                  <linearGradient id="amberGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#2563EB" stopOpacity="0.1" />
+                    <stop offset="100%" stopColor="#2563EB" stopOpacity="0" />
                   </linearGradient>
                   <filter id="shadow1" x="-2" y="-2" width="110%" height="110%">
                     <feDropShadow dx="0" dy="1" stdDeviation="1" floodColor="#3B82F6" floodOpacity="0.3"/>
                   </filter>
                   <filter id="shadow2" x="-2" y="-2" width="110%" height="110%">
-                    <feDropShadow dx="0" dy="1" stdDeviation="1" floodColor="#8B5CF6" floodOpacity="0.3"/>
+                    <feDropShadow dx="0" dy="1" stdDeviation="1" floodColor="#2563EB" floodOpacity="0.3"/>
                   </filter>
                 </defs>
                 
@@ -365,7 +365,7 @@ const DashboardDemo = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.2, duration: 0.8 }}
                   d="M0,90 C50,75 100,60 150,75 C200,90 250,45 300,60 C350,75 400,55 450,45 L450,180 L0,180 Z"
-                  fill="url(#purpleGradient)"
+                  fill="url(#amberGradient)"
                 />
                 
                 {/* Main path lines */}
@@ -385,7 +385,7 @@ const DashboardDemo = () => {
                   animate={{ pathLength: 1, opacity: 1 }}
                   transition={{ delay: 0.8, duration: 1.2, ease: "easeInOut" }}
                   d="M0,90 C50,75 100,60 150,75 C200,90 250,45 300,60 C350,75 400,55 450,45"
-                  stroke="#8B5CF6"
+                  stroke="#2563EB"
                   strokeWidth="1.5"
                   fill="none"
                   strokeLinecap="round"
@@ -405,7 +405,7 @@ const DashboardDemo = () => {
           </div>
           
           {/* Status card with improved visuals */}
-          <div className="rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 sm:p-3 h-[56%] flex flex-col shadow-lg shadow-blue-500/5">
+          <div className="rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 sm:p-3 h-[56%] flex flex-col shadow-sm shadow-blue-500/5">
             <h3 className="text-[9px] sm:text-xs font-semibold mb-1 sm:mb-2">System Status</h3>
             <div className="flex-1 flex flex-col gap-1 sm:gap-1.5 overflow-hidden">
               <motion.div 
@@ -413,13 +413,13 @@ const DashboardDemo = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.6, duration: 0.3 }}
                 whileHover={{ scale: 1.03, x: 2 }}
-                className="flex items-center justify-between p-1 sm:p-1.5 rounded-md bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 shadow-sm"
+                className="flex items-center justify-between p-1 sm:p-1.5 rounded-md bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 shadow-sm"
               >
                 <div className="flex items-center gap-1 sm:gap-1.5">
-                  <CheckCircle2 className="h-2 w-2 sm:h-3 sm:w-3 text-green-600 dark:text-green-400" />
-                  <span className="text-[7px] sm:text-[9px] text-green-800 dark:text-green-300">API</span>
+                  <CheckCircle2 className="h-2 w-2 sm:h-3 sm:w-3 text-blue-600 dark:text-blue-400" />
+                  <span className="text-[7px] sm:text-[9px] text-blue-800 dark:text-blue-300">API</span>
                 </div>
-                <span className="text-[6px] sm:text-[8px] font-medium text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-800/30 px-1 sm:px-1.5 py-0.5 rounded-full">Operational</span>
+                <span className="text-[6px] sm:text-[8px] font-medium text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-800/30 px-1 sm:px-1.5 py-0.5 rounded-full">Operational</span>
               </motion.div>
               
               <motion.div 
@@ -427,13 +427,13 @@ const DashboardDemo = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.3 }}
                 whileHover={{ scale: 1.03, x: 2 }}
-                className="flex items-center justify-between p-1 sm:p-1.5 rounded-md bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 shadow-sm"
+                className="flex items-center justify-between p-1 sm:p-1.5 rounded-md bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 shadow-sm"
               >
                 <div className="flex items-center gap-1 sm:gap-1.5">
-                  <AlertCircle className="h-2 w-2 sm:h-3 sm:w-3 text-amber-600 dark:text-amber-400" />
-                  <span className="text-[7px] sm:text-[9px] text-amber-800 dark:text-amber-300">Database</span>
+                  <AlertCircle className="h-2 w-2 sm:h-3 sm:w-3 text-blue-600 dark:text-blue-400" />
+                  <span className="text-[7px] sm:text-[9px] text-blue-800 dark:text-blue-300">Database</span>
                 </div>
-                <span className="text-[6px] sm:text-[8px] font-medium text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-800/30 px-1 sm:px-1.5 py-0.5 rounded-full">Degraded</span>
+                <span className="text-[6px] sm:text-[8px] font-medium text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-800/30 px-1 sm:px-1.5 py-0.5 rounded-full">Degraded</span>
               </motion.div>
               
               <motion.div 
@@ -455,18 +455,18 @@ const DashboardDemo = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.85, duration: 0.3 }}
                 whileHover={{ scale: 1.03, x: 2 }}
-                className="flex items-center justify-between p-1 sm:p-1.5 rounded-md bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 shadow-sm"
+                className="flex items-center justify-between p-1 sm:p-1.5 rounded-md bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 shadow-sm"
               >
                 <div className="flex items-center gap-1 sm:gap-1.5">
-                  <CheckCircle2 className="h-2 w-2 sm:h-3 sm:w-3 text-green-600 dark:text-green-400" />
-                  <span className="text-[7px] sm:text-[9px] text-green-800 dark:text-green-300">Storage</span>
+                  <CheckCircle2 className="h-2 w-2 sm:h-3 sm:w-3 text-blue-600 dark:text-blue-400" />
+                  <span className="text-[7px] sm:text-[9px] text-blue-800 dark:text-blue-300">Storage</span>
                 </div>
-                <span className="text-[6px] sm:text-[8px] font-medium text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-800/30 px-1 sm:px-1.5 py-0.5 rounded-full">Operational</span>
+                <span className="text-[6px] sm:text-[8px] font-medium text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-800/30 px-1 sm:px-1.5 py-0.5 rounded-full">Operational</span>
               </motion.div>
               
               <div className="mt-auto border-t border-slate-100 dark:border-slate-700 pt-1 flex items-center justify-between">
                 <div className="flex items-center gap-0.5 sm:gap-1">
-                  <Calendar className="h-2 w-2 sm:h-3 sm:w-3 text-purple-500" />
+                  <Calendar className="h-2 w-2 sm:h-3 sm:w-3 text-blue-500" />
                   <span className="text-[6px] sm:text-[8px] text-muted-foreground">Next Update:</span>
                 </div>
                 <motion.span 
@@ -489,15 +489,15 @@ const DashboardDemo = () => {
 // Enhanced landing hero section
 export function LandingHero() {
   return (
-    <section className="relative min-h-screen w-full flex items-center bg-gradient-to-b from-background to-muted/30 via-muted/20 pt-0 overflow-hidden pb-10 sm:pb-0">
-      {/* Decorative circles */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
-      
+    <section className="relative w-full flex items-center bg-background overflow-hidden border-b border-border/60 py-12 md:py-16 lg:py-20">
+      {/* Subtle decorative blue glow */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-500/[0.04] rounded-full blur-3xl -translate-y-1/3 pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-600/[0.03] rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
       {/* Floating icons animation - hidden on mobile, visible on larger screens */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         <motion.div 
-          className="absolute text-blue-500/10 dark:text-blue-400/5"
+          className="absolute text-blue-500/[0.06] dark:text-blue-400/5"
           animate={{ 
             y: [0, -20, 0],
             x: [0, 15, 0],
@@ -509,7 +509,7 @@ export function LandingHero() {
           <BarChart3 className="h-36 w-36" />
         </motion.div>
         <motion.div 
-          className="absolute text-purple-500/10 dark:text-purple-400/5"
+          className="absolute text-blue-500/[0.06] dark:text-blue-400/5"
           animate={{ 
             y: [0, 25, 0],
             x: [0, -10, 0],
@@ -521,7 +521,7 @@ export function LandingHero() {
           <PieChart className="h-28 w-28" />
         </motion.div>
         <motion.div 
-          className="absolute text-green-500/10 dark:text-green-400/5"
+          className="absolute text-blue-500/[0.06] dark:text-blue-400/5"
           animate={{ 
             y: [0, 15, 0],
             x: [0, -5, 0],
@@ -534,7 +534,7 @@ export function LandingHero() {
         </motion.div>
       </div>
 
-      <div className="w-full container px-3 sm:px-6 lg:px-8 py-4 md:py-8 lg:py-12">
+      <div className="w-full container px-3 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 gap-y-12 sm:gap-y-16 items-center">
           <motion.div 
             className="space-y-6 z-10"
@@ -543,32 +543,32 @@ export function LandingHero() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeIn}>
-              <Badge className="mb-4 bg-blue-600/10 text-blue-600 hover:bg-blue-600/20 transition-colors border-blue-200 dark:border-blue-800">
+              <Badge className="mb-2 bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors border border-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-800 rounded-full px-3 py-1 font-medium">
                 Portfolio Project
               </Badge>
             </motion.div>
             <motion.h1 
-              className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600"
+              className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-blue-950 dark:text-white"
               variants={fadeIn}
             >
-              Interactive <br className="hidden lg:block" />Dashboard Suite
+              Interactive <br className="hidden lg:block" /><span className="text-primary">Dashboard Suite</span>
             </motion.h1>
             <motion.p 
-              className="max-w-[600px] text-muted-foreground md:text-xl"
+              className="max-w-[600px] text-muted-foreground text-base md:text-xl leading-relaxed"
               variants={fadeIn}
             >
               A professional dashboard showcase with interactive charts, analytics, and data visualization components designed by Advait K.
             </motion.p>
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row gap-4 pt-2"
               variants={fadeIn}
             >
-              <Button size="lg" className="gap-2 text-base sm:text-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/20 hover:shadow-xl hover:shadow-blue-500/30 transition-all" asChild>
+              <Button size="lg" className="gap-2 text-base sm:text-lg bg-primary hover:bg-blue-700 text-white shadow-sm transition-all rounded-xl" asChild>
                 <Link href="/dashboard">
                   Explore Dashboard <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="gap-2 text-base sm:text-lg border-blue-300 dark:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950/50" asChild>
+              <Button size="lg" variant="outline" className="gap-2 text-base sm:text-lg border-blue-200 text-blue-700 hover:bg-blue-50 hover:text-blue-800 dark:border-blue-800 dark:text-blue-300 dark:hover:bg-blue-950/50 rounded-xl" asChild>
                 <Link href="#features">
                   Learn More
                 </Link>
@@ -576,14 +576,13 @@ export function LandingHero() {
             </motion.div>
           </motion.div>
           <motion.div 
-            className="relative h-[250px] xs:h-[300px] sm:h-[350px] md:h-[400px] lg:h-[550px] rounded-lg overflow-hidden shadow-2xl shadow-blue-500/20 hover:shadow-blue-500/30 transition-shadow duration-500 mx-auto w-full max-w-[95%] xs:max-w-[90%] sm:max-w-[80%] lg:max-w-none"
+            className="relative h-[250px] xs:h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden border border-blue-100 dark:border-blue-900/50 shadow-[0_20px_50px_-20px_rgba(37,99,235,0.35)] transition-shadow duration-500 mx-auto w-full max-w-[95%] xs:max-w-[90%] sm:max-w-[80%] lg:max-w-none bg-white dark:bg-slate-900"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-purple-600/5 dark:from-blue-500/10 dark:to-purple-500/10 z-10 mix-blend-overlay rounded-lg" />
             <DashboardDemo />
           </motion.div>
         </div>

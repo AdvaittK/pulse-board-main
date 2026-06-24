@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 
 export function LandingCTA() {
   return (
-    <section id="about" className="w-full py-16 md:py-24 bg-gradient-to-b from-card via-card/95 to-card relative overflow-hidden">
+    <section id="about" className="w-full py-16 md:py-24 bg-card relative overflow-hidden">
       {/* Decorative circles */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
       
       {/* Floating icons animation */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -27,7 +27,7 @@ export function LandingCTA() {
           <Laptop className="h-28 w-28" />
         </motion.div>
         <motion.div 
-          className="absolute text-purple-500/10 dark:text-purple-400/5"
+          className="absolute text-blue-500/10 dark:text-blue-400/5"
           animate={{ 
             y: [0, 20, 0],
             x: [0, -10, 0],
@@ -39,7 +39,7 @@ export function LandingCTA() {
           <Code className="h-24 w-24" />
         </motion.div>
         <motion.div 
-          className="absolute text-amber-500/10 dark:text-amber-400/5"
+          className="absolute text-blue-500/10 dark:text-blue-400/5"
           animate={{ 
             y: [0, 15, 0],
             x: [0, -8, 0],
@@ -51,7 +51,7 @@ export function LandingCTA() {
           <LineChart className="h-20 w-20" />
         </motion.div>
         <motion.div 
-          className="absolute text-green-500/10 dark:text-green-400/5"
+          className="absolute text-blue-500/10 dark:text-blue-400/5"
           animate={{ 
             y: [0, -15, 0],
             x: [0, 5, 0],
@@ -72,14 +72,14 @@ export function LandingCTA() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-primary">
               Ready to Explore?
             </h2>
             <p className="text-muted-foreground md:text-xl mb-8">
               Take a tour of our dashboard demo and experience the full range of features and capabilities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gap-2 text-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/20 hover:shadow-xl hover:shadow-blue-500/30 transition-all" asChild>
+              <Button size="lg" className="gap-2 text-lg bg-primary hover:bg-primary/90 shadow-sm shadow-blue-500/20 hover:shadow-sm hover:shadow-blue-500/30 transition-all" asChild>
                 <Link href="/dashboard">
                   Launch Dashboard <ArrowRight className="h-5 w-5" />
                 </Link>

@@ -21,20 +21,20 @@ const Widget = (props: WidgetProps) => {
     icon, 
     title, 
     subtitle, 
-    bgColor = "from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20",
+    bgColor = "bg-blue-50 dark:bg-blue-900/20",
     iconBg = "bg-blue-500",
     growth,
-    growthColor = "text-emerald-500"
+    growthColor = "text-blue-500"
   } = props;
   
   // Determine if growth is positive
   const isPositiveGrowth = growth && !growth.includes("-");
   
   return (
-    <Card className="border-0 overflow-hidden shadow-md rounded-2xl h-auto">
+    <Card className="border-0 overflow-hidden shadow-sm rounded-2xl h-auto">
       <CardContent className="p-0">
         <div className={cn(
-          "bg-gradient-to-br p-5 h-full flex flex-row items-center justify-between",
+          "p-5 h-full flex flex-row items-center justify-between",
           bgColor
         )}>
           <div className="flex items-center gap-4">

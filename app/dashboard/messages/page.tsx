@@ -296,7 +296,7 @@ export default function MessagesPage() {
           className="flex justify-between items-center mb-6"
         >
           <div>
-            <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold tracking-tight text-blue-700">
               Messages
             </h1>
             <p className="text-muted-foreground mt-1">
@@ -313,14 +313,14 @@ export default function MessagesPage() {
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M9 3v18" /></svg>
             </Button>
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white hidden sm:flex">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 hidden sm:flex">
               <Plus className="mr-2 h-4 w-4" />
               New Message
             </Button>
           </div>
         </motion.div>
 
-        <div className="flex flex-1 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-md">
+        <div className="flex flex-1 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm">
           {/* Sidebar */}
           <AnimatePresence>
             {showSidebar && (
@@ -414,9 +414,9 @@ export default function MessagesPage() {
                                     </Avatar>
                                     <div className={cn(
                                       "absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white dark:border-slate-950",
-                                      contact.status === "online" && "bg-green-500",
+                                      contact.status === "online" && "bg-blue-500",
                                       contact.status === "offline" && "bg-slate-400",
-                                      contact.status === "busy" && "bg-rose-500"
+                                      contact.status === "busy" && "bg-blue-500"
                                     )}></div>
                                   </div>
                                   <div className="flex-1 min-w-0">
@@ -465,15 +465,15 @@ export default function MessagesPage() {
                               <div className="relative">
                                 <Avatar>
                                   <AvatarImage src={contact.avatar || undefined} alt={contact.name} />
-                                  <AvatarFallback className={cn(contact.isGroup && "bg-gradient-to-br from-blue-500 to-purple-600 text-white")}>
+                                  <AvatarFallback className={cn(contact.isGroup && "bg-blue-600 text-white")}>
                                     {contact.isGroup ? contact.name.substring(0, 2) : contact.name.split(" ").map(n => n[0]).join("")}
                                   </AvatarFallback>
                                 </Avatar>
                                 <div className={cn(
                                   "absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white dark:border-slate-950",
-                                  contact.status === "online" && "bg-green-500",
+                                  contact.status === "online" && "bg-blue-500",
                                   contact.status === "offline" && "bg-slate-400",
-                                  contact.status === "busy" && "bg-rose-500"
+                                  contact.status === "busy" && "bg-blue-500"
                                 )}></div>
                               </div>
                               <div className="flex-1 min-w-0">
@@ -521,7 +521,7 @@ export default function MessagesPage() {
                     )}
                     <Avatar>
                       <AvatarImage src={activeContact.avatar || undefined} alt={activeContact.name} />
-                      <AvatarFallback className={cn(activeContact.isGroup && "bg-gradient-to-br from-blue-500 to-purple-600 text-white")}>
+                      <AvatarFallback className={cn(activeContact.isGroup && "bg-blue-600 text-white")}>
                         {activeContact.isGroup ? activeContact.name.substring(0, 2) : activeContact.name.split(" ").map(n => n[0]).join("")}
                       </AvatarFallback>
                     </Avatar>
@@ -537,9 +537,9 @@ export default function MessagesPage() {
                       <div className="flex items-center gap-1 text-sm text-muted-foreground">
                         <div className={cn(
                           "h-2 w-2 rounded-full",
-                          activeContact.status === "online" && "bg-green-500",
+                          activeContact.status === "online" && "bg-blue-500",
                           activeContact.status === "offline" && "bg-slate-400",
-                          activeContact.status === "busy" && "bg-rose-500"
+                          activeContact.status === "busy" && "bg-blue-500"
                         )}></div>
                         <span>
                           {activeContact.status === "online" 
@@ -594,7 +594,7 @@ export default function MessagesPage() {
                         <DropdownMenuItem className="flex items-center gap-2">
                           <Archive className="h-4 w-4" /> Archive
                         </DropdownMenuItem>
-                        <DropdownMenuItem className="flex items-center gap-2 text-rose-500 dark:text-rose-400">
+                        <DropdownMenuItem className="flex items-center gap-2 text-blue-500 dark:text-blue-400">
                           <Trash2 className="h-4 w-4" /> Delete conversation
                         </DropdownMenuItem>
                       </DropdownMenuContent>
@@ -735,7 +735,7 @@ export default function MessagesPage() {
                   <Button 
                     onClick={handleSendMessage}
                     className={cn(
-                      "rounded-full h-12 w-12 p-0 shrink-0 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700",
+                      "rounded-full h-12 w-12 p-0 shrink-0 bg-primary hover:bg-primary/90",
                       !currentMessage.trim() && "opacity-50 cursor-not-allowed"
                     )}
                     disabled={!currentMessage.trim()}

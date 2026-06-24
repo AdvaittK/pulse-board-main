@@ -205,7 +205,7 @@ export function PlanComparison() {
             <TabsTrigger value="monthly">Monthly Billing</TabsTrigger>
             <TabsTrigger value="annual" className="relative">
               Annual Billing
-              <Badge className="absolute -top-3 -right-3 bg-green-600 text-[10px]">Save 20%</Badge>
+              <Badge className="absolute -top-3 -right-3 bg-blue-600 text-[10px]">Save 20%</Badge>
             </TabsTrigger>
           </TabsList>
         </Tabs>
@@ -225,7 +225,7 @@ export function PlanComparison() {
           return (
             <motion.div key={plan.name} variants={itemVariants}>
               <Card className={cn(
-                "h-full flex flex-col border shadow-lg rounded-xl overflow-hidden",
+                "h-full flex flex-col border shadow-sm rounded-xl overflow-hidden",
                 plan.popular && "ring-2 ring-blue-500 relative"
               )}>
                 {plan.popular && (
@@ -250,7 +250,7 @@ export function PlanComparison() {
                     </div>
                     
                     {annualDiscount && (
-                      <p className="text-sm text-green-600 dark:text-green-500 mt-1.5">
+                      <p className="text-sm text-blue-600 dark:text-blue-500 mt-1.5">
                         Save ${annualDiscount.savings} per year ({annualDiscount.percent}%)
                       </p>
                     )}
@@ -266,7 +266,7 @@ export function PlanComparison() {
                     className={cn(
                       "w-full",
                       plan.popular 
-                        ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white" 
+                        ? "bg-primary text-primary-foreground hover:bg-primary/90" 
                         : ""
                     )}
                   >
@@ -279,7 +279,7 @@ export function PlanComparison() {
                   <ul className="space-y-3">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex gap-2 text-sm">
-                        <Check className="h-5 w-5 text-green-500 shrink-0" />
+                        <Check className="h-5 w-5 text-blue-500 shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -351,7 +351,7 @@ export function PlanComparison() {
                   <td className="px-6 py-4 text-center">
                     {typeof feature.free === 'boolean' ? (
                       feature.free ? 
-                        <Check className="h-5 w-5 text-green-500 mx-auto" /> : 
+                        <Check className="h-5 w-5 text-blue-500 mx-auto" /> : 
                         <X className="h-5 w-5 text-slate-300 dark:text-slate-600 mx-auto" />
                     ) : (
                       <span>{feature.free}</span>
@@ -361,7 +361,7 @@ export function PlanComparison() {
                   <td className="px-6 py-4 text-center bg-blue-50 dark:bg-blue-950/30 border-x">
                     {typeof feature.pro === 'boolean' ? (
                       feature.pro ? 
-                        <Check className="h-5 w-5 text-green-500 mx-auto" /> : 
+                        <Check className="h-5 w-5 text-blue-500 mx-auto" /> : 
                         <X className="h-5 w-5 text-slate-300 dark:text-slate-600 mx-auto" />
                     ) : (
                       <span className="font-medium">{feature.pro}</span>
@@ -371,7 +371,7 @@ export function PlanComparison() {
                   <td className="px-6 py-4 text-center">
                     {typeof feature.business === 'boolean' ? (
                       feature.business ? 
-                        <Check className="h-5 w-5 text-green-500 mx-auto" /> : 
+                        <Check className="h-5 w-5 text-blue-500 mx-auto" /> : 
                         <X className="h-5 w-5 text-slate-300 dark:text-slate-600 mx-auto" />
                     ) : (
                       <span>{feature.business}</span>
@@ -392,7 +392,7 @@ export function PlanComparison() {
         </p>
         <Button 
           size="lg" 
-          className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8"
+          className="bg-primary text-primary-foreground hover:bg-primary/90 px-8"
         >
           View All Plans
         </Button>

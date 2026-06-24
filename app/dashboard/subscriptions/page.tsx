@@ -119,16 +119,16 @@ export default function SubscriptionsPage() {
     let color = "blue";
     
     if (plan.name.toLowerCase().includes('pro')) {
-      icon = <Sparkles className="h-5 w-5 text-purple-500" />;
-      color = "purple";
+      icon = <Sparkles className="h-5 w-5 text-blue-500" />;
+      color = "amber";
     } else if (plan.name.toLowerCase().includes('enterprise')) {
-      icon = <Building className="h-5 w-5 text-amber-500" />;
+      icon = <Building className="h-5 w-5 text-blue-500" />;
       color = "amber";
     } else if (plan.name.toLowerCase().includes('financial')) {
-      icon = <LineChart className="h-5 w-5 text-green-500" />;
+      icon = <LineChart className="h-5 w-5 text-blue-500" />;
       color = "green";
     } else if (plan.name.toLowerCase().includes('weather') || plan.name.toLowerCase().includes('forecast')) {
-      icon = <CloudRain className="h-5 w-5 text-cyan-500" />;
+      icon = <CloudRain className="h-5 w-5 text-blue-500" />;
       color = "cyan";
     }
     
@@ -307,14 +307,14 @@ export default function SubscriptionsPage() {
         className="flex flex-col md:flex-row md:items-end justify-between gap-4"
       >
         <div>
-          <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold tracking-tight text-blue-700">
             Subscriptions
           </h1>
           <p className="text-muted-foreground mt-2">
             Manage your subscription plans, billing history, and add-ons
           </p>
         </div>
-        <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-md self-start md:self-auto">
+        <Button className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm self-start md:self-auto">
           <Plus className="mr-2 h-4 w-4" />
           Add Subscription
         </Button>
@@ -324,31 +324,31 @@ export default function SubscriptionsPage() {
         <TabsList className="grid grid-cols-2 md:grid-cols-5 bg-slate-100/60 dark:bg-slate-900/40 p-1 rounded-xl overflow-hidden">
           <TabsTrigger 
             value="active" 
-            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
+            className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
           >
             Current Plans
           </TabsTrigger>
           <TabsTrigger 
             value="explore" 
-            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
+            className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
           >
             Explore Plans
           </TabsTrigger>
           <TabsTrigger 
             value="features" 
-            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
+            className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
           >
             Features & Limits
           </TabsTrigger>
           <TabsTrigger 
             value="analytics" 
-            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
+            className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
           >
             Analytics
           </TabsTrigger>
           <TabsTrigger 
             value="billing" 
-            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
+            className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300"
           >
             Billing History
           </TabsTrigger>
@@ -359,7 +359,7 @@ export default function SubscriptionsPage() {
             // Loading skeleton
             <div className="grid gap-6 md:grid-cols-2">
               {[1, 2].map((item) => (
-                <Card key={item} className="border-0 shadow-lg">
+                <Card key={item} className="border-0 shadow-sm">
                   <CardHeader className="p-4 pb-2">
                     <div className="flex items-start justify-between">
                       <div>
@@ -397,7 +397,7 @@ export default function SubscriptionsPage() {
               ))}
             </div>
           ) : userSubscriptions.length === 0 ? (
-            <Card className="border-0 shadow-lg text-center p-8">
+            <Card className="border-0 shadow-sm text-center p-8">
               <div className="flex flex-col items-center justify-center space-y-4">
                 <div className="h-16 w-16 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center">
                   <Package className="h-8 w-8" />
@@ -408,7 +408,7 @@ export default function SubscriptionsPage() {
                 </p>
                 <Button 
                   onClick={() => handleTabChange('explore')}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white mt-4"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4"
                 >
                   Explore Plans
                 </Button>
@@ -423,8 +423,8 @@ export default function SubscriptionsPage() {
             >
               {userSubscriptions.map((subscription) => (
                 <motion.div key={subscription.id} variants={itemVariants}>
-                  <Card className="border-0 shadow-lg overflow-hidden bg-white dark:bg-slate-900 hover:shadow-xl transition-shadow duration-300">
-                    <CardHeader className="p-5 pb-2 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 border-b border-slate-100 dark:border-slate-800">
+                  <Card className="border-0 shadow-sm overflow-hidden bg-white dark:bg-slate-900 hover:shadow-sm transition-shadow duration-300">
+                    <CardHeader className="p-5 pb-2 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
                       <div className="flex items-start justify-between">
                         <div className="flex gap-3">
                           <div className="h-10 w-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
@@ -437,7 +437,7 @@ export default function SubscriptionsPage() {
                         </div>
                         <Badge 
                           variant="default"
-                          className={`bg-${subscription.status === 'active' ? 'green' : 'amber'}-500 flex items-center gap-1`}
+                          className={`bg-blue-500 flex items-center gap-1`}
                         >
                           <CheckCircle className="h-3 w-3" />
                           {subscription.status === 'active' ? 'Active' : 'Pending'}
@@ -463,40 +463,40 @@ export default function SubscriptionsPage() {
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
                           <div className="flex items-center gap-1.5">
-                            <Zap className="h-4 w-4 text-amber-500" />
+                            <Zap className="h-4 w-4 text-blue-500" />
                             <span>Usage</span>
                           </div>
                           <span className={cn(
-                            subscription.usagePercent > 80 ? "text-amber-500" : 
+                            subscription.usagePercent > 80 ? "text-blue-500" : 
                             subscription.usagePercent > 50 ? "text-blue-500" : 
-                            "text-green-500"
+                            "text-blue-500"
                           )}>{subscription.usagePercent}%</span>
                         </div>
                         <Progress 
                           value={subscription.usagePercent} 
                           className={cn(
                             "h-2",
-                            subscription.usagePercent > 80 ? "bg-amber-100 dark:bg-amber-900/30" : 
+                            subscription.usagePercent > 80 ? "bg-blue-100 dark:bg-blue-900/30" : 
                             subscription.usagePercent > 50 ? "bg-blue-100 dark:bg-blue-900/30" : 
-                            "bg-green-100 dark:bg-green-900/30"
+                            "bg-blue-100 dark:bg-blue-900/30"
                           )}
                           indicatorClassName={cn(
-                            subscription.usagePercent > 80 ? "bg-amber-500" : 
+                            subscription.usagePercent > 80 ? "bg-blue-500" : 
                             subscription.usagePercent > 50 ? "bg-blue-500" : 
-                            "bg-green-500"
+                            "bg-blue-500"
                           )}
                         />
                       </div>
 
                       <div className="space-y-3">
                         <h4 className="text-sm font-medium flex items-center gap-2">
-                          <ShieldCheck className="h-4 w-4 text-green-500" />
+                          <ShieldCheck className="h-4 w-4 text-blue-500" />
                           Features
                         </h4>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1.5 text-sm">
                           {subscription.featuresFormatted?.map((feature: string, index: number) => (
                             <li key={index} className="flex items-center gap-2">
-                              <CheckCircle className="h-3.5 w-3.5 text-green-500 shrink-0" />
+                              <CheckCircle className="h-3.5 w-3.5 text-blue-500 shrink-0" />
                               <span className="text-muted-foreground">{feature}</span>
                             </li>
                           ))}
@@ -506,7 +506,7 @@ export default function SubscriptionsPage() {
                       {subscription.recommendedAddons && subscription.recommendedAddons.length > 0 && (
                         <div className="space-y-3">
                           <h4 className="text-sm font-medium flex items-center gap-2">
-                            <Sparkles className="h-4 w-4 text-amber-500" />
+                            <Sparkles className="h-4 w-4 text-blue-500" />
                             Recommended Add-ons
                           </h4>
                           <div className="flex flex-wrap gap-2">
@@ -514,7 +514,7 @@ export default function SubscriptionsPage() {
                               <Badge 
                                 key={index} 
                                 variant="outline" 
-                                className="bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100 cursor-pointer dark:bg-amber-900/20 dark:text-amber-300 dark:border-amber-800"
+                                className="bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100 cursor-pointer dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800"
                               >
                                 {addon}
                               </Badge>
@@ -540,7 +540,7 @@ export default function SubscriptionsPage() {
                                   <h3 className="font-medium">{subscription.plan.name}</h3>
                                   <p className="text-sm text-muted-foreground">Active until {formatDate(subscription.endDate)}</p>
                                 </div>
-                                <Badge variant="outline" className="bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-300">Active</Badge>
+                                <Badge variant="outline" className="bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300">Active</Badge>
                               </div>
                               <div className="flex justify-between items-center">
                                 <span className="font-medium">Monthly Price</span>
@@ -589,7 +589,7 @@ export default function SubscriptionsPage() {
             {availablePlans.map((plan) => (
               <motion.div key={plan.id} variants={itemVariants}>
                 <Card className={cn(
-                  "border-0 shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300",
+                  "border-0 shadow-sm overflow-hidden hover:shadow-sm transition-all duration-300",
                   plan.popular && "ring-2 ring-blue-500 dark:ring-blue-400"
                 )}>
                   {plan.popular && (
@@ -597,11 +597,11 @@ export default function SubscriptionsPage() {
                       MOST POPULAR
                     </div>
                   )}
-                  <CardHeader className="p-5 pb-2 bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 border-b border-slate-100 dark:border-slate-800">
+                  <CardHeader className="p-5 pb-2 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
                     <div className="flex gap-3 items-start">
                       <div className={cn(
                         "h-10 w-10 rounded-full flex items-center justify-center",
-                        `bg-${plan.color}-100 text-${plan.color}-500 dark:bg-${plan.color}-900/30 dark:text-${plan.color}-400`
+                        `bg-blue-100 text-blue-500 dark:bg-blue-900/30 dark:text-blue-400`
                       )}>
                         {plan.icon}
                       </div>
@@ -618,7 +618,7 @@ export default function SubscriptionsPage() {
                         <span className="text-sm font-normal text-muted-foreground ml-1.5">/monthly</span>
                       </div>
                       {plan.discount && (
-                        <Badge variant="outline" className="ml-2 bg-red-50 text-red-600 border-red-200 dark:bg-red-900/20 dark:border-red-800 dark:text-red-400">
+                        <Badge variant="outline" className="ml-2 bg-blue-50 text-blue-600 border-blue-200 dark:bg-blue-900/20 dark:border-blue-800 dark:text-blue-400">
                           <Tag className="h-3 w-3 mr-1" />
                           {plan.discount.percent}% off
                         </Badge>
@@ -636,7 +636,7 @@ export default function SubscriptionsPage() {
                         <li key={index} className="flex items-center gap-2 text-sm">
                           <CheckCircle className={cn(
                             "h-4 w-4 shrink-0",
-                            `text-${plan.color}-500 dark:text-${plan.color}-400`
+                            `text-blue-500 dark:text-blue-400`
                           )} />
                           <span>{feature.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</span>
                         </li>
@@ -648,7 +648,7 @@ export default function SubscriptionsPage() {
                       className={cn(
                         "w-full",
                         plan.popular ? 
-                          "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-md" :
+                          "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm" :
                           "bg-white dark:bg-slate-800"
                       )}
                       onClick={() => handlePlanSelect(plan)}
@@ -661,16 +661,16 @@ export default function SubscriptionsPage() {
             ))}
 
             <motion.div variants={itemVariants}>
-              <Card className="border-0 shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+              <Card className="border-0 shadow-sm overflow-hidden hover:shadow-sm transition-all duration-300 h-full flex flex-col">
                 <CardContent className="h-full flex flex-col items-center justify-center p-8 text-center">
-                  <div className="h-16 w-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center mb-4">
+                  <div className="h-16 w-16 rounded-full bg-blue-600 flex items-center justify-center mb-4">
                     <Users className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-medium">Custom Plan</h3>
                   <p className="mt-2 text-center text-sm text-muted-foreground max-w-[250px]">
                     Need a tailored solution? Contact our sales team for a custom plan
                   </p>
-                  <Button className="mt-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+                  <Button className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90">
                     Contact Sales
                   </Button>
                 </CardContent>
@@ -711,7 +711,7 @@ export default function SubscriptionsPage() {
             className="space-y-6"
           >
             <motion.div variants={itemVariants}>
-              <Card className="border-0 shadow-lg">
+              <Card className="border-0 shadow-sm">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <CreditCard className="h-5 w-5 text-blue-500" />
@@ -744,12 +744,12 @@ export default function SubscriptionsPage() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <Card className="border-0 shadow-lg">
+              <Card className="border-0 shadow-sm">
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <div>
                       <CardTitle className="flex items-center gap-2">
-                        <Clock className="h-5 w-5 text-amber-500" />
+                        <Clock className="h-5 w-5 text-blue-500" />
                         Billing History
                       </CardTitle>
                       <CardDescription>View your recent invoices</CardDescription>
@@ -769,14 +769,14 @@ export default function SubscriptionsPage() {
                         className="flex flex-col sm:flex-row sm:items-center justify-between p-4 border rounded-lg bg-slate-50 dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                       >
                         <div className="flex items-center gap-4">
-                          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/30">
-                            <Clock className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+                          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
+                            <Clock className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                           </div>
                           <div>
                             <p className="font-medium">{invoice.description}</p>
                             <div className="flex items-center gap-3 text-sm">
                               <span className="text-muted-foreground">{invoice.date}</span>
-                              <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 dark:bg-green-900/20 dark:text-green-400 dark:border-green-800">
+                              <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-blue-400 dark:border-blue-800">
                                 Paid
                               </Badge>
                             </div>

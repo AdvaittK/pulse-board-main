@@ -121,7 +121,7 @@ export function SubscriptionCheckout({
                       },
                     },
                     invalid: {
-                      color: '#9e2146',
+                      color: '#1E3A8A',
                     },
                   },
                 }}
@@ -130,7 +130,7 @@ export function SubscriptionCheckout({
           </div>
           
           {error && (
-            <div className="text-sm text-red-500 mt-2">
+            <div className="text-sm text-blue-500 mt-2">
               {error}
             </div>
           )}
@@ -147,7 +147,7 @@ export function SubscriptionCheckout({
             <Button 
               type="submit" 
               disabled={!stripe || isProcessing}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
             >
               {isProcessing ? (
                 <>

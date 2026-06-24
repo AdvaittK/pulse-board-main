@@ -20,8 +20,8 @@ export default function Loading() {
   // Mockup stats for the skeleton
   const stats = [
     { title: "Total Users", icon: <UsersRound className="h-6 w-6 text-blue-500/40" /> },
-    { title: "Active Users", icon: <CheckCircle className="h-6 w-6 text-green-500/40" /> },
-    { title: "Admins", icon: <UserCog className="h-6 w-6 text-purple-500/40" /> },
+    { title: "Active Users", icon: <CheckCircle className="h-6 w-6 text-blue-500/40" /> },
+    { title: "Admins", icon: <UserCog className="h-6 w-6 text-blue-500/40" /> },
   ]
 
   // Generate dummy rows for the skeleton table
@@ -41,7 +41,7 @@ export default function Loading() {
               <Filter className="mr-2 h-4 w-4" />
               Filters
             </Button>
-            <Button disabled className="bg-gradient-to-r from-blue-600/50 to-purple-600/50 text-white opacity-70">
+            <Button disabled className="bg-blue-600 text-white opacity-70">
               <Plus className="mr-2 h-4 w-4" />
               Add User
             </Button>
@@ -51,7 +51,7 @@ export default function Loading() {
         {/* Stats Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           {stats.map((stat, index) => (
-            <Card key={index} className="overflow-hidden border-0 shadow-md bg-gradient-to-br from-white to-blue-50/50 dark:from-gray-900/50 dark:to-gray-800/50">
+            <Card key={index} className="overflow-hidden border-0 shadow-sm bg-white dark:bg-gray-900/50">
               <CardContent className="p-6 flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-muted-foreground/70">{stat.title}</p>
@@ -67,8 +67,8 @@ export default function Loading() {
       </div>
 
       {/* Main Content */}
-      <Card className="border-0 shadow-lg bg-white/80 dark:bg-gray-900/80 rounded-xl overflow-hidden">
-        <CardHeader className="bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-gray-800/70 dark:to-gray-800/70 pb-6">
+      <Card className="border-0 shadow-sm bg-white/80 dark:bg-gray-900/80 rounded-xl overflow-hidden">
+        <CardHeader className="bg-blue-600 dark:bg-gray-800/70 pb-6">
           <div className="flex items-center justify-between">
             <div>
               <CardTitle className="text-xl font-semibold"><Skeleton className="h-6 w-32" /></CardTitle>

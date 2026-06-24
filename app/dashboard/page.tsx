@@ -78,7 +78,7 @@ export default function DashboardPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50/80 to-blue-50/70 dark:from-slate-900 dark:to-indigo-950/70 px-1 sm:px-2 md:px-3">
+    <div className="min-h-screen bg-blue-50/60 dark:bg-slate-900 px-1 sm:px-2 md:px-3">
       <div className="container px-0 md:px-4 max-w-full py-6">
         <motion.div 
           initial="hidden"
@@ -99,7 +99,7 @@ export default function DashboardPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="text-blue-700">
                     Interactive Dashboard Demo
                   </span>
                 </motion.h1>
@@ -137,10 +137,10 @@ export default function DashboardPage() {
                 icon={<MdBarChart className="h-7 w-7" />}
                 title={'Earnings'}
                 subtitle={'$340.5'}
-                bgColor="from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20"
+                bgColor="bg-blue-50 dark:bg-blue-950/30"
                 iconBg="bg-blue-500"
                 growth="+14%"
-                growthColor="text-emerald-500"
+                growthColor="text-blue-500"
               />
             </motion.div>
             
@@ -152,10 +152,10 @@ export default function DashboardPage() {
                 icon={<IoDocuments className="h-6 w-6" />}
                 title={'Spend this month'}
                 subtitle={'$642.39'}
-                bgColor="from-purple-50 to-purple-100 dark:from-purple-950/30 dark:to-purple-900/20"
-                iconBg="bg-purple-500"
+                bgColor="bg-blue-50 dark:bg-blue-950/30"
+                iconBg="bg-blue-500"
                 growth="+2.5%"
-                growthColor="text-emerald-500"
+                growthColor="text-blue-500"
               />
             </motion.div>
             
@@ -167,10 +167,10 @@ export default function DashboardPage() {
                 icon={<MdBarChart className="h-7 w-7" />}
                 title={'Sales'}
                 subtitle={'$574.34'}
-                bgColor="from-emerald-50 to-emerald-100 dark:from-emerald-950/30 dark:to-emerald-900/20"
-                iconBg="bg-emerald-500"
+                bgColor="bg-blue-50 dark:bg-blue-950/30"
+                iconBg="bg-blue-500"
                 growth="+8.1%"
-                growthColor="text-emerald-500"
+                growthColor="text-blue-500"
               />
             </motion.div>
             
@@ -182,10 +182,10 @@ export default function DashboardPage() {
                 icon={<MdDashboard className="h-6 w-6" />}
                 title={'Your Balance'}
                 subtitle={'$1,000'}
-                bgColor="from-amber-50 to-amber-100 dark:from-amber-950/30 dark:to-amber-900/20"
-                iconBg="bg-amber-500"
+                bgColor="bg-blue-50 dark:bg-blue-950/30"
+                iconBg="bg-blue-500"
                 growth="+3.2%"
-                growthColor="text-emerald-500"
+                growthColor="text-blue-500"
               />
             </motion.div>
             
@@ -197,10 +197,10 @@ export default function DashboardPage() {
                 icon={<ClipboardList className="h-6 w-6" />}
                 title={'New Tasks'}
                 subtitle={'154'}
-                bgColor="from-rose-50 to-rose-100 dark:from-rose-950/30 dark:to-rose-900/20"
-                iconBg="bg-rose-500"
+                bgColor="bg-blue-50 dark:bg-blue-950/30"
+                iconBg="bg-blue-500"
                 growth="+12%"
-                growthColor="text-emerald-500"
+                growthColor="text-blue-500"
               />
             </motion.div>
             
@@ -212,10 +212,10 @@ export default function DashboardPage() {
                 icon={<Briefcase className="h-6 w-6" />}
                 title={'Total Projects'}
                 subtitle={'28'}
-                bgColor="from-indigo-50 to-indigo-100 dark:from-indigo-950/30 dark:to-indigo-900/20"
-                iconBg="bg-indigo-500"
+                bgColor="bg-blue-50 dark:bg-blue-950/30"
+                iconBg="bg-blue-500"
                 growth="+4%"
-                growthColor="text-emerald-500"
+                growthColor="text-blue-500"
               />
             </motion.div>
           </motion.div>
@@ -233,8 +233,8 @@ export default function DashboardPage() {
                   <TabsTrigger 
                     value="overview" 
                     className={cn(
-                      "data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg",
-                      "transition-all duration-300 data-[state=active]:shadow-md"
+                      "data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg",
+                      "transition-all duration-300 data-[state=active]:shadow-sm"
                     )}
                   >
                     Overview
@@ -242,8 +242,8 @@ export default function DashboardPage() {
                   <TabsTrigger 
                     value="analytics" 
                     className={cn(
-                      "data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg",
-                      "transition-all duration-300 data-[state=active]:shadow-md"
+                      "data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg",
+                      "transition-all duration-300 data-[state=active]:shadow-sm"
                     )}
                   >
                     Analytics
@@ -251,8 +251,8 @@ export default function DashboardPage() {
                   <TabsTrigger 
                     value="reports" 
                     className={cn(
-                      "data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg",
-                      "transition-all duration-300 data-[state=active]:shadow-md"
+                      "data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg",
+                      "transition-all duration-300 data-[state=active]:shadow-sm"
                     )}
                   >
                     Reports
@@ -260,8 +260,8 @@ export default function DashboardPage() {
                   <TabsTrigger 
                     value="notifications" 
                     className={cn(
-                      "data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg",
-                      "transition-all duration-300 data-[state=active]:shadow-md"
+                      "data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg",
+                      "transition-all duration-300 data-[state=active]:shadow-sm"
                     )}
                   >
                     Notifications
@@ -287,13 +287,13 @@ export default function DashboardPage() {
                     <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
                       <motion.div
                         whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                        className="transition-all duration-200 shadow-sm hover:shadow-md"
+                        className="transition-all duration-200 shadow-sm hover:shadow-sm"
                       >
                         <TotalSpent />
                       </motion.div>
                       <motion.div
                         whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                        className="transition-all duration-200 shadow-sm hover:shadow-md"
+                        className="transition-all duration-200 shadow-sm hover:shadow-sm"
                       >
                         <WeeklyRevenue />
                       </motion.div>
@@ -303,20 +303,20 @@ export default function DashboardPage() {
                     <div className="grid grid-cols-1 gap-4 sm:gap-6 xl:grid-cols-2">
                       <motion.div
                         whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                        className="transition-all duration-200 shadow-sm hover:shadow-md overflow-x-auto"
+                        className="transition-all duration-200 shadow-sm hover:shadow-sm overflow-x-auto"
                       >
                         <CheckTable tableData={tableDataCheck} />
                       </motion.div>
                       <div className="grid grid-cols-1 gap-4 xs:grid-cols-2 sm:gap-6">
                         <motion.div
                           whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                          className="transition-all duration-200 shadow-sm hover:shadow-md"
+                          className="transition-all duration-200 shadow-sm hover:shadow-sm"
                         >
                           <DailyTraffic />
                         </motion.div>
                         <motion.div
                           whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                          className="transition-all duration-200 shadow-sm hover:shadow-md"
+                          className="transition-all duration-200 shadow-sm hover:shadow-sm"
                         >
                           <PieChartCard />
                         </motion.div>
@@ -327,13 +327,13 @@ export default function DashboardPage() {
                     <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
                       <motion.div
                         whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                        className="transition-all duration-200 shadow-sm hover:shadow-md"
+                        className="transition-all duration-200 shadow-sm hover:shadow-sm"
                       >
                         <ComplexTable tableData={tableDataComplex} />
                       </motion.div>
                       <motion.div
                         whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                        className="transition-all duration-200 shadow-sm hover:shadow-md"
+                        className="transition-all duration-200 shadow-sm hover:shadow-sm"
                       >
                         <TaskCard />
                       </motion.div>
@@ -345,8 +345,8 @@ export default function DashboardPage() {
                       whileHover={{ y: -5, transition: { duration: 0.2 } }}
                       className="transition-all duration-200"
                     >
-                      <Card className="overflow-hidden border-0 shadow-lg rounded-2xl bg-white dark:bg-slate-900">
-                        <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-slate-900 pb-6">
+                      <Card className="overflow-hidden border-0 shadow-sm rounded-2xl bg-white dark:bg-slate-900">
+                        <CardHeader className="bg-blue-600 dark:bg-slate-900 pb-6">
                           <div className="flex items-center justify-between">
                             <div>
                               <CardTitle className="text-xl font-semibold text-slate-800 dark:text-white">Data Feed Performance</CardTitle>
@@ -375,14 +375,14 @@ export default function DashboardPage() {
                       whileHover={{ y: -5, transition: { duration: 0.2 } }}
                       className="transition-all duration-200"
                     >
-                      <Card className="overflow-hidden border-0 shadow-lg rounded-2xl bg-white dark:bg-slate-900">
-                        <CardHeader className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-slate-900 dark:to-slate-900 pb-6">
+                      <Card className="overflow-hidden border-0 shadow-sm rounded-2xl bg-white dark:bg-slate-900">
+                        <CardHeader className="bg-blue-600 dark:bg-slate-900 pb-6">
                           <div className="flex items-center justify-between">
                             <div>
                               <CardTitle className="text-xl font-semibold text-slate-800 dark:text-white">Reports</CardTitle>
                               <CardDescription className="text-slate-500 dark:text-slate-400">View and download your reports</CardDescription>
                             </div>
-                            <Badge variant="outline" className="bg-amber-500/10 text-amber-600 dark:text-amber-400 dark:bg-amber-500/20 border-amber-200 dark:border-amber-800">Weekly</Badge>
+                            <Badge variant="outline" className="bg-blue-500/10 text-blue-600 dark:text-blue-400 dark:bg-blue-500/20 border-blue-200 dark:border-blue-800">Weekly</Badge>
                           </div>
                         </CardHeader>
                         <CardContent className="p-6">
@@ -405,14 +405,14 @@ export default function DashboardPage() {
                       whileHover={{ y: -5, transition: { duration: 0.2 } }}
                       className="transition-all duration-200"
                     >
-                      <Card className="overflow-hidden border-0 shadow-lg rounded-2xl bg-white dark:bg-slate-900">
-                        <CardHeader className="bg-gradient-to-r from-rose-50 to-pink-50 dark:from-slate-900 dark:to-slate-900 pb-6">
+                      <Card className="overflow-hidden border-0 shadow-sm rounded-2xl bg-white dark:bg-slate-900">
+                        <CardHeader className="bg-blue-600 dark:bg-slate-900 pb-6">
                           <div className="flex items-center justify-between">
                             <div>
                               <CardTitle className="text-xl font-semibold text-slate-800 dark:text-white">Notifications</CardTitle>
                               <CardDescription className="text-slate-500 dark:text-slate-400">Manage your notification settings</CardDescription>
                             </div>
-                            <Badge variant="outline" className="bg-rose-500/10 text-rose-600 dark:text-rose-400 dark:bg-rose-500/20 border-rose-200 dark:border-rose-800">5 Unread</Badge>
+                            <Badge variant="outline" className="bg-blue-500/10 text-blue-600 dark:text-blue-400 dark:bg-blue-500/20 border-blue-200 dark:border-blue-800">5 Unread</Badge>
                           </div>
                         </CardHeader>
                         <CardContent className="p-6">

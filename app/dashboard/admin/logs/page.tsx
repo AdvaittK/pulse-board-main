@@ -78,8 +78,8 @@ export default function AdminLogsPage() {
         const level = row.getValue("level") as string
         const colors: Record<string, string> = {
           info: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300",
-          warn: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300",
-          error: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300",
+          warn: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300",
+          error: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300",
           debug: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300",
         }
         
@@ -125,13 +125,13 @@ export default function AdminLogsPage() {
         let color = "bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-300"
         
         if (action.includes("create")) {
-          color = "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
+          color = "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
         } else if (action.includes("update")) {
           color = "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
         } else if (action.includes("delete")) {
-          color = "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300"
+          color = "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
         } else if (action.includes("access")) {
-          color = "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300"
+          color = "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
         }
         
         return (
@@ -170,7 +170,7 @@ export default function AdminLogsPage() {
   return (
     <div className={`container px-4 py-6 mx-auto max-w-7xl transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold tracking-tight text-blue-700">
           System Logs
         </h1>
         <p className="text-muted-foreground mt-1">

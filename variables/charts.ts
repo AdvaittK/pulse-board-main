@@ -82,7 +82,7 @@ export const barChartOptionsDailyTraffic: ApexGeneric = {
         [
           {
             offset: 0,
-            color: '#4318FF',
+            color: '#2563EB',
             opacity: 1,
           },
           {
@@ -107,7 +107,7 @@ export const barChartOptionsDailyTraffic: ApexGeneric = {
 
 export const pieChartOptions: ApexGeneric = {
   labels: ['Your files', 'System', 'Empty'],
-  colors: ['#4318FF', '#6AD2FF', '#EFF4FB'],
+  colors: ['#2563EB', '#60A5FA', '#EFF4FB'],
   chart: {
     width: '50px',
   },
@@ -136,7 +136,7 @@ export const pieChartOptions: ApexGeneric = {
     },
   },
   fill: {
-    colors: ['#4318FF', '#6AD2FF', '#EFF4FB'],
+    colors: ['#2563EB', '#60A5FA', '#EFF4FB'],
   },
   tooltip: {
     enabled: true,
@@ -155,7 +155,7 @@ export const barChartDataWeeklyRevenue = [
   {
     name: 'PRODUCT B',
     data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
-    color: '#4318FF',
+    color: '#2563EB',
   },
   {
     name: 'PRODUCT C',
@@ -233,12 +233,12 @@ export const barChartOptionsWeeklyRevenue: ApexGeneric = {
   },
   fill: {
     type: 'solid',
-    colors: ['#5E37FF', '#6AD2FF', '#E1E9F8'],
+    colors: ['#2563EB', '#60A5FA', '#E1E9F8'],
   },
   legend: {
     show: false,
   },
-  colors: ['#5E37FF', '#6AD2FF', '#E1E9F8'],
+  colors: ['#2563EB', '#60A5FA', '#E1E9F8'],
   dataLabels: {
     enabled: false,
   },
@@ -254,12 +254,12 @@ export const lineChartDataTotalSpent = [
   {
     name: 'Revenue',
     data: [50, 64, 48, 66, 49, 68],
-    color: '#4318FF',
+    color: '#2563EB',
   },
   {
     name: 'Profit',
     data: [30, 40, 24, 46, 20, 46],
-    color: '#6AD2FF',
+    color: '#60A5FA',
   },
 ];
 

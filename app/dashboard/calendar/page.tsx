@@ -298,22 +298,22 @@ const categoryConfig = {
     label: "Meeting"
   },
   planning: {
-    color: "bg-purple-500",
+    color: "bg-blue-500",
     icon: <CalendarIcon className="h-4 w-4" />,
     label: "Planning"
   },
   design: {
-    color: "bg-amber-500",
+    color: "bg-blue-500",
     icon: <Eye className="h-4 w-4" />,
     label: "Design"
   },
   client: {
-    color: "bg-green-500",
+    color: "bg-blue-500",
     icon: <User className="h-4 w-4" />,
     label: "Client"
   },
   social: {
-    color: "bg-rose-500",
+    color: "bg-blue-500",
     icon: <Users className="h-4 w-4" />,
     label: "Social"
   },
@@ -407,7 +407,7 @@ export default function CalendarPage() {
           className="flex flex-col md:flex-row md:items-end justify-between gap-4"
         >
           <div>
-            <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold tracking-tight text-blue-700">
               Calendar
             </h1>
             <p className="text-muted-foreground mt-2">
@@ -457,7 +457,7 @@ export default function CalendarPage() {
               </SelectContent>
             </Select>
             <Button 
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
               onClick={handleCreateEvent}
             >
               <Plus className="mr-2 h-4 w-4" />
@@ -475,13 +475,13 @@ export default function CalendarPage() {
           <Tabs defaultValue="week" className="space-y-6" onValueChange={setActiveTab} value={activeTab}>
             <div className="flex items-center justify-between mb-2">
               <TabsList className="bg-white dark:bg-slate-900 p-1 border border-slate-200 dark:border-slate-800 shadow-sm rounded-xl">
-                <TabsTrigger value="month" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300">
+                <TabsTrigger value="month" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300">
                   Month
                 </TabsTrigger>
-                <TabsTrigger value="week" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300">
+                <TabsTrigger value="week" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300">
                   Week
                 </TabsTrigger>
-                <TabsTrigger value="day" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-600 data-[state=active]:text-white rounded-lg transition-all duration-300">
+                <TabsTrigger value="day" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white rounded-lg transition-all duration-300">
                   Day
                 </TabsTrigger>
               </TabsList>
@@ -539,7 +539,7 @@ export default function CalendarPage() {
             ) : (
               <>
                 <TabsContent value="month" className="space-y-4">
-                  <Card className="border-0 shadow-md">
+                  <Card className="border-0 shadow-sm">
                     <CardContent className="p-0">
                       <div className="grid grid-cols-7 border-b dark:border-slate-800">
                         {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
@@ -620,7 +620,7 @@ export default function CalendarPage() {
                 </TabsContent>
 
                 <TabsContent value="week" className="space-y-4">
-                  <Card className="border-0 shadow-md overflow-hidden">
+                  <Card className="border-0 shadow-sm overflow-hidden">
                     <CardContent className="p-0">
                       <div className="grid grid-cols-8 border-b dark:border-slate-800">
                         <div className="border-r dark:border-slate-800 p-3">
@@ -698,7 +698,7 @@ export default function CalendarPage() {
                 </TabsContent>
                 
                 <TabsContent value="day" className="space-y-4">
-                  <Card className="border-0 shadow-md overflow-hidden">
+                  <Card className="border-0 shadow-sm overflow-hidden">
                     <CardHeader className="p-4 border-b dark:border-slate-800 flex flex-row items-center justify-between bg-slate-50 dark:bg-slate-900">
                       <div>
                         <CardTitle className="text-xl">
@@ -746,7 +746,7 @@ export default function CalendarPage() {
                               className={cn(
                                 "absolute left-2 right-2 rounded-md p-2 text-white",
                                 categoryConfig[event.category as keyof typeof categoryConfig]?.color || categoryConfig.default.color,
-                                "cursor-pointer hover:opacity-90 shadow-md"
+                                "cursor-pointer hover:opacity-90 shadow-sm"
                               )}
                               style={{ 
                                 top: `${(event.date.getHours() - 8) * 80 + (event.date.getMinutes() / 60 * 80)}px`,
@@ -784,7 +784,7 @@ export default function CalendarPage() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className={cn("space-y-6", viewMode === "calendar" && "hidden")}
         >
-          <Card className="border-0 shadow-md overflow-hidden">
+          <Card className="border-0 shadow-sm overflow-hidden">
             <CardHeader className="p-4 border-b dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
               <div className="flex items-center justify-between">
                 <div>

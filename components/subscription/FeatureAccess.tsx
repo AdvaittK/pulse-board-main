@@ -117,7 +117,7 @@ export function SubscriptionFeatures() {
   }
 
   return (
-    <Card className="border-0 shadow-lg overflow-hidden">
+    <Card className="border-0 shadow-sm overflow-hidden">
       <CardHeader>
         <CardTitle>Compare Plans & Features</CardTitle>
         <CardDescription>
@@ -150,7 +150,7 @@ export function SubscriptionFeatures() {
                         className={cn(
                           "mt-2 w-full",
                           plan.popular ? 
-                            "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white" : 
+                            "bg-primary text-primary-foreground hover:bg-primary/90" : 
                             ""
                         )}
                       >
@@ -173,7 +173,7 @@ export function SubscriptionFeatures() {
                     return (
                       <TableCell key={`${plan.name}-${feature}`} className="text-center">
                         {isCheckmark ? (
-                          <CheckCircle className="h-5 w-5 text-green-500 mx-auto" />
+                          <CheckCircle className="h-5 w-5 text-blue-500 mx-auto" />
                         ) : isCross ? (
                           <XCircle className="h-5 w-5 text-slate-300 dark:text-slate-600 mx-auto" />
                         ) : (

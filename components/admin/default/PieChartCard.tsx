@@ -16,15 +16,15 @@ const PieChartCard = () => {
       <Card 
         extra={cn(
           "rounded-2xl p-3 h-full border-none overflow-hidden",
-          "shadow-md hover:shadow-lg transition-all duration-300",
-          "bg-gradient-to-br from-white to-purple-50",
-          "dark:from-slate-900 dark:to-purple-950/30"
+          "shadow-sm hover:shadow-sm transition-all duration-300",
+          "bg-white",
+          "dark:bg-slate-900"
         )}
       >
         <div className="flex flex-row justify-between px-3 pt-2">
           <div className="flex items-center gap-2">
-            <div className="flex items-center justify-center p-2 rounded-lg bg-purple-100 dark:bg-purple-900/30">
-              <MdPieChart className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+            <div className="flex items-center justify-center p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
+              <MdPieChart className="h-5 w-5 text-blue-600 dark:text-blue-400" />
             </div>
             <h4 className="text-lg font-bold text-slate-800 dark:text-white">
               Resource Usage
@@ -38,7 +38,7 @@ const PieChartCard = () => {
               "border border-slate-200 dark:border-slate-700",
               "bg-white dark:bg-slate-800",
               "hover:bg-slate-50 dark:hover:bg-slate-700",
-              "focus:ring-2 focus:ring-purple-500/20 dark:focus:ring-purple-500/30",
+              "focus:ring-2 focus:ring-blue-500/20 dark:focus:ring-blue-500/30",
               "outline-none transition-all duration-200"
             )}>
               <option value="monthly">Monthly</option>
@@ -66,33 +66,33 @@ const PieChartCard = () => {
             <div>
               <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center">
-                  <MdStorage className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 mr-2" />
+                  <MdStorage className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 mr-2" />
                   <span className="text-xs font-medium text-slate-700 dark:text-slate-300">Memory</span>
                 </div>
                 <span className="text-xs font-medium text-slate-700 dark:text-slate-300">65%</span>
               </div>
               <div className="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-1.5">
-                <div className="bg-purple-600 dark:bg-purple-500 h-1.5 rounded-full" style={{ width: "65%" }}></div>
+                <div className="bg-blue-600 dark:bg-blue-500 h-1.5 rounded-full" style={{ width: "65%" }}></div>
               </div>
             </div>
             <div>
               <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center">
-                  <MdCloud className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 mr-2" />
+                  <MdCloud className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 mr-2" />
                   <span className="text-xs font-medium text-slate-700 dark:text-slate-300">Cloud Storage</span>
                 </div>
                 <span className="text-xs font-medium text-slate-700 dark:text-slate-300">42%</span>
               </div>
               <div className="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-1.5">
-                <div className="bg-amber-600 dark:bg-amber-500 h-1.5 rounded-full" style={{ width: "42%" }}></div>
+                <div className="bg-blue-600 dark:bg-blue-500 h-1.5 rounded-full" style={{ width: "42%" }}></div>
               </div>
             </div>
           </div>
         </div>
 
         <div className="relative mb-auto flex h-[180px] w-full items-center justify-center p-2">
-          <div className="absolute inset-0 z-0 rounded-xl bg-gradient-to-b from-transparent via-purple-400/5 to-transparent dark:via-purple-600/5"></div>
-          <div className="chart-container rounded-lg overflow-hidden filter drop-shadow-lg">
+          <div className="absolute inset-0 z-0 rounded-xl bg-blue-400/5 dark:bg-blue-600/5"></div>
+          <div className="chart-container rounded-lg overflow-hidden filter drop-shadow-sm">
             <PieChart chartOptions={pieChartOptions} chartData={pieChartData} />
           </div>
         </div>
@@ -104,12 +104,12 @@ const PieChartCard = () => {
           className={cn(
             "flex flex-row !justify-between rounded-xl px-6 py-3 mt-2",
             "bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm",
-            "shadow-md dark:shadow-slate-900/30"
+            "shadow-sm dark:shadow-slate-900/30"
           )}
         >
           <div className="flex flex-col items-center justify-center">
             <div className="flex items-center justify-center">
-              <div className="h-3 w-3 rounded-full bg-purple-500" />
+              <div className="h-3 w-3 rounded-full bg-blue-500" />
               <p className="ml-2 text-sm font-medium text-slate-700 dark:text-slate-300">Your Files</p>
             </div>
             <p className="mt-1 text-xl font-bold text-slate-800 dark:text-white">
@@ -121,7 +121,7 @@ const PieChartCard = () => {
 
           <div className="flex flex-col items-center justify-center">
             <div className="flex items-center justify-center">
-              <div className="h-3 w-3 rounded-full bg-cyan-500" />
+              <div className="h-3 w-3 rounded-full bg-blue-500" />
               <p className="ml-2 text-sm font-medium text-slate-700 dark:text-slate-300">System</p>
             </div>
             <p className="mt-1 text-xl font-bold text-slate-800 dark:text-white">
@@ -133,7 +133,7 @@ const PieChartCard = () => {
           
           <div className="flex flex-col items-center justify-center">
             <div className="flex items-center justify-center">
-              <div className="h-3 w-3 rounded-full bg-amber-500" />
+              <div className="h-3 w-3 rounded-full bg-blue-500" />
               <p className="ml-2 text-sm font-medium text-slate-700 dark:text-slate-300">Other</p>
             </div>
             <p className="mt-1 text-xl font-bold text-slate-800 dark:text-white">
